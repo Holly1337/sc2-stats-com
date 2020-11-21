@@ -9,24 +9,30 @@ export const GeneralSection = (props) => {
           General Stats
         </Header>
         <SegmentCustom>
-          <Grid columns={3} divided={true} textAlign={'center'}>
+          <Grid columns={3} divided={true} textAlign={'center'} stackable={true}>
             <Grid.Row>
               <Grid.Column>
-                <Statistic>
+                <Statistic color={'blue'}>
                   <Statistic.Value>799</Statistic.Value>
-                  <Statistic.Label>Games Played</Statistic.Label>
+                  <Statistic.Label>
+                      <Header size={"huge"}>Games Played</Header>
+                  </Statistic.Label>
                 </Statistic>
               </Grid.Column>
               <Grid.Column>
-                <Statistic>
+                <Statistic color={'blue'}>
                   <Statistic.Value>243</Statistic.Value>
-                  <Statistic.Label>Hours Played</Statistic.Label>
+                  <Statistic.Label>
+                      <Header size={"huge"}>Hours Played</Header>
+                  </Statistic.Label>
                 </Statistic>
               </Grid.Column>
               <Grid.Column>
-                <Statistic>
+                <Statistic color={'blue'}>
                   <Statistic.Value>~10.641.512</Statistic.Value>
-                  <Statistic.Label>Actions Executed</Statistic.Label>
+                  <Statistic.Label>
+                      <Header size={"huge"}>Actions Executed</Header>
+                  </Statistic.Label>
                 </Statistic>
               </Grid.Column>
             </Grid.Row>

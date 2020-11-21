@@ -1,17 +1,17 @@
 import { SegmentCustom } from '../src/Components/SegmentCustom'
 import { Breadcrumb, Grid, Header, Statistic } from 'semantic-ui-react'
 import { GeneralSection } from '../src/Components/Sections/GeneralSection'
-import { MatchupsSection } from '../src/Components/Sections/Maps/MatchupsSection'
+import { MatchupsSection } from '../src/Components/Sections/Maps/Matchups/MatchupsSection'
 
 export default function Home() {
   return (
     <div>
       <Breadcrumb>
-        <Breadcrumb.Section link href={'/'}>
+        <Breadcrumb.Section href={'/'}>
           Home
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
-        <Breadcrumb.Section link href={'/hscxviii'}>
+        <Breadcrumb.Section href={'/hscxviii'}>
           Home Story Cup XVIII
         </Breadcrumb.Section>
         <Breadcrumb.Divider />

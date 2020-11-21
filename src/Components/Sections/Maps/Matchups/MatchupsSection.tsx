@@ -1,6 +1,8 @@
 import React from 'react'
 import { Grid, Header, Statistic } from 'semantic-ui-react'
-import { SegmentCustom } from '../../SegmentCustom'
+import { SegmentCustom } from '../../../SegmentCustom'
+import MatchupItem from "./MatchupItem";
+import Number from "../../../Common/Numbers/Number";
 
 export const MatchupsSection = (props) => {
     return (
@@ -9,13 +11,35 @@ export const MatchupsSection = (props) => {
           Matchups
         </Header>
         <SegmentCustom>
-          <Grid columns={3} celled={true} textAlign={'center'}>
+          <Grid columns={3} divided={"vertically"} stackable={true}>
             <Grid.Row>
               <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>799</Statistic.Value>
-                  <Statistic.Label>PvZ</Statistic.Label>
-                </Statistic>
+                <MatchupItem race1={"Prot"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+              <Grid.Column>
+                <MatchupItem race1={"Prot"} race2={"Zerg"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+              <Grid.Column>
+                <MatchupItem race1={"Zerg"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <MatchupItem race1={"Zerg"} race2={"Zerg"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+              <Grid.Column>
+                <MatchupItem race1={"Terr"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+              <Grid.Column>
+                <MatchupItem race1={"Prot"} race2={"Prot"} race1Wins={1} race2Wins={2} />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          {/*
+            <Grid columns={3} divided={true} textAlign={'center'}>
+            <Grid.Row>
+              <Grid.Column>
+                <div><Header size={"huge"}>Test</Header></div>
               </Grid.Column>
               <Grid.Column>
                 <Statistic>
@@ -51,6 +75,7 @@ export const MatchupsSection = (props) => {
               </Grid.Column>
             </Grid.Row>
           </Grid>
+          */}
         </SegmentCustom>
       </>
 

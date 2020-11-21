@@ -1,0 +1,23 @@
+$color-previous: yellow;
+$color-gas: #42f365;
+$color-minerals: #3abff0;
+
+.colorNumbers {
+  color: #2185d0;
+}
+
+.colorPrevious {
+  color: $color-previous;
+}
+
+.colorGas {
+  color: $color-gas;
+}
+
+.colorMinerals {
+  color: $color-minerals /*#3dd1ed*/;
+}
+
+.colorTest{
+  color: grey
+}

@@ -1,7 +1,9 @@
 import 'semantic-ui-css/semantic.min.css'
 import '../styles/styles.scss'
+import '../styles/font-starcraft.css'
 import { Container, Menu } from 'semantic-ui-react'
-import { SidebarCustom } from '../src/Components/SidebarCustom'
+import { SidebarCustom } from '../src/Components/Nav/SidebarCustom'
+import {TopBar} from "../src/Components/Nav/TopBar";
 
 
 const menuStyle = {
@@ -13,6 +15,7 @@ const menuStyle = {
 function MyApp({ Component, pageProps }) {
   return (
     <div>
+      <TopBar />
       {/*<Menu borderless={true} size={'huge'} style={menuStyle}>
         <Container>
           <Menu.Item as={'a'} active={true}>Home</Menu.Item>
@@ -21,13 +24,17 @@ function MyApp({ Component, pageProps }) {
         </Container>
       </Menu>*/}
       <div style={{
-        height: '100vh',
+        // TODO: Fix height
+        height: 'calc(100vh - 64px)',
         width: '100vw',
-        position: 'absolute'
+        position: 'absolute',
+        marginTop: 64
       }}>
         <SidebarCustom>
           <div style={{ marginLeft: 150 }}>
-            <Component {...pageProps} />
+            <Container>
+              <Component {...pageProps} />
+            </Container>
           </div>
         </SidebarCustom>
       </div>
