@@ -5,6 +5,7 @@ import { MatchupsSection } from '../src/Components/Sections/Matchups/MatchupsSec
 import { WorkerSection } from '../src/Components/Sections/Workers/WorkerSection'
 import { SupplySection } from '../src/Components/Sections/Supply/SupplySection'
 import { PopularUnitsSection } from '../src/Components/Sections/PopularUnits/PopularUnitsSection'
+import MapsPlayedSectionHorizontal from '../src/Components/Sections/Maps/MapsPlayed'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </Breadcrumb>
       <GeneralSection />
       <MatchupsSection />
+      <MapsPlayedSectionHorizontal />
       <SupplySection />
       <WorkerSection />
       <PopularUnitsSection />

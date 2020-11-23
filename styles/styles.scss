@@ -4,28 +4,44 @@ body {
   background-color: $background-color !important;
 }
 
+.ui.header {
+  color: rgb(5,5,5)!important;
+}
+
 #base-segment {
   background-color: $background-color;
 }
 
 .d-flex {
-  display: flex;
+  display: flex!important;
 }
 
 .flex-column {
-  flex-direction: column;
+  flex-direction: column!important;
 }
 
 .align-items-center {
-  align-items: center;
+  align-items: center!important;
 }
 
 .justify-content-between {
-  justify-content: space-between;
+  justify-content: space-between!important;
+}
+
+.justify-content-end {
+  justify-content: end!important;
 }
 
 .text-center {
-  text-align: center;
+  text-align: center!important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.m-0 {
+  margin: 0!important;
 }
 
 .mt-0 {

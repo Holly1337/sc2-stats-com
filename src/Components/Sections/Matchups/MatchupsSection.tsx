@@ -4,13 +4,14 @@ import { SegmentCustom } from '../../Segments/SegmentCustom'
 import MatchupItem from './MatchupItem'
 
 export const MatchupsSection = (props) => {
+    // TODO: add possibility for user to get a list of all games of a specific matchup and link to their pages.
     return (
       <>
         <Header size={'huge'}>
           Matchups
         </Header>
         <SegmentCustom>
-          <Grid columns={3} divided={"vertically"} stackable={true}>
+          <Grid columns={3} divided={"vertically"} stackable={true} celled='internally'>
             <Grid.Row>
               <Grid.Column>
                 <MatchupItem race1={"Prot"} race2={"Terr"} race1Wins={1} race2Wins={2} />
@@ -34,47 +35,6 @@ export const MatchupsSection = (props) => {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          {/*
-            <Grid columns={3} divided={true} textAlign={'center'}>
-            <Grid.Row>
-              <Grid.Column>
-                <div><Header size={"huge"}>Test</Header></div>
-              </Grid.Column>
-              <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>243</Statistic.Value>
-                  <Statistic.Label>PvT</Statistic.Label>
-                </Statistic>
-              </Grid.Column>
-              <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>436</Statistic.Value>
-                  <Statistic.Label>PvP</Statistic.Label>
-                </Statistic>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>651</Statistic.Value>
-                  <Statistic.Label>PvZ</Statistic.Label>
-                </Statistic>
-              </Grid.Column>
-              <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>314</Statistic.Value>
-                  <Statistic.Label>PvT</Statistic.Label>
-                </Statistic>
-              </Grid.Column>
-              <Grid.Column>
-                <Statistic>
-                  <Statistic.Value>673</Statistic.Value>
-                  <Statistic.Label>PvP</Statistic.Label>
-                </Statistic>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-          */}
         </SegmentCustom>
       </>
 
