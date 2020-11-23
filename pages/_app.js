@@ -1,6 +1,8 @@
 import 'semantic-ui-css/semantic.min.css'
 import '../styles/styles.scss'
+import '../styles/timeline-custom.css'
 import '../styles/font-starcraft.css'
+import 'vis-timeline/dist/vis-timeline-graph2d.min.css'
 import { Container, Menu } from 'semantic-ui-react'
 import { SidebarCustom } from '../src/Components/Nav/SidebarCustom'
 import {TopBar} from "../src/Components/Nav/TopBar";

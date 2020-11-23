@@ -8,6 +8,8 @@ import { PopularUnitsSection } from '../src/Components/Sections/PopularUnits/Pop
 import MapsPlayedSectionHorizontal from '../src/Components/Sections/Maps/MapsPlayed'
 import ResearchAmountSection from '../src/Components/Sections/Upgrades/ResearchAmount/ResearchAmountSection'
 import { ResourcesSpentGraphSection } from '../src/Components/Sections/Resources/ResourcesSpentGraphSection'
+import CombatUpgradeSection from '../src/Components/Sections/Upgrades/CompletionTimes/CombatUpgradeSection'
+import GeneralUpgradeSection from '../src/Components/Sections/Upgrades/CompletionTimes/GeneralUpgradeSection'
 
 export default function Home() {
   return (
@@ -33,6 +35,8 @@ export default function Home() {
       <WorkerSection />
       <PopularUnitsSection />
       <ResearchAmountSection />
+      <CombatUpgradeSection />
+      <GeneralUpgradeSection />
       <Header as={'h1'}>
         Resources
       </Header>
