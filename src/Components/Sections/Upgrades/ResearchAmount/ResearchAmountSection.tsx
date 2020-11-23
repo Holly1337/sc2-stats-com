@@ -13,6 +13,7 @@ interface UpgradeData {
 }
 
 const ResearchAmountSection = () => {
+  // TODO: add toggle/hover between total amount and percentage
   return (
     <>
       <Header size={'huge'}>Research Stats</Header>
@@ -70,30 +71,6 @@ const ResearchAmountSection = () => {
       </SegmentCustom>
     </>
   )
-  // TODO: add toggle/hover between total amount and percentage
-  /*
-    return (
-    <Section id={'research-stats'}>
-      <SectionHeading title={'Research Stats'} />
-      <Container>
-        <Row>
-          <Col>
-            <h2 className='text-center' style={{ marginBottom: 40 }}>Combat Upgrades</h2>
-            <div className='d-flex flex-wrap justify-content-center'>
-              {combatUpgrades}
-            </div>
-          </Col>
-          <Col>
-            <h2 className='text-center' style={{ marginBottom: 40 }}>General Research</h2>
-            <div className='d-flex flex-wrap justify-content-center'>
-              {generalUpgrades}
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </Section>
-  )
-   */
 }
 
 export default ResearchAmountSection
