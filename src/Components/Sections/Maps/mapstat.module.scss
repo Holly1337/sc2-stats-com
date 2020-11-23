@@ -1,0 +1,38 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+
+  @media screen and (max-width: 768px) {
+    grid-gap: .5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.titles {
+  display: flex;
+  justify-content: end;
+  text-align: end;
+  align-items: center;
+  margin: 0;
+
+  @media screen and (max-width: 768px) {
+    text-align: start;
+  }
+}
+
+.image {
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+  max-height: 67px;
+  background-position: center;
+  background-size: 800px;
+
+  @media screen and (max-width: 768px) {
+    height: 67px;
+  }
+}
