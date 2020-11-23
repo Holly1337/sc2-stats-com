@@ -6,6 +6,7 @@ import { WorkerSection } from '../src/Components/Sections/Workers/WorkerSection'
 import { SupplySection } from '../src/Components/Sections/Supply/SupplySection'
 import { PopularUnitsSection } from '../src/Components/Sections/PopularUnits/PopularUnitsSection'
 import MapsPlayedSectionHorizontal from '../src/Components/Sections/Maps/MapsPlayed'
+import ResearchAmountSection from '../src/Components/Sections/Upgrades/ResearchAmount/ResearchAmountSection'
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <SupplySection />
       <WorkerSection />
       <PopularUnitsSection />
+      <ResearchAmountSection />
       <Header as={'h1'}>
         Resources
       </Header>

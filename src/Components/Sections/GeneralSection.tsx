@@ -9,7 +9,12 @@ export const GeneralSection = (props) => {
           General Stats
         </Header>
         <SegmentCustom>
-          <Grid columns={3} divided={true} textAlign={'center'} stackable={true}>
+          <Grid
+            columns={3}
+            divided={true}
+            textAlign={'center'}
+            stackable={true}
+          >
             <Grid.Row>
               <Grid.Column>
                 <Statistic color={'blue'}>

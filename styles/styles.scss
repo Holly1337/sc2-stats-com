@@ -16,12 +16,20 @@ body {
   display: flex!important;
 }
 
+.flex-wrap {
+  flex-wrap: wrap!important;
+}
+
 .flex-column {
   flex-direction: column!important;
 }
 
 .align-items-center {
   align-items: center!important;
+}
+
+.justify-content-center {
+  justify-content: center!important;
 }
 
 .justify-content-between {
@@ -42,6 +50,10 @@ body {
 
 .m-0 {
   margin: 0!important;
+}
+
+.m-2 {
+  margin: 0.5rem!important;
 }
 
 .mt-0 {
