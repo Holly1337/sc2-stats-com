@@ -1,6 +1,15 @@
 import React from 'react'
 
 const Marine = '/assets/images/units/marine.png'
+const Zergling = '/assets/images/units/zergling.png'
+const Zealot = '/assets/images/units/zealot.png'
+const Baneling = '/assets/images/units/baneling.png'
+const Overlord = '/assets/images/units/overlord.png'
+const SupplyDepot = '/assets/images/buildings/supplydepot.png'
+const Pylon = '/assets/images/buildings/pylon.webp'
+const Drone = '/assets/images/units/drone.png'
+const SCV = '/assets/images/units/scv.png'
+const Probe = '/assets/images/units/probe.png'
 const defaultImage = '/assets/images/units/default.png'
 import ImageStat from '../ImageStat/ImageStat'
 
@@ -8,6 +17,15 @@ import allUnitCost from '../../../data/units-cost.json'
 
 const images: { [id: string]: string } = {
   Marine,
+  Zergling,
+  Zealot,
+  Baneling,
+  Overlord,
+  SupplyDepot,
+  Pylon,
+  Drone,
+  SCV,
+  Probe
 }
 
 interface Props {
@@ -24,6 +42,7 @@ interface Props {
 const UnitStat: React.FC<Props> = (props) => {
   const { id, count, averagePerGame, showCost, height } = props
   const image = images[id] ?? defaultImage
+  console.log(id, image)
 
   let cost
   const costPerUnit = (allUnitCost as any)[id]

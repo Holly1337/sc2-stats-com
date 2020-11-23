@@ -4,7 +4,7 @@ import PreviousNumber from '../Numbers/PreviousNumber'
 import MineralNumber from '../Numbers/MineralNumber'
 import GasNumber from '../Numbers/GasNumber'
 import Number from '../Numbers/Number'
-import Image from 'next/image'
+import { Header } from 'semantic-ui-react'
 
 interface Props {
   id: string
@@ -27,23 +27,23 @@ const ImageStat: React.FC<Props> = (props) => {
 
   return (
     <>
-      <h2><Number value={count} /></h2>
+      <Header style={{ fontSize: 32 }}><Number value={count} /></Header>
       {
         (averagePerGame !== undefined) && (
-          <h4>
+          <Header size={'large'}>
             <FormattedNumber value={averagePerGame.current} />{' '}
             {averagePerGame.previous !== undefined && <PreviousNumber value={averagePerGame.previous} showBrackets />}{' '}
             per game
-          </h4>
+          </Header>
         )
       }
       <img src={image} alt='' height={height ?? 165 } className='mt-4 image-dropshadow' />
       {
         (cost !== undefined) && (
-          <div>
+          <Header size={'large'}>
             {cost.minerals > 0 && <><MineralNumber value={cost.minerals} /> Minerals</>}
             {cost.gas > 0 && <><br /><GasNumber value={cost.gas} /> Gas</>}
-          </div>
+          </Header>
         )
       }
     </>
