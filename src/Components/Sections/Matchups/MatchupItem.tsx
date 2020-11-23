@@ -2,6 +2,7 @@ import React from 'react'
 import Number from "../../Common/Numbers/Number"
 import classnames from 'classnames'
 import styles from './matchup.module.scss'
+import { Header } from 'semantic-ui-react'
 
 const icons = {
     Prot: <span className={classnames('sc-protoss', styles['sc-protoss'], styles.matchupIcon)} />,
@@ -18,8 +19,8 @@ const MatchupItem: React.FC<MatchupStat> = ({ race1, race2, race1Wins, race2Wins
     return (
         <div className={styles.matchup}>
             <div className={'text-center'}>
-                <span><Number value={totalGames}/></span>
-                <div className='d-flex flex-column' style={{fontSize: 20, padding: '0 40px'}}>
+                <Header className={styles.valueHeader}><Number value={totalGames}/></Header>
+                <div className='d-flex flex-column' style={{fontSize: 24, padding: '0 40px'}}>
                     <div className='d-flex align-items-center justify-content-between'>
                         {icons[race1]}
                         <span className={styles.vs}>vs</span>

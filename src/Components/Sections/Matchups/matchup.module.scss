@@ -1,7 +1,6 @@
 .matchup {
   max-width: 350px;
   margin: 20px auto;
-  font-size: 32px;
 }
 
 .matchupIcon {
@@ -9,6 +8,11 @@
   font-size: 64px;
   width: 64px;
   min-width: 64px;
+}
+
+.valueHeader {
+  font-size: 32px!important;
+  margin: 0;
 }
 
 .vs {

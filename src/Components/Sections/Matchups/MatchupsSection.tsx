@@ -14,24 +14,24 @@ export const MatchupsSection = (props) => {
           <Grid columns={3} divided={"vertically"} stackable={true} celled='internally'>
             <Grid.Row>
               <Grid.Column>
-                <MatchupItem race1={"Prot"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Prot"} race2={"Zerg"} race1Wins={99} race2Wins={100} />
               </Grid.Column>
               <Grid.Column>
-                <MatchupItem race1={"Prot"} race2={"Zerg"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Terr"} race2={"Zerg"} race1Wins={86} race2Wins={98} />
               </Grid.Column>
               <Grid.Column>
-                <MatchupItem race1={"Zerg"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Prot"} race2={"Terr"} race1Wins={87} race2Wins={79} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column>
-                <MatchupItem race1={"Zerg"} race2={"Zerg"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Prot"} race2={"Prot"} race1Wins={126} race2Wins={0} />
               </Grid.Column>
               <Grid.Column>
-                <MatchupItem race1={"Terr"} race2={"Terr"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Zerg"} race2={"Zerg"} race1Wins={75} race2Wins={0} />
               </Grid.Column>
               <Grid.Column>
-                <MatchupItem race1={"Prot"} race2={"Prot"} race1Wins={1} race2Wins={2} />
+                <MatchupItem race1={"Terr"} race2={"Terr"} race1Wins={49} race2Wins={0} />
               </Grid.Column>
             </Grid.Row>
           </Grid>

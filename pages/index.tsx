@@ -1,5 +1,5 @@
 import { Breadcrumb } from 'semantic-ui-react'
-import { GeneralSection } from '../src/Components/Sections/GeneralSection'
+import { GeneralSection } from '../src/Components/Sections/General/GeneralSection'
 import { MatchupsSection } from '../src/Components/Sections/Matchups/MatchupsSection'
 import { WorkerSection } from '../src/Components/Sections/Workers/WorkerSection'
 import { SupplySection } from '../src/Components/Sections/Supply/SupplySection'
