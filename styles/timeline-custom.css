@@ -2,3 +2,7 @@
     width: 100%!important;
     border: none!important;
 }
+
+.vis-text.vis-major {
+    display: none;
+}
