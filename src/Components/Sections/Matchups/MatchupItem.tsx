@@ -21,14 +21,14 @@ const MatchupItem: React.FC<MatchupStat> = ({ race1, race2, race1Wins, race2Wins
             <div className={'text-center'}>
                 <Header className={styles.valueHeader}><Number value={totalGames}/></Header>
                 <div className='d-flex flex-column' style={{fontSize: 24, padding: '0 40px'}}>
-                    <div className='d-flex align-items-center justify-content-between'>
+                    <div className='d-flex align-items-center justify-content-between' style={{ marginTop: 12 }}>
                         {icons[race1]}
                         <span className={styles.vs}>vs</span>
                         {icons[race2]}
                     </div>
                     {
                         (race1 !== race2) && (
-                            <div className='d-flex justify-content-between mt-4'>
+                            <div className='d-flex justify-content-between' style={{ marginTop: 24 }}>
                                 <span style={{width: 64}}>{winrateRace1}%</span>
                                 <span>{race1Wins}:{race2Wins}</span>
                                 <span style={{width: 64}}>{winrateRace2}%</span>

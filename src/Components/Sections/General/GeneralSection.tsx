@@ -18,16 +18,16 @@ export const GeneralSection = () => {
           >
             <Grid.Row>
               <Grid.Column>
-                <Header style={{ fontSize: 32, margin: 0 }}><Number value={799} /></Header>
-                <Header style={{ fontSize: 28, margin: 0 }}>Games Played</Header>
+                <Header style={{ fontSize: 32, marginBottom: 12, marginTop: 24 }}><Number value={799} /></Header>
+                <Header style={{ fontSize: 28, marginTop: 0, marginBottom: 24 }}>Games Played</Header>
               </Grid.Column>
               <Grid.Column>
-                <Header style={{ fontSize: 32, margin: 0 }}><Number value={243} /></Header>
-                <Header style={{ fontSize: 28, margin: 0 }}>Hours Played</Header>
+                <Header style={{ fontSize: 32, marginBottom: 12, marginTop: 24 }}><Number value={243} /></Header>
+                <Header style={{ fontSize: 28, marginTop: 0, marginBottom: 24 }}>Hours Played</Header>
               </Grid.Column>
               <Grid.Column>
-                <Header style={{ fontSize: 32, margin: 0 }}><Number value={10641512} /></Header>
-                <Header style={{ fontSize: 28, margin: 0 }}>Actions Executed</Header>
+                <Header style={{ fontSize: 32, marginBottom: 12, marginTop: 24 }}><Number value={10641512} /></Header>
+                <Header style={{ fontSize: 28, marginTop: 0, marginBottom: 24 }}>Actions Executed</Header>
               </Grid.Column>
             </Grid.Row>
           </Grid>
