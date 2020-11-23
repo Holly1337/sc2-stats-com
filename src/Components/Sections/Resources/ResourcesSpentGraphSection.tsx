@@ -193,7 +193,7 @@ export const ResourcesSpentGraphSection: React.FC = () => {
           <XAxis dataKey="name" />
           <YAxis tickLine={false} />
           <Legend
-            iconSize={48}
+            iconSize={36}
             iconType='square'
             payload={[
               { value: 'Protoss', type: 'square', id: 'Protoss', color: 'orange' },
