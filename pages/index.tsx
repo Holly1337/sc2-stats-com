@@ -1,7 +1,10 @@
-import { SegmentCustom } from '../src/Components/SegmentCustom'
+import { SegmentCustom } from '../src/Components/Segments/SegmentCustom'
 import { Breadcrumb, Grid, Header, Statistic } from 'semantic-ui-react'
 import { GeneralSection } from '../src/Components/Sections/GeneralSection'
-import { MatchupsSection } from '../src/Components/Sections/Maps/Matchups/MatchupsSection'
+import { MatchupsSection } from '../src/Components/Sections/Matchups/MatchupsSection'
+import { WorkerSection } from '../src/Components/Sections/Workers/WorkerSection'
+import { SupplySection } from '../src/Components/Sections/Supply/SupplySection'
+import { PopularUnitsSection } from '../src/Components/Sections/PopularUnits/PopularUnitsSection'
 
 export default function Home() {
   return (
@@ -21,6 +24,9 @@ export default function Home() {
       </Breadcrumb>
       <GeneralSection />
       <MatchupsSection />
+      <SupplySection />
+      <WorkerSection />
+      <PopularUnitsSection />
       <Header as={'h1'}>
         Resources
       </Header>

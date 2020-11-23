@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Header, Statistic } from 'semantic-ui-react'
-import { SegmentCustom } from '../SegmentCustom'
+import { SegmentCustom } from '../Segments/SegmentCustom'
 
 export const GeneralSection = (props) => {
     return (

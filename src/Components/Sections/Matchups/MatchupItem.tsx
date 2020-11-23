@@ -1,8 +1,7 @@
 import React from 'react'
-import Number from "../../../Common/Numbers/Number"
+import Number from "../../Common/Numbers/Number"
 import classnames from 'classnames'
 import styles from './matchup.module.scss'
-import {Header} from "semantic-ui-react";
 
 const icons = {
     Prot: <span className={classnames('sc-protoss', styles['sc-protoss'], styles.matchupIcon)} />,

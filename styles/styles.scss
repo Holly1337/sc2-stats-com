@@ -1,5 +1,11 @@
+$background-color: #f0f2f5;
+
 body {
-  background-color: #f7f7f7 !important;
+  background-color: $background-color !important;
+}
+
+#base-segment {
+  background-color: $background-color;
 }
 
 .d-flex {
@@ -22,10 +28,27 @@ body {
   text-align: center;
 }
 
+.mt-0 {
+  margin-top: 0!important;
+}
+
+.mb-0 {
+  margin-bottom: 0!important;
+}
+
 .mb-4 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem!important;
 }
 
 .mt-4 {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem!important;
+}
+
+.my-4 {
+  margin-bottom: 1.5rem!important;
+  margin-top: 1.5rem!important;
+}
+
+.image-dropshadow {
+  filter: drop-shadow(5px 5px 5px #111);
 }

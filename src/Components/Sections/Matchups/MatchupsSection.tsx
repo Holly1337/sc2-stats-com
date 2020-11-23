@@ -1,8 +1,7 @@
 import React from 'react'
-import { Grid, Header, Statistic } from 'semantic-ui-react'
-import { SegmentCustom } from '../../../SegmentCustom'
-import MatchupItem from "./MatchupItem";
-import Number from "../../../Common/Numbers/Number";
+import { Grid, Header } from 'semantic-ui-react'
+import { SegmentCustom } from '../../Segments/SegmentCustom'
+import MatchupItem from './MatchupItem'
 
 export const MatchupsSection = (props) => {
     return (

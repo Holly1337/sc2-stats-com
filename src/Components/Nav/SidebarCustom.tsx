@@ -2,7 +2,7 @@ import { Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import React from 'react'
 
 export const SidebarCustom: React.FC = ({ children }) => (
-  <Sidebar.Pushable as={Segment} style={{ border: 'none', borderRadius: 0 }}>
+  <Sidebar.Pushable as={Segment} style={{ border: 'none', borderRadius: 0 }} id={'base-segment'}>
     <Sidebar
       as={Menu}
       animation='overlay'

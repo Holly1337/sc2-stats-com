@@ -1,5 +1,6 @@
 import React from 'react'
 import { Header, Segment } from 'semantic-ui-react'
+import styles from './segment.module.scss'
 
 interface Props {
   heading?: React.ReactChild
@@ -10,7 +11,7 @@ export const SegmentCustom: React.FC<Props> = ({ heading, subheading, children }
   const hasHeading = heading !== undefined || subheading !== undefined
   return (
     <>
-      <Segment style={{ borderRadius: 0, boxShadow: '0 1px 2px #ccc' }}>
+      <Segment className={styles.segment}>
         {hasHeading && (
           <div style={{ marginBottom: '2rem' }}>
             {heading && (
