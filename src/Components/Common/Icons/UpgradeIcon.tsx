@@ -12,7 +12,7 @@ interface Props {
 const UpgradeIcon: React.FC<Props> = ({ id, amount, image }) => {
   return (
     <div className={classNames('m-2', styles.wrapper)}>
-      <div className='d-flex justify-content-center'>
+      <div className={styles.imageWrapper}>
         <img src={image} style={{ width: 48, height: 48 }} alt={id} />
       </div>
       <div className='text-center'>x {amount}</div>
