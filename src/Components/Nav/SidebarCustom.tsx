@@ -3,7 +3,12 @@ import React from 'react'
 import Link from 'next/link'
 
 export const SidebarCustom: React.FC = ({ children }) => (
-  <Sidebar.Pushable as={Segment} style={{ border: 'none', borderRadius: 0 }} id={'base-segment'} className={'mt-0'}>
+  <Sidebar.Pushable
+    as={Segment}
+    style={{ border: 'none', borderRadius: 0, height: '100%', minHeight: '100vh' }}
+    id={'base-segment'}
+    className={'mt-0'}
+  >
     <Sidebar
       as={Menu}
       animation='overlay'
@@ -12,6 +17,7 @@ export const SidebarCustom: React.FC = ({ children }) => (
       vertical
       visible
       width='thin'
+      style={{ height: '100%' }}
     >
       <Link href={'/tournament/hscxiii'}>
         <Menu.Item as={'a'} active>
