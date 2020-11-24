@@ -16,7 +16,7 @@ const MapStatHorizontal: React.FC<Props> = ({ name, count, image, maxPlayCount }
       <h3 className={styles.titles}>
         <div style={{ width: '100%' }}>
           <Header size={'large'} className={'mb-0'}>{name}</Header>
-          <Header size={'medium'} className={'mt-0'}>{count}</Header>
+          <Header size={'medium'} className={'mt-0'} style={{fontWeight: 400}}>{count}</Header>
         </div>
       </h3>
       <div

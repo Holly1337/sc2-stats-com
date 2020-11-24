@@ -65,8 +65,7 @@ const MapsPlayedSectionHorizontal = () => {
 
   return (
     <>
-      <Header size={'huge'}>Maps Played</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Maps Played'}>
         <div className={'mt-4'}>
           {maps.map(map => (
             <MapStatHorizontal key={map.id} {...map} maxPlayCount={maxPlayCount} />

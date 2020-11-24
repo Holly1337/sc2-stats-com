@@ -7,10 +7,7 @@ export const MatchupsSection = (props) => {
     // TODO: add possibility for user to get a list of all games of a specific matchup and link to their pages.
     return (
       <>
-        <Header size={'huge'}>
-          Matchups
-        </Header>
-        <SegmentCustom>
+        <SegmentCustom heading={'Matchups'}>
           <Grid columns={3} divided={"vertically"} stackable={true} celled='internally'>
             <Grid.Row>
               <Grid.Column>

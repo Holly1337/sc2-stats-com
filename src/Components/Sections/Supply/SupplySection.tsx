@@ -253,8 +253,7 @@ export const SupplySection = () => {
 
   return (
     <>
-      <Header size={'huge'}>Look at the supply</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Look at the supply'}>
         <SectionHeading
           title={<><Number value={totalStructures} /> supply structures generated <Number value={totalSupply} /> free supply</>}
           subtitle={<>Yellow values are from {previousName}</>}

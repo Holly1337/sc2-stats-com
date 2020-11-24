@@ -23,8 +23,7 @@ export const PopularUnitsSection = () => {
 
   return (
     <>
-      <Header size={'huge'}>Most Popular Units</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Most Popular Units'}>
         <SectionHeading
           title={<>They account for a total of <MineralNumber value={1337} /> minerals and <GasNumber value={42} /> Gas</>}
         />

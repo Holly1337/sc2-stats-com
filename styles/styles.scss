@@ -1,11 +1,12 @@
 $background-color: #f0f2f5;
+$font-color-primary: #383838;
 
 body {
   background-color: $background-color !important;
 }
 
-.ui.header {
-  color: rgb(5,5,5)!important;
+.ui.header, ui.breadcrumb {
+  color: $font-color-primary!important;
 }
 
 #base-segment {

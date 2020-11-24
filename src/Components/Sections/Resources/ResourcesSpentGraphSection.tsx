@@ -424,8 +424,7 @@ export const ResourcesSpentGraphSection: React.FC = () => {
 
   return (
     <>
-      <Header size={'huge'}>Average Resources spent per game</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Average Resources spent per game'}>
         <Statistic.Group widths='two' className={'mt-4'}>
           <Statistic>
             <Statistic.Value><MineralNumber value={spent.Minerals} /></Statistic.Value>

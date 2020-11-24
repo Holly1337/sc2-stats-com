@@ -6,10 +6,7 @@ import Number from '../../Common/Numbers/Number'
 export const GeneralSection = () => {
     return (
       <>
-        <Header as={'h1'}>
-          General Stats
-        </Header>
-        <SegmentCustom>
+        <SegmentCustom heading={'General Stats'}>
           <Grid
             columns={3}
             divided={true}

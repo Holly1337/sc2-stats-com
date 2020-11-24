@@ -254,8 +254,7 @@ export const WorkerSection = () => {
 
   return (
     <>
-      <Header size={'huge'}>Workers</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Workers'}>
         <SectionHeading
           title={<><Number value={totalWorkers} /> Workers were created</>}
           subtitle={<>That's <MineralNumber value={mineralCost}/> Minerals</>}

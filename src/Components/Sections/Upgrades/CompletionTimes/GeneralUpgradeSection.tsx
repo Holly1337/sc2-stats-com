@@ -647,8 +647,7 @@ const GeneralUpgradeSection = () => {
 
   return (
     <>
-      <Header size={'large'}>Mean Research Completion Times</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Mean Research Completion Times'}>
         <Timeline
           options={timelineOptions}
           items={timelineItems}

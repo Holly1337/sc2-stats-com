@@ -157,8 +157,7 @@ const ResearchAmountSection = () => {
 
   return (
     <>
-      <Header size={'huge'}>Research Amount</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Research Amount'}>
         <Grid columns={2} divided={'vertically'} stackable={true}>
           <Grid.Row>
             <Grid.Column>

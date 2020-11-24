@@ -646,8 +646,7 @@ const CombatUpgradeSection = () => {
 
   return (
     <>
-      <Header size={'large'}>Mean Combat Upgrade Completion Times</Header>
-      <SegmentCustom>
+      <SegmentCustom heading={'Mean Combat Upgrade Completion Times'}>
         <Timeline
           options={timelineOptions}
           items={timelineItems}
