@@ -1,32 +1,35 @@
-import { Breadcrumb } from 'semantic-ui-react'
-import { GeneralSection } from '../src/Components/Sections/General/GeneralSection'
-import { MatchupsSection } from '../src/Components/Sections/Matchups/MatchupsSection'
-import { WorkerSection } from '../src/Components/Sections/Workers/WorkerSection'
-import { SupplySection } from '../src/Components/Sections/Supply/SupplySection'
-import { PopularUnitsSection } from '../src/Components/Sections/PopularUnits/PopularUnitsSection'
-import MapsPlayedSectionHorizontal from '../src/Components/Sections/Maps/MapsPlayed'
-import { ResourcesSpentGraphSection } from '../src/Components/Sections/Resources/ResourcesSpentGraphSection'
+import React from 'react'
+import { Card, Container, Icon } from 'semantic-ui-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Home() {
+const dhMastersBackground = '/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png'
+
+export default function Home () {
   return (
-    <div>
-      <Breadcrumb>
-        <Breadcrumb.Section href={'/'}>
-          Home
-        </Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section active>
-          Home Story Cup XVIII
-        </Breadcrumb.Section>
-        <Breadcrumb.Divider />
-      </Breadcrumb>
-      <GeneralSection />
-      <MatchupsSection />
-      <ResourcesSpentGraphSection />
-      <MapsPlayedSectionHorizontal />
-      <SupplySection />
-      <WorkerSection />
-      <PopularUnitsSection />
-    </div>
+    <Container>
+      <div style={{ marginTop: 20 }}>
+        <Link href={'/tournament/hscxiii'} passHref={false}>
+          <Card link={true}>
+            <Image src={dhMastersBackground} width={290} height={145} />
+            <Card.Content>
+              <Card.Header>Dreamhack Masters Winter</Card.Header>
+              <Card.Meta>
+                <span className='date'>20.10.2020 - 14.11.2020</span>
+              </Card.Meta>
+              {/*
+              <Card.Description>
+                Matthew is a musician living in Nashville.
+              </Card.Description>
+            */}
+            </Card.Content>
+            <Card.Content extra>
+              <Icon name='game' />
+              1089 Games
+            </Card.Content>
+          </Card>
+        </Link>
+      </div>
+    </Container>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 
 export const SidebarCustom: React.FC = ({ children }) => (
-  <Sidebar.Pushable as={Segment} style={{ border: 'none', borderRadius: 0 }} id={'base-segment'}>
+  <Sidebar.Pushable as={Segment} style={{ border: 'none', borderRadius: 0 }} id={'base-segment'} className={'mt-0'}>
     <Sidebar
       as={Menu}
       animation='overlay'
@@ -13,16 +13,12 @@ export const SidebarCustom: React.FC = ({ children }) => (
       visible
       width='thin'
     >
-      <Link href={'/'}>
-        <Menu.Item as={'a'}>
-          <Icon name='home' />
-          Home
+      <Link href={'/tournament/hscxiii'}>
+        <Menu.Item as={'a'} active>
+          <Icon name='area graph' />
+          General
         </Menu.Item>
       </Link>
-      <Menu.Item as='a'>
-        <Icon name='area graph' />
-        General
-      </Menu.Item>
       <Menu.Item as='a'>
         <Icon name='map outline' />
         Maps
@@ -31,7 +27,7 @@ export const SidebarCustom: React.FC = ({ children }) => (
         <Icon name='group' />
         Units
       </Menu.Item>
-      <Link href={'/upgrades'}>
+      <Link href={'/tournament/hscxiii/upgrades'}>
         <Menu.Item as={'a'}>
           <Icon name='cut' />
           Upgrades
