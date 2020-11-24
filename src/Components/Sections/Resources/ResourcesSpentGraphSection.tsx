@@ -429,11 +429,11 @@ export const ResourcesSpentGraphSection: React.FC = () => {
         <Statistic.Group widths='two' className={'mt-4'}>
           <Statistic>
             <Statistic.Value><MineralNumber value={spent.Minerals} /></Statistic.Value>
-            <Statistic.Label>Total Minerals</Statistic.Label>
+            <Statistic.Label><Header size={'large'}>Total Minerals</Header></Statistic.Label>
           </Statistic>
           <Statistic>
             <Statistic.Value><GasNumber value={spent.Gas} /></Statistic.Value>
-            <Statistic.Label>Total Gas</Statistic.Label>
+            <Statistic.Label><Header size={'large'}>Total Gas</Header></Statistic.Label>
           </Statistic>
         </Statistic.Group>
         <Divider section />
