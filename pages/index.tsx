@@ -8,7 +8,7 @@ export default function Home () {
     <Container>
       <div style={{ marginTop: 20 }}>
         <Card.Group itemsPerRow={3}>
-          <Link href={'/tournament/hscxiii'} passHref={false}>
+          <Link href={'/tournament/hscxiii'} passHref={true}>
             <TournamentCard
               name={'DreamHack Masters Winter'}
               from={new Date('2020-10-14')}

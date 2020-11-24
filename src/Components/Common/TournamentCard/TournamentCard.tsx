@@ -11,14 +11,15 @@ interface Props {
   games: number
   pricepool: number
   tier: 'premier' | 'major' | 'minor' | 'other'
+  href?: string
 }
 
 export const TournamentCard = (props: Props) => {
-  const { name, from, to, description, games, pricepool } = props
-  // TODO: include tier
+  const { name, from, to, description, games, pricepool, href } = props
+  // TODO: include tier, and maybe points (allow custom points type for the future. EPT <-> WCS)
 
   return (
-    <Card link={true} color={'red'}>
+    <Card link={true} color={'red'} href={href}>
       <Image
         src={dhMastersBackground}
         fluid={true}
