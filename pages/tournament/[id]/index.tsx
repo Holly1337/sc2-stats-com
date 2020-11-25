@@ -20,7 +20,6 @@ export default function Home() {
         <Breadcrumb.Section active>
           Home Story Cup XVIII
         </Breadcrumb.Section>
-        <Breadcrumb.Divider />
       </Breadcrumb>
       <GeneralSection />
       <MatchupsSection />

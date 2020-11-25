@@ -233,7 +233,7 @@ const MapsHome = () => {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Upgrades
+          Maps
         </Breadcrumb.Section>
       </Breadcrumb>
       <MapsPlayedSectionHorizontal />
