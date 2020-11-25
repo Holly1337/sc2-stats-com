@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Header } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import MatchupItem from './MatchupItem'
 

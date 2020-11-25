@@ -19,7 +19,7 @@ export const TournamentCard = (props: Props) => {
   // TODO: include tier, and maybe points (allow custom points type for the future. EPT <-> WCS)
 
   return (
-    <Card link={true} color={'red'} href={href}>
+    <Card link={href !== undefined} color={'red'} href={href}>
       <Image
         src={dhMastersBackground}
         fluid={true}
