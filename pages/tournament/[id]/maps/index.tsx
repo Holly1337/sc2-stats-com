@@ -2,6 +2,7 @@ import { TournamentPageWrapper } from '../../../../src/Components/Layout/Tournam
 import { Breadcrumb } from 'semantic-ui-react'
 import MapsPlayedSectionHorizontal from '../../../../src/Components/Sections/Maps/MapsPlayed'
 import { MapsMatchupSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MapsMatchupSection'
+import Link from 'next/link'
 
 const data = {
   "matchups": {
@@ -224,11 +225,11 @@ const MapsHome = () => {
     <TournamentPageWrapper>
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
-          Home
+          <Link href={'/'}>Home</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
-        <Breadcrumb.Section href={'/tournament/hscxviii'}>
-          Home Story Cup XVIII
+        <Breadcrumb.Section>
+          <Link href={'/tournament/hscxviii'}>Home Story Cup XVIII</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>

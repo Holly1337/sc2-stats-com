@@ -7,13 +7,14 @@ import { SupplySection } from '../../../src/Components/Sections/Supply/SupplySec
 import { WorkerSection } from '../../../src/Components/Sections/Workers/WorkerSection'
 import { PopularUnitsSection } from '../../../src/Components/Sections/PopularUnits/PopularUnitsSection'
 import { TournamentPageWrapper } from '../../../src/Components/Layout/TournamentPageWrapper'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <TournamentPageWrapper>
       <Breadcrumb>
-        <Breadcrumb.Section href={'/'}>
-          Home
+        <Breadcrumb.Section>
+          <Link href={'/'}>Home</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
