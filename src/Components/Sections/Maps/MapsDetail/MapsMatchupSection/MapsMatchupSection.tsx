@@ -1,5 +1,5 @@
 import React from 'react'
-import { SegmentCustom } from '../../../Segments/SegmentCustom'
+import { SegmentCustom } from '../../../../Segments/SegmentCustom'
 import { StrictTabProps, Tab } from 'semantic-ui-react'
 import Image from 'next/image'
 import { MatchupGrid } from './MatchupGrid'

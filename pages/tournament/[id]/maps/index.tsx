@@ -1,7 +1,7 @@
 import { TournamentPageWrapper } from '../../../../src/Components/Layout/TournamentPageWrapper'
 import { Breadcrumb } from 'semantic-ui-react'
 import MapsPlayedSectionHorizontal from '../../../../src/Components/Sections/Maps/MapsPlayed'
-import { MapsMatchupSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MapsMatchupSection'
+import { MapsMatchupSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MapsMatchupSection/MapsMatchupSection'
 import Link from 'next/link'
 
 const data = {
