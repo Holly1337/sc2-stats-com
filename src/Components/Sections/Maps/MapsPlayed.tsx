@@ -64,15 +64,13 @@ const MapsPlayedSectionHorizontal = () => {
   const maxPlayCount = Math.max(...countPerMap)
 
   return (
-    <>
-      <SegmentCustom heading={'Maps Played'}>
-        <div className={'mt-4'}>
-          {maps.map(map => (
-            <MapStatHorizontal key={map.id} {...map} maxPlayCount={maxPlayCount} />
-          ))}
-        </div>
-      </SegmentCustom>
-    </>
+    <SegmentCustom heading={'Maps Played'}>
+      <div className={'mt-4'}>
+        {maps.map(map => (
+          <MapStatHorizontal key={map.id} {...map} maxPlayCount={maxPlayCount} />
+        ))}
+      </div>
+    </SegmentCustom>
   )
 }
 
