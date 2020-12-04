@@ -1,9 +1,9 @@
 import 'semantic-ui-css/semantic.min.css'
-import '../styles/styles.scss'
 import '../styles/timeline-custom.css'
 import '../styles/font-starcraft.css'
 import 'vis-timeline/dist/vis-timeline-graph2d.min.css'
-import { TopBar } from '../src/Components/Nav/TopBar'
+import '../styles/styles.scss'
+import { TopBar } from '../src/Components/Nav/TopBar/TopBar'
 import React from 'react'
 
 function MyApp({ Component, pageProps }) {
