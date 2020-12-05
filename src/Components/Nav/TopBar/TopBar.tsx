@@ -1,5 +1,6 @@
-import styles from './topbar.module.scss'
+import styles from '../topbar.module.scss'
 import Link from 'next/link'
+import { SearchBar } from './SearchBar'
 
 export const TopBar = () => {
     return (
@@ -9,6 +10,10 @@ export const TopBar = () => {
                 <span style={{fontSize: 18}}>Home</span>
               </a>
             </Link>
+          <div>
+            <SearchBar />
+          </div>
+          <div>Twitter here</div>
         </div>
     )
 }
