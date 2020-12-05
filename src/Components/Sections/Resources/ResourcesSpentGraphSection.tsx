@@ -436,12 +436,13 @@ export const ResourcesSpentGraphSection: React.FC = () => {
           </Statistic>
         </Statistic.Group>
         <Divider section />
-        <ResponsiveContainer height={460}>
+        <ResponsiveContainer height={500}>
           <BarChart
             data={chartData}
             margin={{
-              top: 0, right: 20, left: 0, bottom: 0
+              top: 0, right: 20, left: 0, bottom: 32
             }}
+            style={{ paddingTop: 32 }}
           >
             <pattern
               id="pattern-stripe"

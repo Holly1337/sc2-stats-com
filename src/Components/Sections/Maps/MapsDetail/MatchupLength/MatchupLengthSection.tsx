@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { SegmentCustom } from '../../../../Segments/SegmentCustom'
 import { Checkbox, StrictTabProps, Tab } from 'semantic-ui-react'
 import Image from 'next/image'
-import { MatchupGrid } from './MatchupGrid'
+import { MapMatchupLengthGraph } from './MapMatchupLengthGraph'
 
 const iceAndChromeImage = '/assets/images/maps/IceAndChrome.jpg'
 
@@ -12,12 +12,12 @@ interface Props {
   }
 }
 
-export const MapsMatchupSection = (props: Props) => {
+export const MatchupLengthSection = (props: Props) => {
   const { allMapsStats } = props
-  const [sortByMatchUp, setSortByMatchUp] = useState<boolean>(false)
+  const [showAverage, setShowAverage] = useState<boolean>(false)
 
-  const onToggleSortByMatchup = () => {
-    setSortByMatchUp(s => !s)
+  const onToggleShowAverage = () => {
+    setShowAverage(showAverage => !showAverage)
   }
 
   const panes: StrictTabProps['panes'] = Object.entries(allMapsStats).map(([mapName, stats]) => ({
@@ -30,13 +30,13 @@ export const MapsMatchupSection = (props: Props) => {
         </div>
       )
     },
-    render: () => <MatchupGrid mapName={mapName} matchupStats={stats} sortByMatchup={sortByMatchUp} />
+    render: () => <MapMatchupLengthGraph mapName={mapName} matchupStats={stats} showAverage={showAverage} />
   }))
 
   return (
-    <SegmentCustom heading={'Matchup Stats'}>
+    <SegmentCustom heading={'Game Length Per Matchup'}>
       <div className={'d-flex justify-content-end'}>
-        <Checkbox toggle label={'Sort by matchup'} checked={sortByMatchUp} onClick={onToggleSortByMatchup} />
+        <Checkbox toggle label={'Show Average'} checked={showAverage} onClick={onToggleShowAverage} />
       </div>
       <Tab menu={{ tabular: true, vertical: true, fluid: true }} panes={panes} className={'mt-4'} />
     </SegmentCustom>
