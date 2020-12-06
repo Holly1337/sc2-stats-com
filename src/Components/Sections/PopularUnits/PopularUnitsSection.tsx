@@ -6,7 +6,7 @@ import SectionHeading from '../../Common/SectionHeading/SectionHeading'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
 import GasNumber from '../../Common/Numbers/GasNumber'
 import { PopularUnit } from '../../../../pages/types/stats'
-import allUnitCost from '../../../data/units-cost.json'
+import allUnitCost from '../../../data/units-meta.json'
 
 interface Props {
   stats: Array<PopularUnit>

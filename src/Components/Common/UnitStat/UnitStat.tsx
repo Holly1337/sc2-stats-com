@@ -13,7 +13,7 @@ const Probe = '/assets/images/units/probe.png'
 const defaultImage = '/assets/images/units/default.png'
 import ImageStat from '../ImageStat/ImageStat'
 
-import allUnitCost from '../../../data/units-cost.json'
+import allUnitCost from '../../../data/units-meta.json'
 
 const images: { [id: string]: string } = {
   Marine,

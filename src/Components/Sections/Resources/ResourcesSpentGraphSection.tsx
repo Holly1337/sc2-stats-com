@@ -1,6 +1,6 @@
 import React from 'react'
 
-import itemsCost from '../../../data/units-cost.json'
+import itemsCost from '../../../data/units-meta.json'
 import { buildTreemapData } from './util'
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { Divider, Header, Statistic } from 'semantic-ui-react'
