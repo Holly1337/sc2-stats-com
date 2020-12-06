@@ -18,12 +18,12 @@ export type GeneralStats = {
   actions: number
 }
 
-export type MatchupStats = {
-  [matchup: string]: {
-    race1Wins: number
-    race2Wins: number
-  }
-}
+export type MatchupStats = Array<{
+  race1: Race
+  race2: Race
+  race1Wins: number
+  race2Wins: number
+}>
 
 export type ResourcesSpent = {
   Minerals: number,
