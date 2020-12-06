@@ -5,8 +5,8 @@ const dhMastersBackground = '/assets/images/TournamentCardBackgrounds/DH_SC2_Mas
 
 interface Props {
   name: string
-  from: Date
-  to: Date
+  from: string
+  to: string
   description: string
   games: number
   pricepool: number
@@ -32,7 +32,7 @@ export const TournamentCard = (props: Props) => {
       <Card.Content>
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
-          <span className='date'>{from.toLocaleDateString()} - {to.toLocaleDateString()}</span>
+          <span className='date'>{new Date(from).toLocaleDateString()} - {new Date(to).toLocaleDateString()}</span>
         </Card.Meta>
         <Card.Description>
           {description}
