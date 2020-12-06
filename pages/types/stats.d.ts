@@ -78,7 +78,7 @@ export type WorkersBuiltPrevious = WorkersBuilt & {
 }
 
 export type PopularUnit = {
-  unitId: string
+  id: string
   unitName: string
   count: number
 }

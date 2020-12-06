@@ -1,41 +1,46 @@
 import React from 'react'
-import { Divider, Grid, Header } from 'semantic-ui-react'
+import { Divider, Grid } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import UnitStat from '../../Common/UnitStat/UnitStat'
 import SectionHeading from '../../Common/SectionHeading/SectionHeading'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
 import GasNumber from '../../Common/Numbers/GasNumber'
+import { PopularUnit } from '../../../../pages/types/stats'
+import allUnitCost from '../../../data/units-cost.json'
 
-const data = {
-  mostBuiltUnits: {
-    "Zergling": 97028,
-    "Marine": 40137,
-    "Baneling": 19349,
-    "Zealot": 18599
-  }
+interface Props {
+  stats: Array<PopularUnit>
 }
 
-export const PopularUnitsSection = () => {
-  const { mostBuiltUnits } = data
-  const unitData = Object.entries(mostBuiltUnits)
-    .map(([unitName, amount]) => ({ id: unitName, count: amount }))
-    .sort((u1, u2) => u2.count - u1.count)
+export const PopularUnitsSection = (props: Props) => {
+  const popularUnits = [...props.stats].sort((u1, u2) => u2.count - u1.count)
+
+  const totalCostPerUnit = popularUnits.map(unit => ({
+    Minerals: allUnitCost[unit.id].Minerals * unit.count,
+    Gas: allUnitCost[unit.id].Gas * unit.count
+  }))
+
+  const totalCost = totalCostPerUnit.reduce((total, current) => {
+    total.Minerals += current.Minerals
+    total.Gas += current.Gas
+    return total
+  }, { Minerals: 0, Gas: 0})
 
   return (
     <>
       <SegmentCustom heading={'Most Popular Units'}>
         <SectionHeading
-          title={<>They account for a total of <MineralNumber value={1337} /> minerals and <GasNumber value={42} /> Gas</>}
+          title={<>They account for a total of <MineralNumber value={totalCost.Minerals} /> minerals and <GasNumber value={totalCost.Gas} /> Gas</>}
         />
         <Divider section />
         <Grid
-          // can be ignored since length of popular units will never be > 16
+          // can be ignored since length of popularUnits will never be > 16
           // @ts-ignore
-          columns={unitData.length}
+          columns={popularUnits.length}
           textAlign={'center'}
         >
           <Grid.Row>
-            {unitData.map(unit => (
+            {popularUnits.map(unit => (
               <Grid.Column key={unit.id}>
                 <UnitStat
                   id={unit.id}

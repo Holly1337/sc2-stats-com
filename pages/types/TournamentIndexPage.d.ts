@@ -1,3 +1,5 @@
+import { PopularUnit } from './stats'
+
 export interface TournamentIndexPageProps {
   id: string
   name: string
@@ -13,4 +15,5 @@ export interface TournamentIndexPageProps {
     current: WorkersBuilt
     previous: WorkersBuiltPrevious
   }
+  popularUnits: Array<PopularUnit>
 }
