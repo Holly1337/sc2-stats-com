@@ -1,32 +1,23 @@
-import { SegmentCustom } from '../src/Components/SegmentCustom'
-import { Breadcrumb, Grid, Header, Statistic } from 'semantic-ui-react'
-import { GeneralSection } from '../src/Components/Sections/GeneralSection'
-import { MatchupsSection } from '../src/Components/Sections/Maps/MatchupsSection'
+import React from 'react'
+import { Card, Container } from 'semantic-ui-react'
+import Link from 'next/link'
+import { TournamentCard } from '../src/Components/Common/TournamentCard/TournamentCard'
+import tournaments from '../data/tournaments/tournaments.json'
 
-export default function Home() {
+export default function Home () {
   return (
-    <div>
-      <Breadcrumb>
-        <Breadcrumb.Section link href={'/'}>
-          Home
-        </Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section link href={'/hscxviii'}>
-          Home Story Cup XVIII
-        </Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section active>
-          Units
-        </Breadcrumb.Section>
-      </Breadcrumb>
-      <GeneralSection />
-      <MatchupsSection />
-      <Header as={'h1'}>
-        Resources
-      </Header>
-      <SegmentCustom>
-        My segment without heading
-      </SegmentCustom>
-    </div>
+    <Container>
+      <div style={{ marginTop: 20 }}>
+        <Card.Group itemsPerRow={3}>
+          {tournaments.map(tournament => (
+            <Link href={`/tournament/${tournament.id}`} passHref={true}>
+              <TournamentCard
+                {...tournament}
+              />
+            </Link>
+          ))}
+        </Card.Group>
+      </div>
+    </Container>
   )
 }

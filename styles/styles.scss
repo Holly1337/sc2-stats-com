@@ -1,3 +1,105 @@
+$background-color: #f0f2f5;
+$font-color-primary: #383838;
+
 body {
-  background-color: #f7f7f7 !important;
+  background-color: $background-color !important;
+}
+
+.ui.header, ui.breadcrumb {
+  color: $font-color-primary!important;
+}
+
+#base-segment {
+  background-color: $background-color;
+}
+
+.d-flex {
+  display: flex!important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap!important;
+}
+
+.flex-column {
+  flex-direction: column!important;
+}
+
+.align-items-center {
+  align-items: center!important;
+}
+
+.justify-content-center {
+  justify-content: center!important;
+}
+
+.justify-content-between {
+  justify-content: space-between!important;
+}
+
+.justify-content-end {
+  justify-content: flex-end!important;
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.m-0 {
+  margin: 0!important;
+}
+
+.m-2 {
+  margin: 0.5rem!important;
+}
+
+.mt-0 {
+  margin-top: 0!important;
+}
+
+.mb-0 {
+  margin-bottom: 0!important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem!important;
+}
+.mr-4 {
+  margin-right: 1.5rem!important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem!important;
+}
+
+
+.ml-4 {
+  margin-left: 1.5rem!important;
+}
+
+.my-4 {
+  margin-bottom: 1.5rem!important;
+  margin-top: 1.5rem!important;
+}
+
+.image-dropshadow {
+  filter: drop-shadow(5px 5px 5px #111);
+}
+
+.ui.input.search-input-wrapper>input {
+  border-radius: 100px;
+  width: 200px;
+  transition: width ease-in-out 100ms;
+
+  &:focus {
+    width: 400px;
+  }
+
+  &:not(:focus) {
+    border: none;
+  }
 }

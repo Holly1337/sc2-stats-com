@@ -1,0 +1,3 @@
+interface NumberComponent {
+  value: number
+}

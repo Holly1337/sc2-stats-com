@@ -1,0 +1,44 @@
+.matchup {
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.matchupIcon {
+  display: block;
+  font-size: 64px;
+  width: 64px;
+  min-width: 64px;
+}
+
+.valueHeader {
+  font-size: 32px!important;
+  margin: 0!important;
+}
+
+.vs {
+  font-size: 32px;
+}
+
+.sc-terran {
+  width: 64px;
+  display: inline-block;
+  color: darkred;
+}
+
+.sc-zerg {
+  width: 64px;
+  display: inline-block;
+  color: purple;
+}
+
+.sc-protoss {
+  width: 64px;
+  display: inline-block;
+  color: orange;
+}
+
+
+.sc-siegetank {
+  width: 64px;
+  display: inline-block;
+}

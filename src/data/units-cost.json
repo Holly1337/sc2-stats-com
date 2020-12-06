@@ -1,0 +1,1115 @@
+{
+  "Hatchery": {
+    "Minerals": 300,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Drone": {
+    "Minerals": 50,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Units",
+    "Subtype": "Worker"
+  },
+  "Overlord": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Units",
+    "Subtype": "Hatchery"
+  },
+  "Probe": {
+    "Minerals": 50,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Units",
+    "Subtype": "Worker"
+  },
+  "Nexus": {
+    "Minerals": 400,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Pylon": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Assimilator": {
+    "Minerals": 75,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Forge": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Extractor": {
+    "Minerals": 70,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "SpawningPool": {
+    "Minerals": 200,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "PhotonCannon": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "CyberneticsCore": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Zergling": {
+    "Minerals": 25,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "RoboticsFacility": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "SpineCrawler": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "ShieldBattery": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Queen": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "BanelingNest": {
+    "Minerals": 100,
+    "Gas": 50,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Immortal": {
+    "Minerals": 275,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Baneling": {
+    "Minerals": 50,
+    "Gas": 25,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "WarpPrism": {
+    "Minerals": 250,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Sentry": {
+    "Minerals": 50,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Stargate": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "TwilightCouncil": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "RoachWarren": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Adept": {
+    "Minerals": 100,
+    "Gas": 25,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Stalker": {
+    "Minerals": 125,
+    "Gas": 50,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Roach": {
+    "Minerals": 75,
+    "Gas": 25,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "EvolutionChamber": {
+    "Minerals": 75,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "SporeCrawler": {
+    "Minerals": 75,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "InfestationPit": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Spire": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "HydraliskDen": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "LurkerDen": {
+    "Minerals": 100,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Hydralisk": {
+    "Minerals": 100,
+    "Gas": 50,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Mutalisk": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Viper": {
+    "Minerals": 100,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "NydusNetwork": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "NydusCanal": {
+    "Minerals": 75,
+    "Gas": 75,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Observer": {
+    "Minerals": 25,
+    "Gas": 75,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "RoboticsBay": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Phoenix": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Disruptor": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "CommandCenter": {
+    "Minerals": 400,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "SCV": {
+    "Minerals": 50,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "SupplyDepot": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Barracks": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "BarracksTechLab": {
+    "Minerals": 50,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "BarracksReactor": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Refinery": {
+    "Minerals": 75,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Marine": {
+    "Minerals": 50,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Bunker": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Factory": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "FactoryReactor": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "FactoryTechLab": {
+    "Minerals": 50,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Starport": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "StarportTechLab": {
+    "Minerals": 50,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "StarportReactor": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Hellion": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Medivac": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Banshee": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "EngineeringBay": {
+    "Minerals": 125,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Armory": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "SiegeTank": {
+    "Minerals": 150,
+    "Gas": 125,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Reaper": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Liberator": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Raven": {
+    "Minerals": 100,
+    "Gas": 200,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "WidowMine": {
+    "Minerals": 75,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Marauder": {
+    "Minerals": 100,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "MissileTurret": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "SensorTower": {
+    "Minerals": 125,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Thor": {
+    "Minerals": 300,
+    "Gas": 200,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "UltraliskCavern": {
+    "Minerals": 150,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Ultralisk": {
+    "Minerals": 300,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Corruptor": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Zealot": {
+    "Minerals": 100,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "DarkShrine": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "GhostAcademy": {
+    "Minerals": 150,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "DarkTemplar": {
+    "Minerals": 125,
+    "Gas": 125,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Ghost": {
+    "Minerals": 150,
+    "Gas": 125,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "VikingFighter": {
+    "Minerals": 150,
+    "Gas": 75,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "Cyclone": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "TemplarArchive": {
+    "Minerals": 150,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "HighTemplar": {
+    "Minerals": 50,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Oracle": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Colossus": {
+    "Minerals": 300,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "VoidRay": {
+    "Minerals": 250,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "FusionCore": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Battlecruiser": {
+    "Minerals": 400,
+    "Gas": 300,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "SwarmHostMP": {
+    "Minerals": 100,
+    "Gas": 75,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Nuke": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Units"
+  },
+  "FleetBeacon": {
+    "Minerals": 300,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
+  "Mothership": {
+    "Minerals": 400,
+    "Gas": 400,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Infestor": {
+    "Minerals": 100,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Carrier": {
+    "Minerals": 350,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Interceptor": {
+    "Minerals": 15,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "Tempest": {
+    "Minerals": 275,
+    "Gas": 175,
+    "Race": "Protoss",
+    "Type": "Units"
+  },
+  "ProtossShieldsLevel1": {
+    "Minerals":150,
+    "Gas": 150,
+    "Race":"Protoss",
+    "Type":"Upgrades"
+  },
+  "ProtossShieldsLevel2": {
+    "Minerals": 225,
+    "Gas": 225,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossShieldsLevel3": {
+    "Minerals": 300,
+    "Gas": 300,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundWeaponsLevel2": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundWeaponsLevel3": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundArmorsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundArmorsLevel2": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossGroundArmorsLevel3": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirWeaponsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirWeaponsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirArmorsLevel1": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirArmorsLevel2": {
+    "Minerals": 225,
+    "Gas": 225,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ProtossAirArmorsLevel3": {
+    "Minerals": 300,
+    "Gas": 300,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryWeaponsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryWeaponsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryArmorsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryArmorsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranInfantryArmorsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleWeaponsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleWeaponsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranShipWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranShipWeaponsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranShipWeaponsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleAndShipArmorsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleAndShipArmorsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranVehicleAndShipArmorsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "ZergMissileWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergMissileWeaponsLevel2": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergMissileWeaponsLevel3": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergMeleeWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergMeleeWeaponsLevel2": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergMeleeWeaponsLevel3": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergGroundArmorsLevel1": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergGroundArmorsLevel2": {
+    "Minerals": 225,
+    "Gas": 225,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergGroundArmorsLevel3": {
+    "Minerals": 300,
+    "Gas": 300,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerWeaponsLevel1": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerWeaponsLevel2": {
+    "Minerals": 175,
+    "Gas": 175,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerWeaponsLevel3": {
+    "Minerals": 250,
+    "Gas": 250,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerArmorsLevel1": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerArmorsLevel2": {
+    "Minerals": 225,
+    "Gas": 225,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ZergFlyerArmorsLevel3": {
+    "Minerals": 300,
+    "Gas": 300,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "AdeptPiercingAttack": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type":"Upgrades"
+  },
+  "WarpGateResearch": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "BlinkTech": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "Charge": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ExtendedThermalLance": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "PhoenixRangeUpgrade": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "PsiStormTech": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "GraviticDrive": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "ObserverGraviticBooster": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "VoidRaySpeedUpgrade": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "DarkTemplarBlinkUpgrade": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Protoss",
+    "Type": "Upgrades"
+  },
+  "BansheeCloak": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "Stimpack": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "ShieldWall": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "BansheeSpeed": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "CycloneLockOnDamageUpgrade": {
+    "Minerals": 75,
+    "Gas": 75,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "PunisherGrenades": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "HighCapacityBarrels": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "BattlecruiserEnableSpecializations": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "DrillClaws": {
+    "Minerals": 75,
+    "Gas": 75,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "EnhancedShockwaves": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "LiberatorAGRangeUpgrade": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "SmartServos": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "PersonalCloaking": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "TerranBuildingArmor": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "RavenCorvidReactor": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "HiSecAutoTracking": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "MedivacIncreaseSpeedBoost": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Terran",
+    "Type": "Upgrades"
+  },
+  "zerglingmovementspeed": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "overlordspeed": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "GlialReconstitution": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "CentrificalHooks": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "EvolveGroovedSpines": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "EvolveMuscularAugments": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "TunnelingClaws": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "InfestorEnergyUpgrade": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "Burrow": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "zerglingattackspeed": {
+    "Minerals": 200,
+    "Gas": 200,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "ChitinousPlating": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "DiggingClaws": {
+    "Minerals": 100,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "LurkerRange": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "AnabolicSynthesis": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
+  "NeuralParasite": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  }
+}

@@ -1,36 +1,20 @@
 import 'semantic-ui-css/semantic.min.css'
+import '../styles/timeline-custom.css'
+import '../styles/font-starcraft.css'
+import 'vis-timeline/dist/vis-timeline-graph2d.min.css'
 import '../styles/styles.scss'
-import { Container, Menu } from 'semantic-ui-react'
-import { SidebarCustom } from '../src/Components/SidebarCustom'
-
-
-const menuStyle = {
-  border: 'none',
-  borderRadius: 0,
-  marginBottom: 0,
-}
+import { TopBar } from '../src/Components/Nav/TopBar/TopBar'
+import React from 'react'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
-      {/*<Menu borderless={true} size={'huge'} style={menuStyle}>
-        <Container>
-          <Menu.Item as={'a'} active={true}>Home</Menu.Item>
-          <Menu.Item as={'a'}>Test 1</Menu.Item>
-          <Menu.Item as={'a'}>Test 2</Menu.Item>
-        </Container>
-      </Menu>*/}
-      <div style={{
-        height: '100vh',
-        width: '100vw',
-        position: 'absolute'
-      }}>
-        <SidebarCustom>
-          <div style={{ marginLeft: 150 }}>
-            <Component {...pageProps} />
-          </div>
-        </SidebarCustom>
-      </div>
+    <div style={{
+      width: '100vw',
+      position: 'absolute',
+      marginTop: 64
+    }}>
+      <TopBar />
+      <Component {...pageProps} />
     </div>
   )
 }

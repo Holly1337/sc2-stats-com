@@ -1,0 +1,14 @@
+[
+  {
+    "id": "dhmw2020",
+    "name": "DreamHack Masters Winter",
+    "from": "2020-10-14",
+    "to": "2020-11-15",
+    "description": "The DreamHack SC2 Masters Winter is the third and last online event of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
+    "games": 1089,
+    "pricepool": 57000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  }
+]
