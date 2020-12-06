@@ -1,0 +1,36 @@
+{
+  "Minerals": 35852325,
+  "Gas": 9367350,
+  "averageTotal": {
+    "ProtossMinerals": 16135,
+    "ProtossGas": 6377,
+    "TerranMinerals": 16940,
+    "TerranGas": 5598,
+    "ZergMinerals": 17652,
+    "ZergGas": 5479
+  },
+  "averageStructures": {
+    "ProtossMinerals": 5360,
+    "ProtossGas": 825,
+    "TerranMinerals": 4714,
+    "TerranGas": 861,
+    "ZergMinerals": 1226,
+    "ZergGas": 322
+  },
+  "averageUnits": {
+    "ProtossMinerals": 10170,
+    "ProtossGas": 4948,
+    "TerranMinerals": 11421,
+    "TerranGas": 3932,
+    "ZergMinerals": 15516,
+    "ZergGas": 4247
+  },
+  "averageUpgrades": {
+    "ProtossMinerals": 605,
+    "ProtossGas": 605,
+    "TerranMinerals": 805,
+    "TerranGas": 805,
+    "ZergMinerals": 911,
+    "ZergGas": 911
+  }
+}

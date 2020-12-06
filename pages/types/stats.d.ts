@@ -1,7 +1,7 @@
 export type QuickOverviewStatsType = {
   general: GeneralStats
   matchups: MatchupStats
-  resourcesSpent: ResourcesSpent
+  resourcesSpent: ResourceStats
   upgradesCount: UpgradesCount
   unitsBuilt: UnitsBuilt
   mapsPlayed: MapsPlayed
@@ -25,9 +25,22 @@ export type MatchupStats = Array<{
   race2Wins: number
 }>
 
-export type ResourcesSpent = {
+export type AllRacesResourcesSpent = {
+  ProtossMinerals: number
+  ProtossGas: number
+  TerranMinerals: number
+  TerranGas: number
+  ZergMinerals: number
+  ZergGas: number
+}
+
+export type ResourceStats = {
   Minerals: number,
-  Gas: number
+  Gas: number,
+  averageTotal: AllRacesResourcesSpent
+  averageStructures: AllRacesResourcesSpent
+  averageUnits: AllRacesResourcesSpent
+  averageUpgrades: AllRacesResourcesSpent
 }
 
 export type UpgradesCount = {
