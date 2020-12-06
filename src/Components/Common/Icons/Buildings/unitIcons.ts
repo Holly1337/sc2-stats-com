@@ -50,6 +50,7 @@ export const unitIcons = {
     Hydralisk: 'Icon_Zerg_Hydralisk.jpg',
     InfestedTerran: 'Icon_Zerg_Infested_Terran.jpg',
     Lurker: 'Icon_Zerg_Lurker.jpg',
+    Larva: 'Icon_Zerg_Larva.jpg',
     Mutalisk: 'Icon_Zerg_Mutalisk.jpg',
     NydusWorm: 'Icon_Zerg_Nydus_Worm.jpg',
     NydusCanal: 'Icon_Zerg_Nydus_Worm.jpg',

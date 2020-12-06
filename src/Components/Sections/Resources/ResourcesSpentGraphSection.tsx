@@ -489,7 +489,7 @@ export const ResourcesSpentGraphSection = (props: Props) => {
               iconType='square'
               payload={[
                 { value: 'Protoss', type: 'square', id: 'Protoss', color: 'orange' },
-                { value: 'Terran', type: 'square', id: 'Terran', color: '#b00' },
+                { value: 'Terran', type: 'square', id: 'Terran', color: '#a00' },
                 { value: 'Zerg', type: 'square', id: 'Zerg', color: '#8884d8' }
               ]}
               verticalAlign={'top'}

@@ -44,6 +44,12 @@
     "Race": "Protoss",
     "Type": "Structures"
   },
+  "Gateway": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Structures"
+  },
   "Forge": {
     "Minerals": 150,
     "Gas": 0,
@@ -53,7 +59,7 @@
   "Extractor": {
     "Minerals": 70,
     "Gas": 0,
-    "Race": "Protoss",
+    "Race": "Zerg",
     "Type": "Structures"
   },
   "SpawningPool": {
@@ -201,6 +207,12 @@
     "Type": "Structures"
   },
   "LurkerDen": {
+    "Minerals": 100,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "LurkerDenMP": {
     "Minerals": 100,
     "Gas": 150,
     "Race": "Zerg",
@@ -1106,10 +1118,34 @@
     "Race": "Zerg",
     "Type": "Upgrades"
   },
-  "NeuralParasite": {
-    "Minerals": 150,
-    "Gas": 150,
+  "MULE": {
+    "Minerals": 0,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Unit"
+  },
+  "Changeling": {
+    "Minerals": 0,
+    "Gas": 0,
     "Race": "Zerg",
-    "Type": "Upgrades"
+    "Type": "Unit"
+  },
+  "Archon": {
+    "Minerals": 0,
+    "Gas": 0,
+    "Race": "Protoss",
+    "Type": "Unit"
+  },
+  "AutoTurret": {
+    "Minerals": 0,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Unit"
+  },
+  "Larva": {
+    "Minerals": 0,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Unit"
   }
 }
