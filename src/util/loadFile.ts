@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-type TournamentPageType = 'meta' | 'general' | 'matchups' | 'resources' | 'mapsPlayed'
+type TournamentPageType = 'meta' | 'general' | 'matchups' | 'resources' | 'mapsPlayed' | 'supply'
 
 export const loadTournamentData = async (tournamentId: string, pageType: TournamentPageType): Promise<object> => {
   const file = await fs.promises.readFile(`./data/tournaments/${tournamentId}/${pageType}.json`, 'utf-8')

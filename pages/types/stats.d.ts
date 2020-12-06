@@ -59,7 +59,7 @@ export type MapsPlayedStats = Array<{
 
 export type SupplyStructuresBuilt = {
   Overlord: number
-  Pylons: number
+  Pylon: number
   SupplyDepot: number
 }
 
