@@ -4,7 +4,7 @@ export type QuickOverviewStatsType = {
   resourcesSpent: ResourceStats
   upgradesCount: UpgradesCount
   unitsBuilt: UnitsBuilt
-  mapsPlayed: MapsPlayed
+  mapsPlayed: MapsPlayedStats
   supplyStructuresBuilt: SupplyStructuresBuilt
   supplyStructuresBuiltPrevious: SupplyStructuresBuiltPrevious
   workersBuilt: WorkersBuilt
@@ -51,11 +51,11 @@ export interface UnitsBuilt {
   [key: string]: number
 }
 
-export type MapsPlayed = {
+export type MapsPlayedStats = Array<{
   id: string
   name: string
   count: number
-}
+}>
 
 export type SupplyStructuresBuilt = {
   Overlord: number

@@ -2,6 +2,7 @@ import React from 'react'
 import MapStatHorizontal from './MapStatHorizontal'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import { mapImagePaths } from './mapsImages'
+import { MapsPlayedStats } from '../../../../pages/types/stats'
 
 interface MapData {
   id: string
@@ -9,48 +10,12 @@ interface MapData {
   count: number
 }
 
-const data = {
-  "mapsPlayed": [
-    {
-      "id": "iceAndChrome",
-      "name": "Ice and Chrome",
-      "count": 120
-    },
-    {
-      "id": "eternalEmpire",
-      "name": "Eternal Empire",
-      "count": 194
-    },
-    {
-      "id": "pillarsOfGold",
-      "name": "Pillars of Gold",
-      "count": 113
-    },
-    {
-      "id": "deathaura",
-      "name": "Deathaura",
-      "count": 140
-    },
-    {
-      "id": "everDream",
-      "name": "Ever Dream",
-      "count": 158
-    },
-    {
-      "id": "goldenWall",
-      "name": "Golden Wall",
-      "count": 46
-    },
-    {
-      "id": "submarine",
-      "name": "Submarine",
-      "count": 28
-    }
-  ]
+interface Props {
+  stats: MapsPlayedStats
 }
 
-const MapsPlayedSectionHorizontal = () => {
-  const mapsPlayed = data.mapsPlayed
+const MapsPlayedSectionHorizontal = (props: Props) => {
+  const mapsPlayed = props.stats
   const maps = (mapsPlayed as MapData[])
     .sort((m1, m2) => m2.count - m1.count)
     .map(map => ({

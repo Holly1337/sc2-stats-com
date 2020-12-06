@@ -1,4 +1,4 @@
-import { GeneralStats, MatchupStats, ResourceStats } from './stats'
+import { GeneralStats, MapsPlayedStats, MatchupStats, ResourceStats } from './stats'
 
 export interface TournamentIndexPageProps {
   id: string
@@ -6,4 +6,5 @@ export interface TournamentIndexPageProps {
   general: GeneralStats
   matchups: MatchupStats
   resources: ResourceStats
+  mapsPlayed: MapsPlayedStats
 }
