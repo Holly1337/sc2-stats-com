@@ -1,5 +1,3 @@
-import { GeneralStats, MapsPlayedStats, MatchupStats, ResourceStats, SupplyStructuresBuiltPrevious } from './stats'
-
 export interface TournamentIndexPageProps {
   id: string
   name: string
@@ -8,7 +6,11 @@ export interface TournamentIndexPageProps {
   resources: ResourceStats
   mapsPlayed: MapsPlayedStats
   supply: {
-    current: SupplyStructuresBuilt,
+    current: SupplyStructuresBuilt
     previous: SupplyStructuresBuiltPrevious
+  }
+  workers: {
+    current: WorkersBuilt
+    previous: WorkersBuiltPrevious
   }
 }

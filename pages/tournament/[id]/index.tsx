@@ -34,7 +34,7 @@ export default function Home(props: TournamentIndexPageProps) {
         <ResourcesSpentGraphSection stats={props.resources} />
         <MapsPlayedSectionHorizontal stats={props.mapsPlayed} />
         <SupplySection current={props.supply.current} previous={props.supply.previous} matchups={props.matchups} />
-        <WorkerSection />
+        <WorkerSection current={props.workers.current} previous={props.workers.previous} matchups={props.matchups} />
         <PopularUnitsSection />
       </TournamentPageWrapper>
     </TournamentContext.Provider>
@@ -57,6 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const resourcesStats = await loadTournamentData(context.params.id as string, 'resources')
   const mapsPlayedStats = await loadTournamentData(context.params.id as string, 'mapsPlayed')
   const supplyStats = await loadTournamentData(context.params.id as string, 'supply')
+  const workerStats = await loadTournamentData(context.params.id as string, 'workers')
 
   return {
     props: {
@@ -65,7 +66,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       matchups: matchupStats,
       resources: resourcesStats,
       mapsPlayed: mapsPlayedStats,
-      supply: supplyStats
+      supply: supplyStats,
+      workers: workerStats
     }
   }
 }

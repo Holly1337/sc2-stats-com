@@ -55,7 +55,7 @@ export const SupplySection = (props: Props) => {
       <SegmentCustom heading={'Look at the supply'}>
         <SectionHeading
           title={<><Number value={totalStructures} /> supply structures generated <Number value={totalSupply} /> free supply</>}
-          subtitle={<>Yellow values are from {previousName}</>}
+          subtitle={<>Gray values are from {previousName}</>}
         />
         <Divider section />
         <Grid columns={3} textAlign={'center'}>
