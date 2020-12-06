@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <TournamentPageWrapper>
+    <TournamentPageWrapper tournamentId={'dhmw2020'}>
       <Breadcrumb>
         <Breadcrumb.Section>
           <Link href={'/'}>Home</Link>

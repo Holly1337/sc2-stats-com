@@ -1,7 +1,5 @@
 import React from 'react'
 import MapStatHorizontal from './MapStatHorizontal'
-
-import { Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import { mapImagePaths } from './mapsImages'
 

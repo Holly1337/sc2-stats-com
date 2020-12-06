@@ -2,8 +2,12 @@ import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import React from 'react'
 import Link from 'next/link'
 
-export const SidebarCustom: React.FC = ({ children }) => {
-  let tournamentId = 'hscxiii'
+interface Props {
+  tournamentId: string
+}
+
+export const SidebarCustom: React.FC<Props> = (props) => {
+  const { tournamentId, children } = props
   return (
     <Sidebar.Pushable
       as={Segment}
@@ -24,7 +28,7 @@ export const SidebarCustom: React.FC = ({ children }) => {
         <Link href={`/tournament/${tournamentId}`}>
           <Menu.Item as={'a'}>
             <Icon name='area graph' />
-            General
+            Quick Summary
           </Menu.Item>
         </Link>
         <Link href={`/tournament/${tournamentId}/maps`}>

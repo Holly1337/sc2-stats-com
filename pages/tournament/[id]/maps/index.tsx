@@ -336,7 +336,7 @@ const data = {
 
 const MapsHome = () => {
   return (
-    <TournamentPageWrapper>
+    <TournamentPageWrapper tournamentId={'dhmw2020'}>
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>

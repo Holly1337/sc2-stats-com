@@ -8,26 +8,53 @@ import { WorkerSection } from '../../../src/Components/Sections/Workers/WorkerSe
 import { PopularUnitsSection } from '../../../src/Components/Sections/PopularUnits/PopularUnitsSection'
 import { TournamentPageWrapper } from '../../../src/Components/Layout/TournamentPageWrapper'
 import Link from 'next/link'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { loadTournamentData } from '../../../src/util/loadFile'
+import { createContext } from 'react'
+import { TournamentIndexPageProps } from '../../types/TournamentIndexPage'
 
-export default function Home() {
+export const TournamentContext = createContext<TournamentIndexPageProps>(null)
+
+export default function Home(props: TournamentIndexPageProps) {
+  const { id, name } = props
   return (
-    <TournamentPageWrapper>
-      <Breadcrumb>
-        <Breadcrumb.Section>
-          <Link href={'/'}>Home</Link>
-        </Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section active>
-          Home Story Cup XVIII
-        </Breadcrumb.Section>
-      </Breadcrumb>
-      <GeneralSection />
-      <MatchupsSection />
-      <ResourcesSpentGraphSection />
-      <MapsPlayedSectionHorizontal />
-      <SupplySection />
-      <WorkerSection />
-      <PopularUnitsSection />
-    </TournamentPageWrapper>
+    <TournamentContext.Provider value={props}>
+      <TournamentPageWrapper tournamentId={id}>
+        <Breadcrumb>
+          <Breadcrumb.Section>
+            <Link href={'/'}>Home</Link>
+          </Breadcrumb.Section>
+          <Breadcrumb.Divider />
+          <Breadcrumb.Section active>
+            {name}
+          </Breadcrumb.Section>
+        </Breadcrumb>
+        <GeneralSection />
+        <MatchupsSection />
+        <ResourcesSpentGraphSection />
+        <MapsPlayedSectionHorizontal />
+        <SupplySection />
+        <WorkerSection />
+        <PopularUnitsSection />
+      </TournamentPageWrapper>
+    </TournamentContext.Provider>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { id: 'dhmw2020' } } // See the "paths" section below
+    ],
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const tournamentData = await loadTournamentData(context.params.id as string, 'general')
+  return {
+    props: {
+      ...tournamentData
+    }
+  }
 }

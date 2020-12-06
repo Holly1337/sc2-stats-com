@@ -42,7 +42,6 @@ interface Props {
 const UnitStat: React.FC<Props> = (props) => {
   const { id, count, averagePerGame, showCost, height } = props
   const image = images[id] ?? defaultImage
-  console.log(id, image)
 
   let cost
   const costPerUnit = (allUnitCost as any)[id]
