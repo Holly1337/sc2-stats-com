@@ -4,6 +4,9 @@ import MapsPlayedSectionHorizontal from '../../../../src/Components/Sections/Map
 import { MapsMatchupSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MapsMatchupSection/MapsMatchupSection'
 import Link from 'next/link'
 import { MatchupLengthSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MatchupLength/MatchupLengthSection'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { loadTournamentData } from '../../../../src/util/loadFile'
+import { MapsPlayedStats } from '../../../types/stats'
 
 const data = {
   "matchups": {
@@ -334,7 +337,11 @@ const data = {
   }
 }
 
-const MapsHome = () => {
+interface Props {
+  mapsPlayed: MapsPlayedStats
+}
+
+const MapsHome = (props: Props) => {
   return (
     <TournamentPageWrapper tournamentId={'dhmw2020'}>
       <Breadcrumb>
@@ -350,7 +357,7 @@ const MapsHome = () => {
           Maps
         </Breadcrumb.Section>
       </Breadcrumb>
-      <MapsPlayedSectionHorizontal />
+      <MapsPlayedSectionHorizontal stats={props.mapsPlayed} />
       <MapsMatchupSection
         allMapsStats={data.perMap}
       />
@@ -361,4 +368,27 @@ const MapsHome = () => {
   )
 }
 
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { id: 'dhmw2020' } } // See the "paths" section below
+    ],
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  console.time('load')
+  const mapsPlayedStats = await loadTournamentData(context.params.id as string, 'mapsPlayed')
+  console.timeEnd('load')
+
+  return {
+    props: {
+      mapsPlayed: mapsPlayedStats
+    }
+  }
+}
+
 export default MapsHome
+

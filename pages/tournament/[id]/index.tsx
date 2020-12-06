@@ -51,6 +51,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  console.time('load')
   const metaData = await loadTournamentData(context.params.id as string, 'meta')
   const generalStats = await loadTournamentData(context.params.id as string, 'general')
   const matchupStats = await loadTournamentData(context.params.id as string, 'matchups')
@@ -59,6 +60,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const supplyStats = await loadTournamentData(context.params.id as string, 'supply')
   const workerStats = await loadTournamentData(context.params.id as string, 'workers')
   const popularUnitsStats = await loadTournamentData(context.params.id as string, 'popularUnits')
+  console.timeEnd('load')
 
   return {
     props: {
