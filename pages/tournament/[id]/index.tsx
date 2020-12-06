@@ -29,7 +29,7 @@ export default function Home(props: TournamentIndexPageProps) {
             {name}
           </Breadcrumb.Section>
         </Breadcrumb>
-        <GeneralSection />
+        <GeneralSection stats={props.general} />
         <MatchupsSection />
         <ResourcesSpentGraphSection />
         <MapsPlayedSectionHorizontal />
@@ -51,10 +51,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const tournamentData = await loadTournamentData(context.params.id as string, 'general')
+  const metaData = await loadTournamentData(context.params.id as string, 'meta')
+  const generalStats = await loadTournamentData(context.params.id as string, 'general')
   return {
     props: {
-      ...tournamentData
+      ...metaData,
+      general: generalStats
     }
   }
 }

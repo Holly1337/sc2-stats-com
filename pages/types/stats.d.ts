@@ -14,7 +14,7 @@ export type QuickOverviewStatsType = {
 
 export type GeneralStats = {
   gamesPlayed: number
-  hoursPlayed: number
+  secondsPlayed: number
   actions: number
 }
 
