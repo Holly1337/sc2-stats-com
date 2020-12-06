@@ -368,7 +368,6 @@ const MapsHome = (props: Props) => {
   )
 }
 
-
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
