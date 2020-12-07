@@ -32,7 +32,7 @@ export const mapImagePaths: { [id: string]: string } = {
   romanticide,
   'Eternal Empire LE': eternalEmpire,
   'Simulacrum LE': simulacrum,
-  'Night Shade LE': nightshade,
+  'Nightshade LE': nightshade,
   'Ever Dream LE': everDream,
   'Golden Wall LE': goldenWall,
   'Zen LE': zen,

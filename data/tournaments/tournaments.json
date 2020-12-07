@@ -34,5 +34,17 @@
     "currency": "$",
     "tier": "premier",
     "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  },
+  {
+    "id": "tsl5",
+    "name": "TeamLiquid StarLeague 5",
+    "from": "2020-04-24",
+    "to": "2020-06-07",
+    "description": "The TeamLiquid StarLeague 5, announced on April 20, 2020, is the third TSL event held for StarCraft II, returning after an 8 years long hiatus.",
+    "games": 181,
+    "pricepool": 30000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/tsl5_banner.png"
   }
 ]
