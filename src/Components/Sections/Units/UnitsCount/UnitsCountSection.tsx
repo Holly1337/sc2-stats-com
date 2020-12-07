@@ -4,6 +4,9 @@ import { UnitCount } from './UnitCount'
 import unitsMeta from '../../../../data/units-meta.json'
 import { Checkbox, Header } from 'semantic-ui-react'
 import { groupUnits } from './utils/groupUnits'
+import { MatchupStats } from '../../../../../pages/types/stats'
+import { countMatchupsPerRace } from '../../../../util/countMatchupsPerRace'
+import { roundTwoDecimals } from '../../../../util/round'
 
 const unitsBuiltStatic = {
   "LabMineralField": 7104,
@@ -229,64 +232,97 @@ const unitsBuiltStatic = {
   "UltraliskBurrowed": 2,
   "GhostAlternate": 7
 }
+const matchups: MatchupStats = [
+  {
+    "race1": "Prot",
+    "race2": "Zerg",
+    "race1Wins": 99,
+    "race2Wins": 100
+  },
+  {
+    "race1": "Terr",
+    "race2": "Zerg",
+    "race1Wins": 86,
+    "race2Wins": 98
+  },
+  {
+    "race1": "Prot",
+    "race2": "Terr",
+    "race1Wins": 87,
+    "race2Wins": 79
+  },
+  {
+    "race1": "Prot",
+    "race2": "Prot",
+    "race1Wins": 126,
+    "race2Wins": 0
+  },
+  {
+    "race1": "Zerg",
+    "race2": "Zerg",
+    "race1Wins": 75,
+    "race2Wins": 0
+  },
+  {
+    "race1": "Terr",
+    "race2": "Terr",
+    "race1Wins": 49,
+    "race2Wins": 0
+  }
+]
 
 export const UnitsCountSection = (props) => {
-  const [groupByRace, setGroupByRace] = useState<boolean>(true)
+  const [showAveragePerGame, setShowAveragePerGame] = useState<boolean>(true)
   const unitsBuilt = groupUnits({ ...unitsBuiltStatic })
 
-  const onToggleGroupByRace = () => {
-    setGroupByRace(g => !g)
+  const onToggleShowAverage = () => {
+    setShowAveragePerGame(showAverage => !showAverage)
   }
 
   const unitsSorted = Object.entries(unitsBuilt).sort(([unitId1, count1], [unitId2, count2]) => count2 - count1)
   const byRace = { Protoss: [], Terran: [], Zerg: [] }
+
+  const totalGamesPerRace = showAveragePerGame
+    ? countMatchupsPerRace(matchups)
+    : { Prot: 1, Terr: 1, Zerg: 1, Rand: 1}
 
   unitsSorted.forEach(([unitId, count]) => {
     const unitMeta = unitsMeta[unitId]
     if (unitMeta === undefined) {
       return
     }
-    byRace[unitMeta.Race].push([unitId, count])
+    const countToShow = roundTwoDecimals(
+      count / totalGamesPerRace[unitMeta.Race.substr(0, 4)]
+    )
+    byRace[unitMeta.Race].push([unitId, countToShow])
   })
+
   // Add options to filter
   // by matchup
   // game length
   return (
     <SegmentCustom heading={'Units Trained'}>
       <div className={'d-flex justify-content-end'}>
-        <Checkbox toggle label={'Group by race'} checked={groupByRace} onClick={onToggleGroupByRace} />
+        <Checkbox toggle label={'Show Average Per Game'} checked={showAveragePerGame} onClick={onToggleShowAverage} className={'mr-4'} />
       </div>
-      {!groupByRace && (
-        <div className={'d-flex flex-wrap'}>
-          {Object.entries(unitsBuilt)
-            .sort(([key1, value1], [key2, value2]) => value2 - value1)
-            .map(([unitId, count]) => (
-              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
-            ))}
-        </div>
-      )}
-      {groupByRace && (
-        <>
-          <Header size={'large'} className={'ml-4'}>Protoss</Header>
-          <div className={'d-flex flex-wrap mt-4'}>
-            {byRace.Protoss.map(([unitId, count]) => (
-              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
-            ))}
-          </div>
-          <Header size={'large'} className={'ml-4'}>Terran</Header>
-          <div className={'d-flex flex-wrap mt-4'}>
-            {byRace.Terran.map(([unitId, count]) => (
-              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
-            ))}
-          </div>
-          <Header size={'large'} className={'ml-4'}>Zerg</Header>
-          <div className={'d-flex flex-wrap mt-4'}>
-            {byRace.Zerg.map(([unitId, count]) => (
-              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
-            ))}
-          </div>
-        </>
-      )}
+      <Header size={'large'} className={'ml-4'}>Protoss</Header>
+      <div className={'d-flex flex-wrap mt-4'}>
+        {byRace.Protoss.map(([unitId, count]) => (
+          <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
+        ))}
+      </div>
+      <Header size={'large'} className={'ml-4'}>Terran</Header>
+      <div className={'d-flex flex-wrap mt-4'}>
+        {byRace.Terran.map(([unitId, count]) => (
+          <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
+        ))}
+      </div>
+      <Header size={'large'} className={'ml-4'}>Zerg</Header>
+      <div className={'d-flex flex-wrap mt-4'}>
+        {byRace.Zerg.map(([unitId, count]) => (
+          <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
+        ))}
+      </div>
     </SegmentCustom>
   )
 }
