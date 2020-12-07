@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Divider, Grid, Header } from 'semantic-ui-react'
 import MatchupItem from '../../../Matchups/MatchupItem'
 

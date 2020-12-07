@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { MatchupLengthSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MatchupLength/MatchupLengthSection'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
-import { FullMatchupStats, MapsPlayedStats, MatchupStats } from '../../../types/stats'
+import { FullMatchupStats, MapsPlayedStats } from '../../../types/stats'
 
 interface Props {
   id: string
