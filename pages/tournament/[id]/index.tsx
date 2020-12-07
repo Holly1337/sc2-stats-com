@@ -1,4 +1,4 @@
-import { Breadcrumb } from 'semantic-ui-react'
+import { Breadcrumb, Header } from 'semantic-ui-react'
 import { GeneralSection } from '../../../src/Components/Sections/General/GeneralSection'
 import { MatchupsSection } from '../../../src/Components/Sections/Matchups/MatchupsSection'
 import { ResourcesSpentGraphSection } from '../../../src/Components/Sections/Resources/ResourcesSpentGraphSection'
@@ -9,9 +9,10 @@ import { PopularUnitsSection } from '../../../src/Components/Sections/PopularUni
 import { TournamentPageWrapper } from '../../../src/Components/Layout/TournamentPageWrapper'
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { loadTournamentData, loadTournaments } from '../../../src/util/loadFile'
+import { loadTournamentData } from '../../../src/util/loadFile'
 import { TournamentIndexPageProps } from '../../../src/types/TournamentIndexPage'
 import { getTournamentPaths } from '../../../src/util/paths'
+import { TournamentNameHeading } from '../../../src/Components/Common/Headings/TournamentNameHeading/TournamentNameHeading'
 
 export default function Home(props: TournamentIndexPageProps) {
   const { id, name } = props
@@ -26,6 +27,7 @@ export default function Home(props: TournamentIndexPageProps) {
           {name}
         </Breadcrumb.Section>
       </Breadcrumb>
+      <TournamentNameHeading>{name}</TournamentNameHeading>
       <GeneralSection stats={props.general} />
       <MatchupsSection stats={props.matchups} />
       <ResourcesSpentGraphSection stats={props.resources} />

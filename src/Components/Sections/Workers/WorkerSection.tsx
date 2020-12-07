@@ -3,7 +3,7 @@ import { Divider, Grid } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import UnitStat from '../../Common/UnitStat/UnitStat'
 import Number from '../../Common/Numbers/Number'
-import SectionHeading from '../../Common/SectionHeading/SectionHeading'
+import SectionHeading from '../../Common/Headings/SectionHeading/SectionHeading'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
 import { MatchupStats, WorkersBuilt, WorkersBuiltPrevious } from '../../../types/stats'
 

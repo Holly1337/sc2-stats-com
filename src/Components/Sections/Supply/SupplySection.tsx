@@ -3,7 +3,7 @@ import { Divider, Grid, Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import UnitStat from '../../Common/UnitStat/UnitStat'
 import Number from '../../Common/Numbers/Number'
-import SectionHeading from '../../Common/SectionHeading/SectionHeading'
+import SectionHeading from '../../Common/Headings/SectionHeading/SectionHeading'
 import { MatchupStats, SupplyStructuresBuilt, SupplyStructuresBuiltPrevious } from '../../../types/stats'
 
 const SUPPLY_PER_BUILDING = 8
