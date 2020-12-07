@@ -15,7 +15,7 @@ interface Props {
 
 export const UnitsCountSection = (props: Props) => {
   let { matchups, unitsBuilt } = props
-  const [showAveragePerGame, setShowAveragePerGame] = useState<boolean>(true)
+  const [showAveragePerGame, setShowAveragePerGame] = useState<boolean>(false)
   unitsBuilt = groupUnits({ ...unitsBuilt })
 
   const onToggleShowAverage = () => {

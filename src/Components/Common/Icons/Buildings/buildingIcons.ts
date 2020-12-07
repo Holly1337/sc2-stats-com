@@ -10,7 +10,7 @@ export const buildingIcons = {
     Pylon: 'Icon_Protoss_Pylon.jpg',
     RoboticsBay: 'Icon_Protoss_Robotics_Bay.jpg',
     RoboticsFacility: 'Icon_Protoss_Robotics_Facility.jpg',
-    ShieldBattery: 'Icon_Protoss_Shield_Battery.webp',
+    ShieldBattery: 'Icon_Protoss_Shield_Battery.jpg',
     Stargate: 'Icon_Protoss_Stargate.jpg',
     TemplarArchive: 'Icon_Protoss_Templar_Archives.jpg',
     TwilightCouncil: 'Icon_Protoss_Twilight_Council.jpg',

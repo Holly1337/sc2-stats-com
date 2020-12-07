@@ -40,7 +40,7 @@ export const SidebarCustom: React.FC<Props> = (props) => {
         <Link href={`/tournament/${tournamentId}/units`}>
           <Menu.Item as={'a'}>
             <Icon name='group' />
-            Units
+            Units & Buildings
           </Menu.Item>
         </Link>
         <Link href={`/tournament/${tournamentId}/upgrades`}>
