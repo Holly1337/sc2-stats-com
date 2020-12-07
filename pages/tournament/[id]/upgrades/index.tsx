@@ -37,8 +37,8 @@ export default function Home(props: Props) {
       </Breadcrumb>
       <ResearchAmountSection matchups={matchups} upgradesCount={upgradesCount} />
       <CombatUpgradeAmountSection matchups={matchups} upgradesCount={upgradesCount} />
-      <CombatUpgradeSection matchups={matchups} upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
-      <GeneralUpgradeSection matchups={matchups} upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
+      <CombatUpgradeSection upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
+      <GeneralUpgradeSection upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
     </TournamentPageWrapper>
   )
 }

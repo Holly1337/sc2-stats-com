@@ -6,7 +6,7 @@ import { Checkbox } from 'semantic-ui-react'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { combatUpgradeIcons } from '../../../Common/Icons/Upgrades/combatUpgrades'
 import unitMetaData from '../../../../data/units-meta.json'
-import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../../../pages/types/stats'
+import { UpgradesCount, UpgradesTimes } from '../../../../../pages/types/stats'
 
 interface UpgradeData {
   id: number
@@ -16,13 +16,12 @@ interface UpgradeData {
 }
 
 interface Props {
-  matchups: MatchupStats
   upgradesCount: UpgradesCount
   upgradesTimes: UpgradesTimes
 }
 
 const CombatUpgradeSection = (props: Props) => {
-  const { matchups, upgradesCount, upgradesTimes } = props
+  const { upgradesCount, upgradesTimes } = props
   const [showProtoss, setShowProtoss] = useState(true)
   const [showTerran, setShowTerran] = useState(true)
   const [showZerg, setShowZerg] = useState(true)
