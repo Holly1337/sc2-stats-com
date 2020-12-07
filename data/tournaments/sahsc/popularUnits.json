@@ -1,0 +1,17 @@
+[
+  {
+    "id": "Marine",
+    "unitName": "Marine",
+    "count": 9633
+  },
+  {
+    "id": "Zergling",
+    "unitName": "Zergling",
+    "count": 23812
+  },
+  {
+    "id": "Baneling",
+    "unitName": "Baneling",
+    "count": 5195
+  }
+]

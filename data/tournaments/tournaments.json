@@ -46,5 +46,29 @@
     "currency": "$",
     "tier": "premier",
     "image": "/assets/images/TournamentCardBackgrounds/tsl5_banner.png"
+  },
+  {
+    "id": "sahsc",
+    "name": "Stay At Home Story Cup",
+    "from": "2020-04-02",
+    "to": "2020-04-11",
+    "description": "The Stay at Home Story Cup #1, organised by Dennis \"TaKe\" Gehlen, is a online tournament where TaKe invites star players from around the world to compete online. This 2 day event was created due to the current COVID-19 situation and replaces the summer HSC 2020, which was postponed.",
+    "games": 172,
+    "pricepool": 5000,
+    "currency": "$",
+    "tier": "major",
+    "image": "/assets/images/TournamentCardBackgrounds/StayAtHomestory_Cup.png"
+  },
+  {
+    "id": "iemkato2020",
+    "name": "Intel Extreme Masters Katowice 2020",
+    "from": "2020-02-24",
+    "to": "2020-03-01",
+    "description": "The Intel Extreme Masters (IEM) is ESL's flagship competition sponsored by Intel.",
+    "games": 438,
+    "pricepool": 400000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/katowice2020.jpg"
   }
 ]
