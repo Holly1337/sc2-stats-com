@@ -8,7 +8,7 @@ import CombatUpgradeAmountSection
   from '../../../../src/Components/Sections/Upgrades/ResearchAmount/CombatUpgradeAmountSection'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
-import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../types/stats'
+import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../../src/types/stats'
 
 interface Props {
   id: string

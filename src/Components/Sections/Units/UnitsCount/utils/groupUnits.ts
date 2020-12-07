@@ -1,4 +1,4 @@
-import { UnitsBuilt } from '../../../../../../pages/types/stats'
+import { UnitsBuilt } from '../../../../../types/stats'
 
 const changelingGroup = {
   target: 'Changeling',

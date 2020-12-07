@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import MatchupItem from './MatchupItem'
-import { MatchupStats } from '../../../../pages/types/stats'
+import { MatchupStats } from '../../../types/stats'
 
 interface Props {
   stats: MatchupStats

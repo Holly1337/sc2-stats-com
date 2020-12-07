@@ -7,7 +7,7 @@ import { Divider, Header, Statistic } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
 import GasNumber from '../../Common/Numbers/GasNumber'
-import { ResourceStats } from '../../../../pages/types/stats'
+import { ResourceStats } from '../../../types/stats'
 
 interface BarChartDataPoint {
   name: string

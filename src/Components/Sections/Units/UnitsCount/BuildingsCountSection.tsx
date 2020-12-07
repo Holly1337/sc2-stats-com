@@ -5,7 +5,7 @@ import unitsMeta from '../../../../data/units-meta.json'
 import { Checkbox, Header } from 'semantic-ui-react'
 import { groupBuildings } from './utils/groupBuildings'
 import { countGamesPerRace } from '../../../../util/countGamesPerRace'
-import { MatchupStats, UnitsBuilt } from '../../../../../pages/types/stats'
+import { MatchupStats, UnitsBuilt } from '../../../../types/stats'
 import { roundTwoDecimals } from '../../../../util/round'
 
 interface Props {

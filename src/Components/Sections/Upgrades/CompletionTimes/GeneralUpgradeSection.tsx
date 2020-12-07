@@ -6,7 +6,7 @@ import { generalUpgradeIcons } from '../../../Common/Icons/Upgrades/generalUpgra
 import { Checkbox } from 'semantic-ui-react'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import unitMetaData from '../../../../data/units-meta.json'
-import { UpgradesCount, UpgradesTimes } from '../../../../../pages/types/stats'
+import { UpgradesCount, UpgradesTimes } from '../../../../types/stats'
 
 interface UpgradeData {
   id: number

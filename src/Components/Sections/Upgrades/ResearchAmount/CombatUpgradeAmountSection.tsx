@@ -4,7 +4,7 @@ import UpgradeIcon from '../../../Common/Icons/UpgradeIcon'
 import { Checkbox, Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { countGamesPerRace } from '../../../../util/countGamesPerRace'
-import { MatchupStats, UpgradesCount } from '../../../../../pages/types/stats'
+import { MatchupStats, UpgradesCount } from '../../../../types/stats'
 import unitMetaData from '../../../../data/units-meta.json'
 
 interface Props {

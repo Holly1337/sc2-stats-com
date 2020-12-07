@@ -5,7 +5,7 @@ import UnitStat from '../../Common/UnitStat/UnitStat'
 import Number from '../../Common/Numbers/Number'
 import SectionHeading from '../../Common/SectionHeading/SectionHeading'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
-import { MatchupStats, WorkersBuilt, WorkersBuiltPrevious } from '../../../../pages/types/stats'
+import { MatchupStats, WorkersBuilt, WorkersBuiltPrevious } from '../../../types/stats'
 
 const COST_PER_WORKER = 50
 

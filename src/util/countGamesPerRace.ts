@@ -1,4 +1,4 @@
-import { MatchupStats } from '../../pages/types/stats'
+import { MatchupStats } from '../types/stats'
 
 export type GamesPerRace = {
   Prot: number

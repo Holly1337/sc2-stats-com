@@ -5,7 +5,7 @@ import UnitStat from '../../Common/UnitStat/UnitStat'
 import SectionHeading from '../../Common/SectionHeading/SectionHeading'
 import MineralNumber from '../../Common/Numbers/MineralNumber'
 import GasNumber from '../../Common/Numbers/GasNumber'
-import { PopularUnit } from '../../../../pages/types/stats'
+import { PopularUnit } from '../../../types/stats'
 import allUnitCost from '../../../data/units-meta.json'
 
 interface Props {

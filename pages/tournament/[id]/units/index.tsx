@@ -5,7 +5,7 @@ import { UnitsCountSection } from '../../../../src/Components/Sections/Units/Uni
 import { BuildingsCountSection } from '../../../../src/Components/Sections/Units/UnitsCount/BuildingsCountSection'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
-import { MatchupStats, UnitsBuilt } from '../../../types/stats'
+import { MatchupStats, UnitsBuilt } from '../../../../src/types/stats'
 
 interface Props {
   id: string

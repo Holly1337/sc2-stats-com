@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import Number from '../../Common/Numbers/Number'
-import { GeneralStats } from '../../../../pages/types/stats'
+import { GeneralStats } from '../../../types/stats'
 
 interface Props {
   stats: GeneralStats

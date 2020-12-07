@@ -10,7 +10,7 @@ import { TournamentPageWrapper } from '../../../src/Components/Layout/Tournament
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../src/util/loadFile'
-import { TournamentIndexPageProps } from '../../types/TournamentIndexPage'
+import { TournamentIndexPageProps } from '../../../src/types/TournamentIndexPage'
 
 export default function Home(props: TournamentIndexPageProps) {
   const { id, name } = props

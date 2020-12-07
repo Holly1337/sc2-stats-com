@@ -2,7 +2,7 @@ import React from 'react'
 import MapStatHorizontal from './MapStatHorizontal'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import { mapImagePaths } from './mapsImages'
-import { MapsPlayedStats } from '../../../../pages/types/stats'
+import { MapsPlayedStats } from '../../../types/stats'
 
 interface MapData {
   id: string
