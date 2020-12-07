@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { generalUpgradeIcons } from '../../../Common/Icons/Upgrades/generalUpgrades'
+import { combatUpgradeIcons } from '../../../Common/Icons/Upgrades/combatUpgrades'
 import UpgradeIcon from '../../../Common/Icons/UpgradeIcon'
+import { Checkbox, Grid, Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
-import { MatchupStats } from '../../../../../pages/types/stats'
 import { countGamesPerRace } from '../../../../util/countGamesPerRace'
-import { Checkbox } from 'semantic-ui-react'
+import { MatchupStats } from '../../../../../pages/types/stats'
 import unitMetaData from '../../../../data/units-meta.json'
 import { toPercent } from '../../../../util/numbers'
 
@@ -152,7 +153,7 @@ const matchups: MatchupStats = [
   }
 ]
 
-const ResearchAmountSection = () => {
+const CombatUpgradeAmountSection = () => {
   const [showPercentage, setShowPercentage] = useState<boolean>(false)
 
   const onToggleShowPercentage = () => {
@@ -161,7 +162,7 @@ const ResearchAmountSection = () => {
 
   // TODO: add checkboxes to filter for each race
   const gamesPerRace = countGamesPerRace(matchups)
-  const generalUpgrades = Object.entries(upgradesCount)
+  const combatUpgrades = Object.entries(upgradesCount)
     .map(
       ([key, amount]) => {
         const race = unitMetaData[key] ? unitMetaData[key].Race.substr(0, 4) : 'Prot' // TODO: fix fallback
@@ -171,7 +172,7 @@ const ResearchAmountSection = () => {
           value: !showPercentage ? amount : toPercent(amount / games),
           race,
           // @ts-ignore
-          image: generalUpgradeIcons[key]
+          image: combatUpgradeIcons[key]
         }
       }
     )
@@ -184,16 +185,16 @@ const ResearchAmountSection = () => {
 
   return (
     <>
-      <SegmentCustom heading={'General Research'}>
+      <SegmentCustom heading={'Combat Upgrades'}>
         <div className={'d-flex justify-content-end'}>
           <Checkbox toggle label={'Show Percentage'} checked={showPercentage} onClick={onToggleShowPercentage} className={'mr-4'} />
         </div>
         <div className='d-flex flex-wrap justify-content-center'>
-          {generalUpgrades}
+          {combatUpgrades}
         </div>
       </SegmentCustom>
     </>
   )
 }
 
-export default ResearchAmountSection
+export default CombatUpgradeAmountSection

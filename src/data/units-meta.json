@@ -1161,6 +1161,12 @@
     "Race": "Zerg",
     "Type": "Upgrades"
   },
+  "NeuralParasite": {
+    "Minerals": 150,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Upgrades"
+  },
   "Burrow": {
     "Minerals": 100,
     "Gas": 100,

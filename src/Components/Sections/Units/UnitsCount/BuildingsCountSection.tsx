@@ -4,7 +4,7 @@ import { UnitCount } from './UnitCount'
 import unitsMeta from '../../../../data/units-meta.json'
 import { Checkbox, Header } from 'semantic-ui-react'
 import { groupBuildings } from './utils/groupBuildings'
-import { countMatchupsPerRace } from '../../../../util/countMatchupsPerRace'
+import { countGamesPerRace } from '../../../../util/countGamesPerRace'
 import { MatchupStats, UnitsBuilt } from '../../../../../pages/types/stats'
 import { roundTwoDecimals } from '../../../../util/round'
 
@@ -26,7 +26,7 @@ export const BuildingsCountSection = (props: Props) => {
   const byRace = { Protoss: [], Terran: [], Zerg: [] }
 
   const totalGamesPerRace = showAveragePerGame
-    ? countMatchupsPerRace(matchups)
+    ? countGamesPerRace(matchups)
     : { Prot: 1, Terr: 1, Zerg: 1, Rand: 1}
 
   unitsSorted.forEach(([unitId, count]) => {

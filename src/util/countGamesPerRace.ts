@@ -1,7 +1,14 @@
 import { MatchupStats } from '../../pages/types/stats'
 
-export const countMatchupsPerRace = (matchups: MatchupStats) => {
-  const totalGames: {[key: string]: number} = {
+export type GamesPerRace = {
+  Prot: number
+  Terr: number
+  Zerg: number
+  Rand: number
+}
+
+export const countGamesPerRace = (matchups: MatchupStats): GamesPerRace => {
+  const totalGames: GamesPerRace = {
     Zerg: 0,
     Terr: 0,
     Prot: 0,

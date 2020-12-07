@@ -4,6 +4,8 @@ import CombatUpgradeSection from '../../../../src/Components/Sections/Upgrades/C
 import GeneralUpgradeSection from '../../../../src/Components/Sections/Upgrades/CompletionTimes/GeneralUpgradeSection'
 import { TournamentPageWrapper } from '../../../../src/Components/Layout/TournamentPageWrapper'
 import Link from 'next/link'
+import CombatUpgradeAmountSection
+  from '../../../../src/Components/Sections/Upgrades/ResearchAmount/CombatUpgradeAmountSection'
 
 export default function Home() {
   return (
@@ -22,6 +24,7 @@ export default function Home() {
         </Breadcrumb.Section>
       </Breadcrumb>
       <ResearchAmountSection />
+      <CombatUpgradeAmountSection />
       <CombatUpgradeSection />
       <GeneralUpgradeSection />
     </TournamentPageWrapper>
