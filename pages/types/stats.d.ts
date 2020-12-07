@@ -25,6 +25,23 @@ export type MatchupStats = Array<{
   race2Wins: number
 }>
 
+export type MapMatchupStats = {
+  games: number
+  time: number
+  [raceGames: string]: number
+  [raceWins: string]: number
+}
+
+export type FullMatchupStats = {
+  matchups: {[matchup: string]: number}
+  perMatchupDuration: {[matchup: string]: number}
+  perMap: {
+    [mapId: string]: {
+      [matchup: string]: MapMatchupStats
+    }
+  }
+}
+
 export type AllRacesResourcesSpent = {
   ProtossMinerals: number
   ProtossGas: number
