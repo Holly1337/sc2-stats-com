@@ -22,7 +22,12 @@ export const UnitsCountSection = (props: Props) => {
     setShowAveragePerGame(showAverage => !showAverage)
   }
 
-  const unitsSorted = Object.entries(unitsBuilt).sort(([unitId1, count1], [unitId2, count2]) => count2 - count1)
+  console.log(unitsBuilt)
+  const unitsSorted = Object.entries(unitsBuilt).sort(([unitId1, count1], [unitId2, count2]) => {
+    return count2 - count1
+  })
+
+
   const byRace = { Protoss: [], Terran: [], Zerg: [] }
 
   const totalGamesPerRace = showAveragePerGame

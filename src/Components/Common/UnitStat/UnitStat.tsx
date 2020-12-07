@@ -10,6 +10,7 @@ const Pylon = '/assets/images/buildings/pylon.webp'
 const Drone = '/assets/images/units/drone.png'
 const SCV = '/assets/images/units/scv.png'
 const Probe = '/assets/images/units/probe.png'
+const SiegeTank = '/assets/images/units/siegetank.png'
 const defaultImage = '/assets/images/units/default.png'
 import ImageStat from '../ImageStat/ImageStat'
 
@@ -25,7 +26,8 @@ const images: { [id: string]: string } = {
   Pylon,
   Drone,
   SCV,
-  Probe
+  Probe,
+  SiegeTank
 }
 
 interface Props {
