@@ -5,6 +5,18 @@
     "Race": "Zerg",
     "Type": "Structures"
   },
+  "Lair": {
+    "Minerals": 150,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
+  "Hive": {
+    "Minerals": 200,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
   "Drone": {
     "Minerals": 50,
     "Gas": 0,
@@ -18,6 +30,13 @@
     "Race": "Zerg",
     "Type": "Units",
     "Subtype": "Hatchery"
+  },
+  "Overseer": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Zerg",
+    "Type": "Units",
+    "Subtype": "Lair"
   },
   "Probe": {
     "Minerals": 50,
@@ -110,6 +129,12 @@
     "Race": "Zerg",
     "Type": "Units"
   },
+  "CreepTumor": {
+    "Minerals": 0,
+    "Gas": 0,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
   "BanelingNest": {
     "Minerals": 100,
     "Gas": 50,
@@ -176,6 +201,12 @@
     "Race": "Zerg",
     "Type": "Units"
   },
+  "Ravager": {
+    "Minerals": 25,
+    "Gas": 75,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
   "EvolutionChamber": {
     "Minerals": 75,
     "Gas": 0,
@@ -200,6 +231,12 @@
     "Race": "Zerg",
     "Type": "Structures"
   },
+  "GreaterSpire": {
+    "Minerals": 100,
+    "Gas": 150,
+    "Race": "Zerg",
+    "Type": "Structures"
+  },
   "HydraliskDen": {
     "Minerals": 100,
     "Gas": 100,
@@ -221,6 +258,18 @@
   "Hydralisk": {
     "Minerals": 100,
     "Gas": 50,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "Lurker": {
+    "Minerals": 50,
+    "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "LurkerMPEgg": {
+    "Minerals": 50,
+    "Gas": 100,
     "Race": "Zerg",
     "Type": "Units"
   },
@@ -275,6 +324,18 @@
   "CommandCenter": {
     "Minerals": 400,
     "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "OrbitalCommand": {
+    "Minerals": 150,
+    "Gas": 0,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "PlanetaryFortress": {
+    "Minerals": 150,
+    "Gas": 150,
     "Race": "Terran",
     "Type": "Structures"
   },
@@ -461,6 +522,12 @@
   "Corruptor": {
     "Minerals": 150,
     "Gas": 100,
+    "Race": "Zerg",
+    "Type": "Units"
+  },
+  "BroodLord": {
+    "Minerals": 150,
+    "Gas": 150,
     "Race": "Zerg",
     "Type": "Units"
   },
