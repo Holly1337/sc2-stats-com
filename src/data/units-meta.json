@@ -363,6 +363,18 @@
     "Race": "Terran",
     "Type": "Structures"
   },
+  "TechLab": {
+    "Minerals": 50,
+    "Gas": 25,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
+  "Reactor": {
+    "Minerals": 50,
+    "Gas": 50,
+    "Race": "Terran",
+    "Type": "Structures"
+  },
   "BarracksReactor": {
     "Minerals": 50,
     "Gas": 50,

@@ -3,8 +3,9 @@ import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { UnitCount } from './UnitCount'
 import unitsMeta from '../../../../data/units-meta.json'
 import { Checkbox, Header } from 'semantic-ui-react'
+import { groupUnits } from './utils/groupUnits'
 
-const unitsBuilt = {
+const unitsBuiltStatic = {
   "LabMineralField": 7104,
   "LabMineralField750": 7104,
   "MineralField": 26208,
@@ -231,6 +232,7 @@ const unitsBuilt = {
 
 export const UnitsCountSection = (props) => {
   const [groupByRace, setGroupByRace] = useState<boolean>(true)
+  const unitsBuilt = groupUnits({ ...unitsBuiltStatic })
 
   const onToggleGroupByRace = () => {
     setGroupByRace(g => !g)
@@ -241,9 +243,6 @@ export const UnitsCountSection = (props) => {
 
   unitsSorted.forEach(([unitId, count]) => {
     const unitMeta = unitsMeta[unitId]
-    if (unitId === 'Ravager') {
-      console.log(unitMeta)
-    }
     if (unitMeta === undefined) {
       return
     }

@@ -33,6 +33,7 @@ export const unitIcons = {
     Marine: 'Icon_Terran_Marine.jpg',
     Medivac: 'Icon_Terran_Medivac.jpg',
     MULE: 'Icon_Terran_MULE.jpg',
+    Nuke: 'Icon_Terran_Nuke.webp',
     PointDefenseDrone: 'Icon_Terran_Point_Defense_Drone.jpg',
     Raven: 'Icon_Terran_Raven.jpg',
     Reaper: 'Icon_Terran_Reaper.jpg',

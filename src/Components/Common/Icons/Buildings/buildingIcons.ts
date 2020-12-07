@@ -35,6 +35,7 @@ export const buildingIcons = {
     SensorTower: 'Icon_Terran_Sensor_Tower.jpg',
     Starport: 'Icon_Terran_Starport.jpg',
     SupplyDepot: 'Icon_Terran_Supply_Depot.jpg',
+    TechLab: 'Icon_Terran_Tech_Lab.jpg',
     BarracksTechLab: 'Icon_Terran_Tech_Lab.jpg',
     FactoryTechLab: 'Icon_Terran_Tech_Lab.jpg',
     StarportTechLab: 'Icon_Terran_Tech_Lab.jpg',

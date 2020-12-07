@@ -3,8 +3,9 @@ import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { UnitCount } from './UnitCount'
 import unitsMeta from '../../../../data/units-meta.json'
 import { Checkbox, Header } from 'semantic-ui-react'
+import { groupBuildings } from './utils/groupBuildings'
 
-const unitsBuilt = {
+const unitsBuiltStatic = {
   "LabMineralField": 7104,
   "LabMineralField750": 7104,
   "MineralField": 26208,
@@ -231,6 +232,7 @@ const unitsBuilt = {
 
 export const BuildingsCountSection = (props) => {
   const [groupByRace, setGroupByRace] = useState<boolean>(true)
+  const unitsBuilt = groupBuildings({ ...unitsBuiltStatic })
 
   const onToggleGroupByRace = () => {
     setGroupByRace(g => !g)
