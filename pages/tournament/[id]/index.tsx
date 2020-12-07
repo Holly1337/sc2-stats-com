@@ -9,8 +9,9 @@ import { PopularUnitsSection } from '../../../src/Components/Sections/PopularUni
 import { TournamentPageWrapper } from '../../../src/Components/Layout/TournamentPageWrapper'
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { loadTournamentData } from '../../../src/util/loadFile'
+import { loadTournamentData, loadTournaments } from '../../../src/util/loadFile'
 import { TournamentIndexPageProps } from '../../../src/types/TournamentIndexPage'
+import { getTournamentPaths } from '../../../src/util/paths'
 
 export default function Home(props: TournamentIndexPageProps) {
   const { id, name } = props
@@ -37,10 +38,9 @@ export default function Home(props: TournamentIndexPageProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getTournamentPaths()
   return {
-    paths: [
-      { params: { id: 'dhmw2020' } } // See the "paths" section below
-    ],
+    paths,
     fallback: false
   }
 }

@@ -6,6 +6,7 @@ import { BuildingsCountSection } from '../../../../src/Components/Sections/Units
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { MatchupStats, UnitsBuilt } from '../../../../src/types/stats'
+import { getTournamentPaths } from '../../../../src/util/paths'
 
 interface Props {
   id: string
@@ -38,10 +39,9 @@ const MapsHome = (props: Props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getTournamentPaths()
   return {
-    paths: [
-      { params: { id: 'dhmw2020' } }
-    ],
+    paths,
     fallback: false
   }
 }

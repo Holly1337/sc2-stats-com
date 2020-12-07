@@ -9,6 +9,7 @@ import CombatUpgradeAmountSection
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../../src/types/stats'
+import { getTournamentPaths } from '../../../../src/util/paths'
 
 interface Props {
   id: string
@@ -44,10 +45,9 @@ export default function Home(props: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getTournamentPaths()
   return {
-    paths: [
-      { params: { id: 'dhmw2020' } } // See the "paths" section below
-    ],
+    paths,
     fallback: false
   }
 }
