@@ -211,7 +211,7 @@ export const BuildingsCountSection = (props) => {
           {Object.entries(unitsBuilt)
             .sort(([key1, value1], [key2, value2]) => value2 - value1)
             .map(([unitId, count]) => (
-              <UnitCount id={unitId} name={unitId} count={count} type={'building'} />
+              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'building'} />
             ))}
         </div>
       )}
@@ -220,19 +220,19 @@ export const BuildingsCountSection = (props) => {
           <Header size={'large'} className={'ml-4'}>Protoss</Header>
           <div className={'d-flex flex-wrap mt-4'}>
             {byRace.Protoss.map(([unitId, count]) => (
-              <UnitCount id={unitId} name={unitId} count={count} type={'building'} />
+              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'building'} />
             ))}
           </div>
           <Header size={'large'} className={'ml-4'}>Terran</Header>
           <div className={'d-flex flex-wrap mt-4'}>
             {byRace.Terran.map(([unitId, count]) => (
-              <UnitCount id={unitId} name={unitId} count={count} type={'building'} />
+              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'building'} />
             ))}
           </div>
           <Header size={'large'} className={'ml-4'}>Zerg</Header>
           <div className={'d-flex flex-wrap mt-4'}>
             {byRace.Zerg.map(([unitId, count]) => (
-              <UnitCount id={unitId} name={unitId} count={count} type={'building'} />
+              <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'building'} />
             ))}
           </div>
         </>
