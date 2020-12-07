@@ -9,6 +9,10 @@ const deathaura = '/assets/images/maps/DeathAura.jpg'
 const iceAndChrome = '/assets/images/maps/IceAndChrome.jpg'
 const pillarsOfGold = '/assets/images/maps/PillarsOfGold.jpg'
 const submarine = '/assets/images/maps/Submarine.jpg'
+const jagannatha = '/assets/images/maps/Jagannatha.jpg'
+const lightshade = '/assets/images/maps/Lightshade.jpg'
+const oxide = '/assets/images/maps/Oxide.jpg'
+const romanticide = '/assets/images/maps/Romanticide.jpg'
 
 export const mapImagePaths: { [id: string]: string } = {
   eternalEmpire,
@@ -22,6 +26,10 @@ export const mapImagePaths: { [id: string]: string } = {
   iceAndChrome,
   pillarsOfGold,
   submarine,
+  jagannatha,
+  lightshade,
+  oxide,
+  romanticide,
   'Eternal Empire LE': eternalEmpire,
   'Simulacrum LE': simulacrum,
   'Night Shade LE': nightshade,
@@ -32,7 +40,11 @@ export const mapImagePaths: { [id: string]: string } = {
   'Deathaura LE': deathaura,
   'Ice and Chrome LE': iceAndChrome,
   'Pillars of Gold LE': pillarsOfGold,
-  'Submarine LE': submarine
+  'Submarine LE': submarine,
+  'Jagannatha LE': jagannatha,
+  'Lightshade LE': lightshade,
+  'Oxide LE': oxide,
+  'Romanticide LE': romanticide
 }
 
 const fallbackImage = '/assets/images/100x100.png'
