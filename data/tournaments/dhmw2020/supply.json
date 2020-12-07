@@ -1,13 +1,1 @@
-{
-  "current": {
-    "Overlord": 11817,
-    "Pylon": 10030,
-    "SupplyDepot": 6832
-  },
-  "previous": {
-    "previousEventName": "TSL5",
-    "Overlord": 19.68,
-    "Pylon": 14.08,
-    "SupplyDepot": 13.85
-  }
-}
+{"current":{"Overlord":11817,"Pylon":10030,"SupplyDepot":6832},"previous":{"previousEventName":"a previous event","Overlord":0,"Pylon":0,"SupplyDepot":0}}

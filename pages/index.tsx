@@ -8,7 +8,7 @@ export default function Home () {
   return (
     <Container>
       <div style={{ marginTop: 20 }}>
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={3} stackable={true}>
           {tournaments.map(tournament => (
             <Link href={`/tournament/${tournament.id}`} passHref={true}>
               <

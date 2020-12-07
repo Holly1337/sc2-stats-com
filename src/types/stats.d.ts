@@ -42,23 +42,29 @@ export type FullMatchupStats = {
   }
 }
 
-export type AllRacesResourcesSpent = {
-  ProtossMinerals: number
-  ProtossGas: number
-  TerranMinerals: number
-  TerranGas: number
-  ZergMinerals: number
-  ZergGas: number
+export type Resources = {
+  Minerals: number
+  Gas: number
+}
+
+export type ResourcesAllRaces = {
+  Protoss: Resources
+  Terran: Resources
+  Zerg: Resources
+}
+
+export type ResourceStatsBase = {
+  perRace: ResourcesAllRaces
+  Structures: ResourcesAllRaces
+  Units: ResourcesAllRaces
+  Upgrades: ResourcesAllRaces
 }
 
 export type ResourceStats = {
   Minerals: number,
   Gas: number,
-  averageTotal: AllRacesResourcesSpent
-  averageStructures: AllRacesResourcesSpent
-  averageUnits: AllRacesResourcesSpent
-  averageUpgrades: AllRacesResourcesSpent
-}
+  average: ResourceStatsBase
+} & ResourceStatsBase
 
 export type UpgradesCount = {
   [key: string]: number
