@@ -10,34 +10,29 @@ import { TournamentPageWrapper } from '../../../src/Components/Layout/Tournament
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../src/util/loadFile'
-import { createContext } from 'react'
 import { TournamentIndexPageProps } from '../../types/TournamentIndexPage'
-
-export const TournamentContext = createContext<TournamentIndexPageProps>(null)
 
 export default function Home(props: TournamentIndexPageProps) {
   const { id, name } = props
   return (
-    <TournamentContext.Provider value={props}>
-      <TournamentPageWrapper tournamentId={id}>
-        <Breadcrumb>
-          <Breadcrumb.Section>
-            <Link href={'/'}>Home</Link>
-          </Breadcrumb.Section>
-          <Breadcrumb.Divider />
-          <Breadcrumb.Section active>
-            {name}
-          </Breadcrumb.Section>
-        </Breadcrumb>
-        <GeneralSection stats={props.general} />
-        <MatchupsSection stats={props.matchups} />
-        <ResourcesSpentGraphSection stats={props.resources} />
-        <MapsPlayedSectionHorizontal stats={props.mapsPlayed} />
-        <SupplySection current={props.supply.current} previous={props.supply.previous} matchups={props.matchups} />
-        <WorkerSection current={props.workers.current} previous={props.workers.previous} matchups={props.matchups} />
-        <PopularUnitsSection stats={props.popularUnits} />
-      </TournamentPageWrapper>
-    </TournamentContext.Provider>
+    <TournamentPageWrapper tournamentId={id}>
+      <Breadcrumb>
+        <Breadcrumb.Section>
+          <Link href={'/'}>Home</Link>
+        </Breadcrumb.Section>
+        <Breadcrumb.Divider />
+        <Breadcrumb.Section active>
+          {name}
+        </Breadcrumb.Section>
+      </Breadcrumb>
+      <GeneralSection stats={props.general} />
+      <MatchupsSection stats={props.matchups} />
+      <ResourcesSpentGraphSection stats={props.resources} />
+      <MapsPlayedSectionHorizontal stats={props.mapsPlayed} />
+      <SupplySection current={props.supply.current} previous={props.supply.previous} matchups={props.matchups} />
+      <WorkerSection current={props.workers.current} previous={props.workers.previous} matchups={props.matchups} />
+      <PopularUnitsSection stats={props.popularUnits} />
+    </TournamentPageWrapper>
   )
 }
 
