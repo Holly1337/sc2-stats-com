@@ -22,7 +22,7 @@ interface Props {
 export default function Home(props: Props) {
   const { id, name, matchups, upgradesCount, upgradesTimes } = props
   return (
-    <TournamentPageWrapper tournamentId={'dhmw2020'}>
+    <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
         <Breadcrumb.Section>
           <Link href={'/'}>Home</Link>

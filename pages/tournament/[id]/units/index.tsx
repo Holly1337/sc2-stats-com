@@ -18,7 +18,7 @@ interface Props {
 const MapsHome = (props: Props) => {
   const { id, name, matchups, unitsBuilt } = props
   return (
-    <TournamentPageWrapper tournamentId={'dhmw2020'}>
+    <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>
