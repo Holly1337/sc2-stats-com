@@ -64,6 +64,12 @@ export type UpgradesCount = {
   [key: string]: number
 }
 
+export type UpgradesTimes = Array<{
+  id: number
+  content: string
+  start: number
+}>
+
 export interface UnitsBuilt {
   [key: string]: number
 }

@@ -6,8 +6,20 @@ import { TournamentPageWrapper } from '../../../../src/Components/Layout/Tournam
 import Link from 'next/link'
 import CombatUpgradeAmountSection
   from '../../../../src/Components/Sections/Upgrades/ResearchAmount/CombatUpgradeAmountSection'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { loadTournamentData } from '../../../../src/util/loadFile'
+import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../types/stats'
 
-export default function Home() {
+interface Props {
+  id: string
+  name: string
+  matchups: MatchupStats
+  upgradesCount: UpgradesCount
+  upgradesTimes: UpgradesTimes
+}
+
+export default function Home(props: Props) {
+  const { id, name, matchups, upgradesCount, upgradesTimes } = props
   return (
     <TournamentPageWrapper tournamentId={'dhmw2020'}>
       <Breadcrumb>
@@ -16,17 +28,42 @@ export default function Home() {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section>
-          <Link href={'/tournament/hscxviii'}>Home Story Cup XVIII</Link>
+          <Link href={`/tournament/${id}`}>{name}</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
           Upgrades
         </Breadcrumb.Section>
       </Breadcrumb>
-      <ResearchAmountSection />
-      <CombatUpgradeAmountSection />
-      <CombatUpgradeSection />
-      <GeneralUpgradeSection />
+      <ResearchAmountSection matchups={matchups} upgradesCount={upgradesCount} />
+      <CombatUpgradeAmountSection matchups={matchups} upgradesCount={upgradesCount} />
+      <CombatUpgradeSection matchups={matchups} upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
+      <GeneralUpgradeSection matchups={matchups} upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
     </TournamentPageWrapper>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { id: 'dhmw2020' } } // See the "paths" section below
+    ],
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const metaData = await loadTournamentData(context.params.id as string, 'meta')
+  const matchupStats = await loadTournamentData(context.params.id as string, 'matchups')
+  const upgradesCountsStats = await loadTournamentData(context.params.id as string, 'upgradesCount')
+  const upgradesTimesStats = await loadTournamentData(context.params.id as string, 'upgradesTimes')
+
+  return {
+    props: {
+      ...metaData,
+      matchups: matchupStats,
+      upgradesCount: upgradesCountsStats,
+      upgradesTimes: upgradesTimesStats
+    }
+  }
 }
