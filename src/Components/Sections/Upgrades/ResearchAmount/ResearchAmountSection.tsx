@@ -182,7 +182,6 @@ const ResearchAmountSection = () => {
 
   const byRace = { Prot: [], Terr: [], Zerg: [] }
   generalUpgrades.forEach(upgrade => {
-    console.log(upgrade)
     byRace[upgrade.race].push(upgrade)
   })
 
