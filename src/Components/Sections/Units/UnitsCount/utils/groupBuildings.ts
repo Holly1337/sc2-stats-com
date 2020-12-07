@@ -49,7 +49,6 @@ export const groupBuildings = (unitsBuilt: UnitsBuilt): UnitsBuilt => {
       delete unitsBuilt[id]
     })
   })
-  console.log(unitsBuilt.BarracksReactor)
 
   return unitsBuilt
 }
