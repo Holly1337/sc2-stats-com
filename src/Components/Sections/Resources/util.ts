@@ -1,4 +1,4 @@
-import unitCost from '../../../data/units-cost.json'
+import unitCost from '../../../data/units-meta.json'
 
 interface TreemapData {
   Race: 'Protoss' | 'Terran' | 'Zerg'

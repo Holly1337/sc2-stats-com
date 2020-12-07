@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Divider, Grid, Header } from 'semantic-ui-react'
 import MatchupItem from '../../../Matchups/MatchupItem'
 
@@ -13,7 +13,7 @@ interface MatchupGridColumnProps extends MatchupStat {
 }
 
 const sortByGames = (a: MatchupGridColumnProps, b: MatchupGridColumnProps) => (a.race1Wins + a.race2Wins) - (b.race1Wins + b.race2Wins)
-const sortByMatchup = (a: MatchupGridColumnProps, b: MatchupGridColumnProps) => a.matchup.localeCompare(b.matchup)
+const sortByMatchup = (a: MatchupGridColumnProps, b: MatchupGridColumnProps) => b.matchup.localeCompare(a.matchup)
 
 export const MatchupGrid = (props: Props) => {
   const { mapName, matchupStats } = props

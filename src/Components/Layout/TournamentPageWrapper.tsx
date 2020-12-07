@@ -2,9 +2,14 @@ import React from 'react'
 import { SidebarCustom } from '../Nav/SidebarCustom'
 import { Container } from 'semantic-ui-react'
 
-export const TournamentPageWrapper: React.FC = ({ children }) => {
+interface Props {
+  tournamentId: string
+}
+
+export const TournamentPageWrapper: React.FC<Props> = (props) => {
+  const { tournamentId, children } = props
   return (
-    <SidebarCustom>
+    <SidebarCustom tournamentId={tournamentId}>
       <div style={{ marginLeft: 150 }}>
         <Container>
           {children}

@@ -1,0 +1,13 @@
+.headerBackground {
+  position: absolute;
+  top: -10px;
+  height: 666px;
+  left: 140px;
+  right: -10px;
+  background-image: url("/assets/images/TournamentCardBackgrounds/katowice2020.jpg");
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}

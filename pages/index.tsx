@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, Container } from 'semantic-ui-react'
 import Link from 'next/link'
-import { TournamentCard } from '../src/Components/Common/TournamentCard/TournamentCard'
 import tournaments from '../data/tournaments/tournaments.json'
+import { TournamentCard } from '../src/Components/Common/TournamentCard/TournamentCard'
 
 export default function Home () {
   return (
@@ -11,7 +11,9 @@ export default function Home () {
         <Card.Group itemsPerRow={3}>
           {tournaments.map(tournament => (
             <Link href={`/tournament/${tournament.id}`} passHref={true}>
-              <TournamentCard
+              <
+                // @ts-ignore
+                TournamentCard
                 {...tournament}
               />
             </Link>

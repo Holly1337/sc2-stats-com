@@ -3,7 +3,8 @@ import { Card, Grid, Icon, Image } from 'semantic-ui-react'
 
 const dhMastersBackground = '/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png'
 
-interface Props {
+interface TournamentCardProps {
+  id: string
   name: string
   from: string
   to: string
@@ -14,7 +15,7 @@ interface Props {
   href?: string
 }
 
-export const TournamentCard = (props: Props) => {
+export const TournamentCard = (props: TournamentCardProps) => {
   const { name, from, to, description, games, pricepool, href } = props
   // TODO: include tier, and maybe points (allow custom points type for the future. EPT <-> WCS)
 

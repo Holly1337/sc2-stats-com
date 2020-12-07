@@ -3,8 +3,7 @@ import { SegmentCustom } from '../../../../Segments/SegmentCustom'
 import { Checkbox, StrictTabProps, Tab } from 'semantic-ui-react'
 import Image from 'next/image'
 import { MatchupGrid } from './MatchupGrid'
-
-const iceAndChromeImage = '/assets/images/maps/IceAndChrome.jpg'
+import { getMapImageByName } from '../../mapsImages'
 
 interface Props {
   allMapsStats: {
@@ -25,7 +24,7 @@ export const MapsMatchupSection = (props: Props) => {
       id: mapName,
       content: (
         <div className={'d-flex align-items-center'}>
-          <Image src={iceAndChromeImage} width={48} height={48} />
+          <Image src={getMapImageByName(mapName)} width={48} height={48} />
           <div className={'ml-4'}>{mapName}</div>
         </div>
       )
