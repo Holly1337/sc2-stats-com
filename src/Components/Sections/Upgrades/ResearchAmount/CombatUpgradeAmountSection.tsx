@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { generalUpgradeIcons } from '../../../Common/Icons/Upgrades/generalUpgrades'
 import { combatUpgradeIcons } from '../../../Common/Icons/Upgrades/combatUpgrades'
 import UpgradeIcon from '../../../Common/Icons/UpgradeIcon'
-import { Checkbox, Grid, Header } from 'semantic-ui-react'
+import { Checkbox, Header } from 'semantic-ui-react'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { countGamesPerRace } from '../../../../util/countGamesPerRace'
 import { MatchupStats } from '../../../../../pages/types/stats'
 import unitMetaData from '../../../../data/units-meta.json'
-import { toPercent } from '../../../../util/numbers'
 
 const upgradesCount = {
   "BansheeSpeed": 2,
@@ -162,14 +160,14 @@ const CombatUpgradeAmountSection = () => {
 
   // TODO: add checkboxes to filter for each race
   const gamesPerRace = countGamesPerRace(matchups)
-  const combatUpgrades = Object.entries(upgradesCount)
+  const generalUpgrades = Object.entries(upgradesCount)
     .map(
       ([key, amount]) => {
         const race = unitMetaData[key] ? unitMetaData[key].Race.substr(0, 4) : 'Prot' // TODO: fix fallback
         const games = gamesPerRace[race]
         return {
           id: key,
-          value: !showPercentage ? amount : toPercent(amount / games),
+          value: !showPercentage ? amount : amount / games,
           race,
           // @ts-ignore
           image: combatUpgradeIcons[key]
@@ -181,16 +179,42 @@ const CombatUpgradeAmountSection = () => {
       if (a.value === b.value) return a.id.localeCompare(b.id)
       return b.value - a.value
     })
-    .map(data => <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />)
+
+  const byRace = { Prot: [], Terr: [], Zerg: [] }
+  generalUpgrades.forEach(upgrade => {
+    console.log(upgrade)
+    byRace[upgrade.race].push(upgrade)
+  })
+
+  const protossUpgrades = byRace.Prot.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
+
+  const terranUpgrades = byRace.Terr.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
+
+  const zergUpgrades = byRace.Zerg.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
 
   return (
     <>
-      <SegmentCustom heading={'Combat Upgrades'}>
+      <SegmentCustom heading={'General Research'}>
         <div className={'d-flex justify-content-end'}>
           <Checkbox toggle label={'Show Percentage'} checked={showPercentage} onClick={onToggleShowPercentage} className={'mr-4'} />
         </div>
-        <div className='d-flex flex-wrap justify-content-center'>
-          {combatUpgrades}
+        <Header size={'large'} className={'ml-2'}>Protoss</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {protossUpgrades}
+        </div>
+        <Header size={'large'} className={'ml-2'}>Terran</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {terranUpgrades}
+        </div>
+        <Header size={'large'} className={'ml-2'}>Zerg</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {zergUpgrades}
         </div>
       </SegmentCustom>
     </>

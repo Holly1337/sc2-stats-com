@@ -4,9 +4,8 @@ import UpgradeIcon from '../../../Common/Icons/UpgradeIcon'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { MatchupStats } from '../../../../../pages/types/stats'
 import { countGamesPerRace } from '../../../../util/countGamesPerRace'
-import { Checkbox } from 'semantic-ui-react'
+import { Checkbox, Header } from 'semantic-ui-react'
 import unitMetaData from '../../../../data/units-meta.json'
-import { toPercent } from '../../../../util/numbers'
 
 const upgradesCount = {
   "BansheeSpeed": 2,
@@ -168,7 +167,7 @@ const ResearchAmountSection = () => {
         const games = gamesPerRace[race]
         return {
           id: key,
-          value: !showPercentage ? amount : toPercent(amount / games),
+          value: !showPercentage ? amount : amount / games,
           race,
           // @ts-ignore
           image: generalUpgradeIcons[key]
@@ -180,7 +179,24 @@ const ResearchAmountSection = () => {
       if (a.value === b.value) return a.id.localeCompare(b.id)
       return b.value - a.value
     })
-    .map(data => <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />)
+
+  const byRace = { Prot: [], Terr: [], Zerg: [] }
+  generalUpgrades.forEach(upgrade => {
+    console.log(upgrade)
+    byRace[upgrade.race].push(upgrade)
+  })
+
+  const protossUpgrades = byRace.Prot.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
+
+  const terranUpgrades = byRace.Terr.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
+
+  const zergUpgrades = byRace.Zerg.map(data =>
+    <UpgradeIcon key={data.id} {...data} showPercentage={showPercentage} gamesPerRace={gamesPerRace} />
+  )
 
   return (
     <>
@@ -188,8 +204,17 @@ const ResearchAmountSection = () => {
         <div className={'d-flex justify-content-end'}>
           <Checkbox toggle label={'Show Percentage'} checked={showPercentage} onClick={onToggleShowPercentage} className={'mr-4'} />
         </div>
-        <div className='d-flex flex-wrap justify-content-center'>
-          {generalUpgrades}
+        <Header size={'large'} className={'ml-2'}>Protoss</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {protossUpgrades}
+        </div>
+        <Header size={'large'} className={'ml-2'}>Terran</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {terranUpgrades}
+        </div>
+        <Header size={'large'} className={'ml-2'}>Zerg</Header>
+        <div className={'d-flex flex-wrap mt-4'}>
+          {zergUpgrades}
         </div>
       </SegmentCustom>
     </>
