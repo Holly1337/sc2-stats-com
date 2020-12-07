@@ -2,16 +2,21 @@
   {
     "id": "Marine",
     "unitName": "Marine",
-    "count": 51708
+    "count": 40137
   },
   {
     "id": "Zergling",
     "unitName": "Zergling",
-    "count": 120675
+    "count": 97028
+  },
+  {
+    "id": "Baneling",
+    "unitName": "Baneling",
+    "count": 19349
   },
   {
     "id": "Zealot",
     "unitName": "Zealot",
-    "count": 24460
+    "count": 18599
   }
 ]
