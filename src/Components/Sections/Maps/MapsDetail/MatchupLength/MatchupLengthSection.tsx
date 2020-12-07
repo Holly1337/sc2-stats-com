@@ -34,9 +34,9 @@ export const MatchupLengthSection = (props: Props) => {
   }))
 
   return (
-    <SegmentCustom heading={'Game Length Per Matchup'}>
+    <SegmentCustom heading={'Game Time Per Matchup'}>
       <div className={'d-flex justify-content-end'}>
-        <Checkbox toggle label={'Show Average'} checked={showAverage} onClick={onToggleShowAverage} />
+        <Checkbox toggle label={'Show average game length'} checked={showAverage} onClick={onToggleShowAverage} />
       </div>
       <Tab menu={{ tabular: true, vertical: true, fluid: true }} panes={panes} className={'mt-4'} />
     </SegmentCustom>

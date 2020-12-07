@@ -98,12 +98,19 @@ export const MapMatchupLengthGraph = (props: Props) => {
           <Bar dataKey="Zerg" fill="#8884d8" stackId={showAverage ? null : 'races'} />
         </BarChart>
       </ResponsiveContainer>
-      <div className={'mt-4'}>
-        Colors represent gametime of games that the race has won.
-        <br/>
-        For example in PvT: If orange is 1:30:00 and and red is 1:00:00 means, that games where Protoss won took
-        a total of 1 hour and 30 minutes and games where Terrans won took a total of 1 hour. Also all PvT games took a total of 2 hours and 30 minutes.
-      </div>
+      {!showAverage && (
+        <div className={'mt-4'}>
+          Colors represent gametime of games that the race has won.
+          <br/>
+          For example in PvT: If orange is 1:30:00 and and red is 1:00:00 means, that games where Protoss won took
+          a total of 1 hour and 30 minutes and games where Terrans won took a total of 1 hour. Also all PvT games took a total of 2 hours and 30 minutes.
+        </div>
+      )}
+      {showAverage && (
+        <div className={'mt-4'}>
+          Colors represent the average gametime of games that the race has won.
+        </div>
+      )}
     </>
   )
 }
