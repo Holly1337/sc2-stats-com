@@ -1,23 +1,35 @@
 [
   {
-    "id": "dhmf2020",
-    "name": "DreamHack Masters Fall",
-    "from": "2020-08-08",
-    "to": "2020-09-20",
-    "description": "The DreamHack SC2 Masters Fall is the second of the three online events of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
-    "games": 799,
-    "pricepool": 57000,
-    "currency": "$",
-    "tier": "premier",
-    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
-  },
-  {
     "id": "dhmw2020",
     "name": "DreamHack Masters Winter",
     "from": "2020-10-14",
     "to": "2020-11-15",
     "description": "The DreamHack SC2 Masters Winter is the third and last online event of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
     "games": 1089,
+    "pricepool": 57000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  },
+  {
+    "id": "kingofbattles2020",
+    "name": "King of Battles: KB International Championship",
+    "from": "2020-09-25",
+    "to": "2020-10-11",
+    "description": "The King of Battles: KB International Championship is a GSL style tournament, consisting of 16 players (8 Korean and 8 Non-Korean players) fighting for 1280 EPT Global Points and a $30,000 USD prize pool.",
+    "games": 188,
+    "pricepool": 30000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/KoB_Banner.png"
+  },
+  {
+    "id": "dhmf2020",
+    "name": "DreamHack Masters Fall",
+    "from": "2020-08-08",
+    "to": "2020-09-20",
+    "description": "The DreamHack SC2 Masters Fall is the second of the three online events of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
+    "games": 188,
     "pricepool": 57000,
     "currency": "$",
     "tier": "premier",

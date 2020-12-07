@@ -21,6 +21,10 @@ export const groupUnits = (unitsBuilt: UnitsBuilt): UnitsBuilt => {
       unitsBuilt[target] = 0
     }
     from.forEach((id) => {
+      const toAdd = unitsBuilt[id]
+      if (typeof toAdd !== 'number') {
+        return
+      }
       unitsBuilt[target] += unitsBuilt[id]
       delete unitsBuilt[id]
     })
