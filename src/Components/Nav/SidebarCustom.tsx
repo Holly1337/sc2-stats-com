@@ -25,28 +25,34 @@ export const SidebarCustom: React.FC<Props> = (props) => {
         width='thin'
         style={{ height: '100%' }}
       >
-        <Link href={`/tournament/${tournamentId}`}>
+        <Link href={`/tournament/${tournamentId}`} passHref={true}>
           <Menu.Item as={'a'}>
             <Icon name='eye' />
             Overview
           </Menu.Item>
         </Link>
-        <Link href={`/tournament/${tournamentId}/maps`}>
+        <Link href={`/tournament/${tournamentId}/maps`} passHref={true}>
           <Menu.Item as={'a'}>
             <Icon name='map outline' />
             Maps
           </Menu.Item>
         </Link>
-        <Link href={`/tournament/${tournamentId}/units`}>
+        <Link href={`/tournament/${tournamentId}/units`} passHref={true}>
           <Menu.Item as={'a'}>
             <Icon name='group' />
             Units & Buildings
           </Menu.Item>
         </Link>
-        <Link href={`/tournament/${tournamentId}/upgrades`}>
+        <Link href={`/tournament/${tournamentId}/upgrades`} passHref={true}>
           <Menu.Item as={'a'}>
             <Icon name='angle double up' />
             Upgrades
+          </Menu.Item>
+        </Link>
+        <Link href={`/tournament/${tournamentId}/games`} passHref={true}>
+          <Menu.Item as={'a'}>
+            <Icon name='sitemap' />
+            All Games
           </Menu.Item>
         </Link>
       </Sidebar>
