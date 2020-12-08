@@ -1,0 +1,42 @@
+{
+  "player1": {
+    "RewardDanceOverlord": 0,
+    "RewardDanceStalker": 0,
+    "RewardDanceGhost": 0,
+    "RewardDanceColossus": 0,
+    "RewardDanceRoach": 0,
+    "RewardDanceOracle": 0,
+    "RewardDanceMule": 0,
+    "RewardDanceViking": 0,
+    "RewardDanceInfestor": 0,
+    "GameHeartActive": 0,
+    "SprayProtoss": 12142,
+    "WarpGateResearch": 5871,
+    "ProtossAirWeaponsLevel1": 8750,
+    "PhoenixRangeUpgrade": 12123,
+    "ProtossShieldsLevel1": 13042,
+    "ProtossAirWeaponsLevel2": 13207,
+    "BlinkTech": 14097,
+    "ProtossGroundWeaponsLevel1": 15320,
+    "Charge": 16779,
+    "ProtossAirWeaponsLevel3": 17185
+  },
+  "player2": {
+    "RewardDanceOverlord": 0,
+    "RewardDanceStalker": 0,
+    "RewardDanceGhost": 0,
+    "RewardDanceColossus": 0,
+    "RewardDanceRoach": 0,
+    "RewardDanceOracle": 0,
+    "RewardDanceMule": 0,
+    "RewardDanceViking": 0,
+    "RewardDanceInfestor": 0,
+    "GameHeartActive": 0,
+    "SprayZerg": 13356,
+    "overlordspeed": 4870,
+    "zerglingmovementspeed": 7617,
+    "ZergFlyerWeaponsLevel1": 12041,
+    "ZergMissileWeaponsLevel1": 14868,
+    "GlialReconstitution": 15473
+  }
+}
