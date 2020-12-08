@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import { UnitsDiedHeatMap } from '../../Common/Heatmap/UnitsDiedHeatMap'
 import { mapImagePaths } from '../Maps/mapsImages'
@@ -15,6 +15,8 @@ interface Props {
 
 const GAMELOOPS_PER_SECOND = 22.4
 const GAMELOOPS_PER_MINUTE = GAMELOOPS_PER_SECOND * 60
+const SECONDS_PER_ANIMATION_STEP = 10
+const GAMELOOP_RANGE = GAMELOOPS_PER_SECOND * 40
 
 const sliderStyles = {
   trackStyle: { backgroundColor: '#db2828' },
@@ -44,14 +46,54 @@ export const HeatmapSection = (props: Props) => {
   const [radius, setRadius] = useState(10)
   const [timeRange, setTimeRange] = useState<[number, number]>([0, totalSteps])
   const [removeWeighting, setRemoveWeighting] = useState(false)
+  const [animate, setAnimate] = useState(false)
+  const [animationGameloop, setAnimationGameloop] = useState(0)
+  const [showTimeFrame, setShowTimeFrame] = useState(false)
 
-  let filteredDataPoints = dataPoints.filter((p) => (
-    p.gameloop >= timeRange[0] * GAMELOOPS_PER_MINUTE
-    && p.gameloop <= timeRange[1] * GAMELOOPS_PER_MINUTE
-  ))
+  useEffect(() => {
+    if (!animate) {
+      return
+    }
+    const interval = window.setInterval(() => {
+
+      setAnimationGameloop((gl) => {
+        let newGameloop = gl + (GAMELOOPS_PER_SECOND * SECONDS_PER_ANIMATION_STEP)
+        if (newGameloop > maxGameloop) {
+          newGameloop = 0
+        }
+        return newGameloop
+      })
+    }, 150)
+
+    return () => {
+      window.clearInterval(interval)
+      setAnimationGameloop(0)
+    }
+  }, [animate])
+
+  const onToggleAnimate = () => {
+    setAnimate(animate => !animate)
+  }
+
+  const onToggleShowTimeframe = () => {
+    setShowTimeFrame(showTimeFrame => !showTimeFrame)
+  }
 
   const onToggleWeighting = () => {
     setRemoveWeighting(removeWeighting => !removeWeighting)
+  }
+
+  let filteredDataPoints
+  if (!animate) {
+    filteredDataPoints = dataPoints.filter((p) => (
+      p.gameloop >= timeRange[0] * GAMELOOPS_PER_MINUTE
+      && p.gameloop <= timeRange[1] * GAMELOOPS_PER_MINUTE
+    ))
+  } else {
+    filteredDataPoints = dataPoints.filter((p) => (
+      p.gameloop >= (showTimeFrame ? animationGameloop : 0)
+      && p.gameloop <= animationGameloop + GAMELOOP_RANGE
+    ))
   }
 
   const mapSizeData: MapSizeData = mapData[mapId]
@@ -100,7 +142,25 @@ export const HeatmapSection = (props: Props) => {
         </Form.Field>
         <Form.Field className={styles.formField}>
           <label>Remove Weighting</label>
-          <Checkbox toggle checked={removeWeighting} onClick={onToggleWeighting} />
+          <Checkbox toggle checked={removeWeighting} onClick={onToggleWeighting} label={'Show all deaths, independently of how many units died on the same spot.'} />
+        </Form.Field>
+        <Form.Field className={styles.formField}>
+          <label>Animate</label>
+          <Checkbox toggle checked={animate} onClick={onToggleAnimate} label={'Animate deaths over time'} />
+        </Form.Field>
+        <Form.Field className={styles.formField}>
+          <label>Show timeframe (when animation is running)  </label>
+          <Checkbox toggle checked={showTimeFrame} onClick={onToggleShowTimeframe} label={"Only shows deaths over a timeframe of 40 seconds instead of all from the beginning."} />
+        </Form.Field>
+        <Form.Field className={styles.formField}>
+          {animate && (
+            <Slider
+              min={0}
+              max={maxGameloop}
+              step={1}
+              value={animationGameloop}
+            />
+          )}
         </Form.Field>
       </Form>
 
