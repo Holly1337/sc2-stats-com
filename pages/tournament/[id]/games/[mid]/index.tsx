@@ -16,6 +16,7 @@ interface Props {
   }
   matchMeta: {
     mapName: string
+    mapId: string
     races: [Race, Race]
     results: [Result, Result]
     duration: number
@@ -26,7 +27,7 @@ interface Props {
 }
 
 const GameHome = (props: Props) => {
-  const { unitsBuilt, upgrades } = props
+  const { matchMeta, unitsBuilt, upgrades } = props
   const { id, name } = props.tournamentMeta
   return (
     <TournamentPageWrapper tournamentId={id}>
@@ -47,7 +48,7 @@ const GameHome = (props: Props) => {
           Showtime vs Maru
         </Breadcrumb.Section>
       </Breadcrumb>
-      <HeatmapSection dataPoints={props.heatmap} />
+      <HeatmapSection dataPoints={props.heatmap} mapId={matchMeta.mapId} mapName={matchMeta.mapName} />
       <UnitsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={['Player 1 Name', 'Player 2 Name']} />
       <BuildingsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={['Player 1 Name', 'Player 2 Name']} />
       <UpgradeTimesTwoPlayers names={['Player 1 Name', 'Player 2 Name']} upgrades={[upgrades.player1, upgrades.player2]} />

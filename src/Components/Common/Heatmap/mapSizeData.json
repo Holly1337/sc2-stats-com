@@ -1,0 +1,66 @@
+{
+  "iceAndChrome": {
+    "heightInUnits": 140,
+    "widthInUnits": 144,
+    "heightInPixels": 583,
+    "widthInPixels": 600,
+    "offsetX": 55,
+    "offsetY": 44
+  },
+  "simulacrum": {
+    "heightInUnits": 124,
+    "widthInUnits": 144,
+    "heightInPixels": 599,
+    "widthInPixels": 696,
+    "offsetX": 35,
+    "offsetY": 10
+  },
+  "eternalEmpire": {
+    "heightInUnits": 140,
+    "widthInUnits": 140,
+    "heightInPixels": 600,
+    "widthInPixels": 600,
+    "offsetX": 17,
+    "offsetY": 16
+  },
+  "zen": {
+    "heightInUnits": 148,
+    "widthInUnits": 132,
+    "heightInPixels": 600,
+    "widthInPixels": 535,
+    "offsetX": 13,
+    "offsetY": 28
+  },
+  "everDream": {
+    "heightInUnits": 141,
+    "widthInUnits": 138,
+    "heightInPixels": 600,
+    "widthInPixels": 587,
+    "offsetX": 29,
+    "offsetY": 39
+  },
+  "nightshade": {
+    "heightInUnits": 136,
+    "widthInUnits": 138,
+    "heightInPixels": 599,
+    "widthInPixels": 617,
+    "offsetX": 27,
+    "offsetY": 15
+  },
+  "goldenWall": {
+    "heightInUnits": 140,
+    "widthInUnits": 168,
+    "heightInPixels": 600,
+    "widthInPixels": 720,
+    "offsetX": 19,
+    "offsetY": -13
+  },
+  "purityAndIndustry": {
+    "heightInUnits": 144,
+    "widthInUnits": 144,
+    "heightInPixels": 600,
+    "widthInPixels": 600,
+    "offsetX": 33,
+    "offsetY": 23
+  }
+}

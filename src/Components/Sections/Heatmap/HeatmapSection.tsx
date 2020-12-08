@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
 import { UnitsDiedHeatMap } from '../../Common/Heatmap/UnitsDiedHeatMap'
 import { mapImagePaths } from '../Maps/mapsImages'
-import { Checkbox, Form, Label } from 'semantic-ui-react'
-import Slider, { Handle, SliderTooltip, Range } from 'rc-slider'
+import { Checkbox, Form, Header } from 'semantic-ui-react'
+import Slider, { Handle, Range, SliderTooltip } from 'rc-slider'
 import styles from './heatmap.module.scss'
+import mapData from './../../Common/Heatmap/mapSizeData.json'
 
 interface Props {
+  mapId: string
+  mapName: string
   dataPoints: Array<HeatmapDataPoint>
 }
 
@@ -33,7 +36,8 @@ const sliderStyles = {
 }
 
 export const HeatmapSection = (props: Props) => {
-  const { dataPoints } = props
+  const { dataPoints, mapId, mapName } = props
+  console.log({ mapId, image: mapImagePaths[mapId]})
   const maxGameloop = Math.max(...dataPoints.map(p => p.gameloop))
   const gameTimeInMinutes = maxGameloop / GAMELOOPS_PER_MINUTE
   const totalSteps = Math.ceil(gameTimeInMinutes)
@@ -51,14 +55,7 @@ export const HeatmapSection = (props: Props) => {
     setRemoveWeighting(removeWeighting => !removeWeighting)
   }
 
-  const mapSizeData: MapSizeData = {
-    heightInUnits: 140,
-    widthInUnits: 144,
-    heightInPixels: 583,
-    widthInPixels: 600,
-    offsetX: 55,
-    offsetY: 44
-  }
+  const mapSizeData: MapSizeData = mapData[mapId]
 
   const marksRange = { 0: 0 }
   for (let i = 1; i <= totalSteps; i++) {
@@ -66,9 +63,10 @@ export const HeatmapSection = (props: Props) => {
   }
 
   return (
-    <SegmentCustom heading={'Unit Death Headmap'}>
+    <SegmentCustom heading={'Unit Death Heatmap'}>
+      <Header size={'huge'} textAlign={'center'}>{mapName}</Header>
       <UnitsDiedHeatMap
-        img={mapImagePaths.iceAndChrome}
+        img={mapImagePaths[mapId]}
         mapSizeData={mapSizeData}
         dataPoints={filteredDataPoints}
         radius={radius}
