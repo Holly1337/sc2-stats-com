@@ -1,0 +1,37 @@
+[
+  {
+    "id": "eternalEmpire",
+    "name": "Eternal Empire LE",
+    "count": 42
+  },
+  {
+    "id": "simulacrum",
+    "name": "Simulacrum LE",
+    "count": 36
+  },
+  {
+    "id": "nightshade",
+    "name": "Nightshade LE",
+    "count": 35
+  },
+  {
+    "id": "goldenWall",
+    "name": "Golden Wall LE",
+    "count": 12
+  },
+  {
+    "id": "everDream",
+    "name": "Ever Dream LE",
+    "count": 30
+  },
+  {
+    "id": "zen",
+    "name": "Zen LE",
+    "count": 12
+  },
+  {
+    "id": "purityAndIndustry",
+    "name": "Purity and Industry LE",
+    "count": 5
+  }
+]

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid, Icon, Image } from 'semantic-ui-react'
+import { Card, Grid, Icon, Image, SemanticCOLORS } from 'semantic-ui-react'
 
 const dhMastersBackground = '/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png'
 
@@ -17,19 +17,33 @@ interface TournamentCardProps {
 }
 
 export const TournamentCard = (props: TournamentCardProps) => {
-  const { name, from, to, description, games, pricepool, href, image } = props
+  const { name, from, to, description, games, pricepool, href, image, tier } = props
   // TODO: include tier, and maybe points (allow custom points type for the future. EPT <-> WCS)
 
+  let label = null
+  let color: SemanticCOLORS = 'black'
+  if (tier === 'premier') {
+    color = 'red'
+    label = {
+      color,
+      content: 'Premier',
+      ribbon: true
+    }
+  } else if (tier === 'major') {
+    color = 'blue'
+    label = {
+      color,
+      content: 'Major',
+      ribbon: true
+    }
+  }
+
   return (
-    <Card link={href !== undefined} color={'red'} href={href}>
+    <Card link={href !== undefined} color={color} href={href}>
       <Image
         src={image}
         fluid={true}
-        label={{
-          color: 'red',
-          content: 'Premier',
-          ribbon: true
-        }}
+        label={label}
       />
       <Card.Content>
         <Card.Header>{name}</Card.Header>

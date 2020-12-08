@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ephemeron",
+    "name": "Ephemeron LE",
+    "count": 91
+  },
+  {
+    "id": "nightshade",
+    "name": "Nightshade LE",
+    "count": 76
+  },
+  {
+    "id": "worldOfSleepers",
+    "name": "World of Sleepers LE",
+    "count": 42
+  },
+  {
+    "id": "triton",
+    "name": "Triton LE",
+    "count": 97
+  },
+  {
+    "id": "zen",
+    "name": "Zen LE",
+    "count": 18
+  },
+  {
+    "id": "eternalEmpire",
+    "name": "Eternal Empire LE",
+    "count": 69
+  },
+  {
+    "id": "simulacrum",
+    "name": "Simulacrum LE",
+    "count": 45
+  }
+]

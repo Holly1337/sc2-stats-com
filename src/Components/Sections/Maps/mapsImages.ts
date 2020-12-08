@@ -13,6 +13,9 @@ const jagannatha = '/assets/images/maps/Jagannatha.jpg'
 const lightshade = '/assets/images/maps/Lightshade.jpg'
 const oxide = '/assets/images/maps/Oxide.jpg'
 const romanticide = '/assets/images/maps/Romanticide.jpg'
+const triton = '/assets/images/maps/Triton.jpg'
+const ephemeron = '/assets/images/maps/Ephemeron.jpg'
+const worldOfSleepers = '/assets/images/maps/World_of_Sleepers.jpg'
 
 export const mapImagePaths: { [id: string]: string } = {
   eternalEmpire,
@@ -30,6 +33,9 @@ export const mapImagePaths: { [id: string]: string } = {
   lightshade,
   oxide,
   romanticide,
+  triton,
+  worldOfSleepers,
+  ephemeron,
   'Eternal Empire LE': eternalEmpire,
   'Simulacrum LE': simulacrum,
   'Nightshade LE': nightshade,
@@ -44,7 +50,10 @@ export const mapImagePaths: { [id: string]: string } = {
   'Jagannatha LE': jagannatha,
   'Lightshade LE': lightshade,
   'Oxide LE': oxide,
-  'Romanticide LE': romanticide
+  'Romanticide LE': romanticide,
+  'Triton LE': triton,
+  'Ephemeron LE': ephemeron,
+  'World of Sleepers LE': worldOfSleepers,
 }
 
 const fallbackImage = '/assets/images/100x100.png'
