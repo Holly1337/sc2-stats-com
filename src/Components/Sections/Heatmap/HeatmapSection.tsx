@@ -37,7 +37,6 @@ const sliderStyles = {
 
 export const HeatmapSection = (props: Props) => {
   const { dataPoints, mapId, mapName } = props
-  console.log({ mapId, image: mapImagePaths[mapId]})
   const maxGameloop = Math.max(...dataPoints.map(p => p.gameloop))
   const gameTimeInMinutes = maxGameloop / GAMELOOPS_PER_MINUTE
   const totalSteps = Math.ceil(gameTimeInMinutes)
