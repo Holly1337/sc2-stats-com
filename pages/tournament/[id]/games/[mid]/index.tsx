@@ -6,21 +6,13 @@ import { UnitsBuilt } from '../../../../../src/types/stats'
 import { UnitsTwoPlayers } from '../../../../../src/Components/Sections/Units/UnitsCount/UnitsTwoPlayers'
 import { UpgradeTimesTwoPlayers } from '../../../../../src/Components/Sections/Upgrades/CompletionTimes/UpgradeTimesTwoPlayers'
 import { BuildingsTwoPlayers } from '../../../../../src/Components/Sections/Units/UnitsCount/BuildingsTwoPlayers'
+import { SingleGameHeaderSection } from '../../../../../src/Components/Sections/SingleGame/SingleGameHeaderSection'
+import { splitName } from '../../../../../src/util/playerNames'
 
-type Result = 'Win' | 'Loss' | 'Draw'
 
 interface Props {
-  tournamentMeta: {
-    id: string
-    name: string
-  }
-  matchMeta: {
-    mapName: string
-    mapId: string
-    races: [Race, Race]
-    results: [Result, Result]
-    duration: number
-  }
+  tournamentMeta: TournamentMeta
+  matchMeta: MatchMeta
   heatmap: Array<HeatmapDataPoint>
   unitsBuilt: { player1: UnitsBuilt, player2: UnitsBuilt }
   upgrades: { player1: {[upgradeId: string]: number}, player2: {[upgradeId: string]: number}}
@@ -41,17 +33,18 @@ const GameHome = (props: Props) => {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section href={`/tournament/${id}/matches`}>
-          <Link href={`/tournament/${id}/matches`}>Matches</Link>
+          <Link href={`/tournament/${id}/games`}>Matches</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Showtime vs Maru
+          {splitName(matchMeta.players[0]).name} vs {splitName(matchMeta.players[1]).name}
         </Breadcrumb.Section>
       </Breadcrumb>
+      <SingleGameHeaderSection matchMeta={matchMeta} />
       <HeatmapSection dataPoints={props.heatmap} mapId={matchMeta.mapId} mapName={matchMeta.mapName} />
-      <UnitsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={['Player 1 Name', 'Player 2 Name']} />
-      <BuildingsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={['Player 1 Name', 'Player 2 Name']} />
-      <UpgradeTimesTwoPlayers names={['Player 1 Name', 'Player 2 Name']} upgrades={[upgrades.player1, upgrades.player2]} />
+      <UnitsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={matchMeta.players} />
+      <BuildingsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={matchMeta.players} />
+      <UpgradeTimesTwoPlayers upgrades={[upgrades.player1, upgrades.player2]} names={matchMeta.players} />
     </TournamentPageWrapper>
   )
 }

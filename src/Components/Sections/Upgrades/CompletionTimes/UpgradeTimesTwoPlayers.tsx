@@ -6,6 +6,7 @@ import Timeline from '../../../Common/ReactVisJSTimeline/ReactVisJSTimeline'
 import { timelineOptions } from '../../../Common/ReactVisJSTimeline/options'
 import { generalUpgradeIcons } from '../../../Common/Icons/Upgrades/generalUpgrades'
 import { Divider, Header } from 'semantic-ui-react'
+import { PlayerName } from '../../SingleGame/PlayerName'
 
 interface Props {
   names: [string, string]
@@ -37,7 +38,7 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
   return (
     <>
       <SegmentCustom heading={'Upgrades'}>
-        <Header size={'large'}>{names[0]}</Header>
+        <Header size={'large'} textAlign={'center'}><PlayerName>{names[0]}</PlayerName></Header>
         <Timeline
           options={{
             ...timelineOptions,
@@ -47,7 +48,7 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
           items={timelineItemsData[0].map(createTimelineItem)}
         />
         <Divider />
-        <Header size={'large'}>{names[1]}</Header>
+        <Header size={'large'} textAlign={'center'}><PlayerName>{names[1]}</PlayerName></Header>
         <Timeline
           options={{
             ...timelineOptions,

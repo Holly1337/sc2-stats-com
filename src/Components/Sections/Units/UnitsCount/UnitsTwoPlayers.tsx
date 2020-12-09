@@ -4,6 +4,7 @@ import { UnitCount } from './UnitCount'
 import { SegmentCustom } from '../../../Segments/SegmentCustom'
 import { groupUnits } from './utils/groupUnits'
 import { UnitsBuilt } from '../../../../types/stats'
+import { PlayerName } from '../../SingleGame/PlayerName'
 
 interface Props {
   units: [UnitsBuilt, UnitsBuilt]
@@ -25,13 +26,13 @@ export const UnitsTwoPlayers = (props: Props) => {
 
   return (
     <SegmentCustom heading={'Units Trained'}>
-      <Header size={'large'} className={'ml-2 mt-4'}>{names[0]}</Header>
+      <Header size={'large'} className={'ml-2 mt-4'} textAlign={'center'}><PlayerName>{names[0]}</PlayerName></Header>
       <div className={'d-flex flex-wrap mt-4'}>
         {unitsSorted[0].map(([unitId, count]) => (
           <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
         ))}
       </div>
-      <Header size={'large'} className={'ml-2'}>{names[1]}</Header>
+      <Header size={'large'} className={'ml-2'} textAlign={'center'}><PlayerName>{names[1]}</PlayerName></Header>
       <div className={'d-flex flex-wrap mt-4'}>
         {unitsSorted[1].map(([unitId, count]) => (
           <UnitCount key={unitId} id={unitId} name={unitId} count={count} type={'unit'} />
