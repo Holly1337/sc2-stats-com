@@ -114,7 +114,56 @@ export const HeatmapSection = (props: Props) => {
         removeWeight={removeWeighting}
       />
       <Form size={'huge'}>
-        <Form.Field className={styles.formField}>
+        <Form.Group widths={3} >
+
+          <Form.Field className={styles.formField}>
+            <label>Animate</label>
+            <Checkbox toggle checked={animate} onClick={onToggleAnimate} label={'Animate deaths over time'} />
+          </Form.Field>
+
+          <Form.Field className={styles.formField}>
+            <label>Show timeframe (on animation)  </label>
+            <Checkbox toggle checked={showTimeFrame} onClick={onToggleShowTimeframe} label={"Only shows deaths over a timeframe of 40 seconds instead of all from the beginning."} />
+          </Form.Field>
+
+          <Form.Field className={styles.formField}>
+            <label>Remove Weighting</label>
+            <Checkbox toggle checked={removeWeighting} onClick={onToggleWeighting} label={'Show all deaths, independently of how many units died on the same spot.'} />
+          </Form.Field>
+        </Form.Group>
+
+        {animate
+          ? (
+            <Form.Field className={styles.gametimeSlider}>
+              <label>Game Time</label>
+              <Slider
+                min={0}
+                max={totalSteps}
+                step={1}
+                value={Math.round(animationGameloop / GAMELOOPS_PER_MINUTE)}
+                disabled={true}
+                marks={marksRange}
+              />
+            </Form.Field>
+          )
+          : (
+            <Form.Field className={styles.gametimeSlider}>
+              <label>Game Time</label>
+              <Range
+                min={0}
+                max={totalSteps}
+                step={1}
+                allowCross={false}
+                value={timeRange}
+                handle={timeHandle}
+                // @ts-ignore
+                onChange={setTimeRange}
+                marks={marksRange}
+              />
+            </Form.Field>
+          )}
+
+        <Form.Field className={styles.intensitySlider}>
           <label>Intensity</label>
           <Slider
             min={1}
@@ -125,42 +174,6 @@ export const HeatmapSection = (props: Props) => {
             onChange={setRadius}
             marks={{ 1: 1, 5: 5, 10: 10, 15: 15, 20: 20, 25: 25, 30: 30 }}
           />
-        </Form.Field>
-        <Form.Field className={styles.formField}>
-          <label>Game Time</label>
-          <Range
-            min={0}
-            max={totalSteps}
-            step={1}
-            allowCross={false}
-            value={timeRange}
-            handle={timeHandle}
-            // @ts-ignore
-            onChange={setTimeRange}
-            marks={marksRange}
-          />
-        </Form.Field>
-        <Form.Field className={styles.formField}>
-          <label>Remove Weighting</label>
-          <Checkbox toggle checked={removeWeighting} onClick={onToggleWeighting} label={'Show all deaths, independently of how many units died on the same spot.'} />
-        </Form.Field>
-        <Form.Field className={styles.formField}>
-          <label>Animate</label>
-          <Checkbox toggle checked={animate} onClick={onToggleAnimate} label={'Animate deaths over time'} />
-        </Form.Field>
-        <Form.Field className={styles.formField}>
-          <label>Show timeframe (when animation is running)  </label>
-          <Checkbox toggle checked={showTimeFrame} onClick={onToggleShowTimeframe} label={"Only shows deaths over a timeframe of 40 seconds instead of all from the beginning."} />
-        </Form.Field>
-        <Form.Field className={styles.formField}>
-          {animate && (
-            <Slider
-              min={0}
-              max={maxGameloop}
-              step={1}
-              value={animationGameloop}
-            />
-          )}
         </Form.Field>
       </Form>
 
