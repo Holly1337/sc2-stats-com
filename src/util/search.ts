@@ -12,6 +12,8 @@ export type SearchObject = {
   matchupLong: string
   race1: string
   race2: string
+  player1: string
+  player2: string
 }
 
 const races = {
@@ -30,10 +32,12 @@ const getMetaFromFile = (filePath: string, tournamentId: string): SearchObject |
       tournamentId,
       matchId: fileName,
       map: meta.mapName,
-      matchup: meta.races.sort((a, b) => a.localeCompare(b)).map(r => r.substr(0, 1).toUpperCase()).join('v'),
-      matchupLong: meta.races.sort((a, b) => a.localeCompare(b)).map(r => races[r]).join('v'),
+      matchup: meta.racesShort.sort((a, b) => a.localeCompare(b)).map(r => r.substr(0, 1).toUpperCase()).join('v'),
+      matchupLong: meta.racesShort.sort((a, b) => a.localeCompare(b)).map(r => races[r]).join('v'),
       race1: races[meta.races[0]],
       race2: races[meta.races[1]],
+      player1: meta.players[0],
+      player2: meta.players[1],
     }
   } catch {
     return null
@@ -57,7 +61,7 @@ const allSearchObjects = getAllGameMetaForTournament(tournamentFolders[4])
 
 let options = {
   includeScore: true,
-  keys: ['map', 'matchup', 'race1', 'race2'],
+  keys: ['map', 'matchup', 'race1', 'race2', 'player1', 'player2'],
   threshold: 0.5
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Header, Search, SearchResultData, SearchResultProps } from 'semantic-ui-react'
 import { useRouter } from 'next/router'
+import { splitName } from '../../../util/playerNames'
 
 export const SearchBar = (props) => {
   const [search, setSearch] = useState('')
@@ -9,9 +10,14 @@ export const SearchBar = (props) => {
   const router = useRouter()
 
   const handleSearchChange = async (event: React.MouseEvent, data: SearchResultData) => {
-    setSearch(data.value)
+    let newValue = data.value
+    setSearch(newValue)
+    if (newValue === '') {
+      setResults([])
+      return
+    }
     setLoading(true)
-    const response = await fetch(`http://localhost:3000/api/search?q=${data.value}`)
+    const response = await fetch(`http://localhost:3000/api/search?q=${newValue}`)
     const json = await response.json()
     const results = json.results
     setResults(results)
@@ -20,6 +26,7 @@ export const SearchBar = (props) => {
 
   const onResultSelect = (e: React.MouseEvent<HTMLDivElement>, data: SearchResultData) => {
     const item = data.result.item
+    setSearch('')
     router.push(`/tournament/${item.tournamentId}/games/${item.matchId}`)
     console.log(item)
   }
@@ -43,7 +50,8 @@ const resultRenderer = (result: SearchResultProps) => {
   return (
     <div>
       <div><Header size={'small'}>Stay At Home Story Cup</Header></div>
-      <strong>{item.map}</strong> - <span>{item.matchup}</span>
+      <div><strong>{item.map}</strong></div>
+      <div><strong>{splitName(item.player1).name}</strong> vs <strong>{splitName(item.player2).name}</strong></div>
     </div>
   )
 }
