@@ -38,7 +38,7 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
   return (
     <>
       <SegmentCustom heading={'Upgrades'}>
-        <Header size={'large'} textAlign={'center'}><PlayerName>{names[0]}</PlayerName></Header>
+        <Header size={'large'} textAlign={'center'} className={'mt-4'}><PlayerName>{names[0]}</PlayerName></Header>
         <Timeline
           options={{
             ...timelineOptions,
@@ -48,7 +48,7 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
           items={timelineItemsData[0].map(createTimelineItem)}
         />
         <Divider />
-        <Header size={'large'} textAlign={'center'}><PlayerName>{names[1]}</PlayerName></Header>
+        <Header size={'large'} textAlign={'center'} className={'mt-4'}><PlayerName>{names[1]}</PlayerName></Header>
         <Timeline
           options={{
             ...timelineOptions,

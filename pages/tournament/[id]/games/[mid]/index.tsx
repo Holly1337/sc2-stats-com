@@ -32,8 +32,8 @@ const GameHome = (props: Props) => {
           <Link href={`/tournament/${id}`}>{name}</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
-        <Breadcrumb.Section href={`/tournament/${id}/matches`}>
-          <Link href={`/tournament/${id}/games`}>Matches</Link>
+        <Breadcrumb.Section href={`/tournament/${id}/games`}>
+          <Link href={`/tournament/${id}/games`}>Games</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>

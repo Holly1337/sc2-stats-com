@@ -25,7 +25,7 @@ const GamesHome = (props: Props) => {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Units
+          All Games
         </Breadcrumb.Section>
       </Breadcrumb>
       <TournamentSection />
