@@ -53,7 +53,6 @@ GameHome.getInitialProps = async (ctx) => {
   const { query: { id, mid } } = ctx
   const res = await fetch(`http://localhost:3000/api/tournament/${id}/matches/${mid}`)
   const json = await res.json()
-  console.log(json.unitsBuilt)
   return {
     ...json
   }

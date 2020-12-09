@@ -28,14 +28,13 @@ export const SearchBar = (props) => {
     const item = data.result.item
     setSearch('')
     router.push(`/tournament/${item.tournamentId}/games/${item.matchId}`)
-    console.log(item)
   }
 
   return (
     <Search
       className={'search-input-wrapper'}
       value={search}
-      placeholder={'Search for maps or matchups'}
+      placeholder={'Search for players, maps or races'}
       loading={loading}
       onResultSelect={onResultSelect}
       onSearchChange={handleSearchChange}

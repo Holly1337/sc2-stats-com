@@ -34,8 +34,8 @@ const getMetaFromFile = (filePath: string, tournamentId: string): SearchObject |
       map: meta.mapName,
       matchup: meta.racesShort.sort((a, b) => a.localeCompare(b)).map(r => r.substr(0, 1).toUpperCase()).join('v'),
       matchupLong: meta.racesShort.sort((a, b) => a.localeCompare(b)).map(r => races[r]).join('v'),
-      race1: races[meta.races[0]],
-      race2: races[meta.races[1]],
+      race1: races[meta.racesShort[0]],
+      race2: races[meta.racesShort[1]],
       player1: meta.players[0],
       player2: meta.players[1],
     }
