@@ -20,7 +20,9 @@ interface Props {
 export const TournamentListItem = (props: Props) => {
   const { tree, depth, initiallyClosedDepths, isSearching, tournamentId } = props
   const hasChildren = tree.children !== undefined
-  const [isOpenState, setIsOpenState] = useState<boolean>(!initiallyClosedDepths.includes(depth))
+  const hasOnlyFileChildren = hasChildren && tree.children.every(child => child.type === 'file')
+  const isInitiallyClosed = initiallyClosedDepths.includes(depth) || hasOnlyFileChildren
+  const [isOpenState, setIsOpenState] = useState<boolean>(!isInitiallyClosed)
 
   const onToggle = () => {
     if (tree.type === 'file') {
