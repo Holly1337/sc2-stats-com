@@ -5,14 +5,16 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { getTournamentPaths } from '../../../../src/util/paths'
 import { TournamentSection } from '../../../../src/Components/Sections/Tournament/TournamentSection'
+import { TreeNode } from '../../../../src/Components/Sections/Tournament/TournamentListItem'
 
 interface Props {
   id: string
   name: string
+  tree: TreeNode
 }
 
 const GamesHome = (props: Props) => {
-  const { id, name, } = props
+  const { id, name, tree } = props
   return (
     <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
@@ -28,7 +30,7 @@ const GamesHome = (props: Props) => {
           All Games
         </Breadcrumb.Section>
       </Breadcrumb>
-      <TournamentSection />
+      <TournamentSection tournamentId={id} tree={tree} />
     </TournamentPageWrapper>
   )
 }
@@ -43,10 +45,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const meta = await loadTournamentData(context.params.id as string, 'meta')
+  const tree = await loadTournamentData(context.params.id as string, 'tree')
 
   return {
     props: {
       ...meta,
+      tree
     }
   }
 }

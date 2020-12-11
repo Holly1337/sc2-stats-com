@@ -10,6 +10,7 @@ export type TreeNode = {
 }
 
 interface Props {
+  tournamentId: string
   tree: TreeNode
   depth: number
   initiallyClosedDepths: Array<number>
@@ -17,10 +18,9 @@ interface Props {
 }
 
 export const TournamentListItem = (props: Props) => {
-  const { tree, depth, initiallyClosedDepths, isSearching } = props
+  const { tree, depth, initiallyClosedDepths, isSearching, tournamentId } = props
   const hasChildren = tree.children !== undefined
   const [isOpenState, setIsOpenState] = useState<boolean>(!initiallyClosedDepths.includes(depth))
-  const tournamentId = 'sahsc'
 
   const onToggle = () => {
     if (tree.type === 'file') {
@@ -55,6 +55,7 @@ export const TournamentListItem = (props: Props) => {
           tree.children.map(child => (
             <List.List>
               <TournamentListItem
+                tournamentId={tournamentId}
                 tree={child}
                 depth={depth + 1}
                 initiallyClosedDepths={initiallyClosedDepths}

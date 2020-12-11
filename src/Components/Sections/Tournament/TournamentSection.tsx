@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { Input, List } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
 import { SegmentCustom } from '../../Segments/SegmentCustom'
+import { TournamentListItem, TreeNode } from './TournamentListItem'
 
-import tree from '../../../../data/tournaments/sahsc/tree.json'
-import { TournamentListItem } from './TournamentListItem'
+interface Props {
+  tournamentId: string
+  tree: TreeNode
+}
 
-export const TournamentSection = () => {
+export const TournamentSection = (props: Props) => {
   // TODO:
   //  - search
   //  - filter by race, matchup, map
@@ -19,8 +22,8 @@ export const TournamentSection = () => {
     <SegmentCustom heading={'Stay At Home Story Cup'}>
       <List>
         <TournamentListItem
-          // @ts-ignore
-          tree={tree}
+          tournamentId={props.tournamentId}
+          tree={props.tree}
           depth={0}
           initiallyClosedDepths={[3, 4]}
           isSearching={search !== ''}

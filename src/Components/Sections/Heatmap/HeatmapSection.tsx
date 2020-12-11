@@ -5,7 +5,7 @@ import { mapImagePaths } from '../Maps/mapsImages'
 import { Checkbox, Form, Header } from 'semantic-ui-react'
 import Slider, { Handle, Range, SliderTooltip } from 'rc-slider'
 import styles from './heatmap.module.scss'
-import mapData from './../../Common/Heatmap/mapSizeData.json'
+import mapData from '../../../data/mapSizeData.json'
 
 interface Props {
   mapId: string
