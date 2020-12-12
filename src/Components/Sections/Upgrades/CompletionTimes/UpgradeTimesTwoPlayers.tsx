@@ -40,7 +40,6 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
     maxP2 = 0
   }
   const max = Math.max(maxP1, maxP2)
-  console.log({ maxP1, maxP2, max })
 
   return (
     <>
