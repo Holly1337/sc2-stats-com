@@ -59,11 +59,11 @@ export const TournamentCard = (props: TournamentCardProps) => {
           <Grid.Row>
             <Grid.Column textAlign={'left'}>
               <Icon name='game' />
-              {games} games
+              <strong>{games}</strong> games
             </Grid.Column>
             <Grid.Column textAlign={'right'}>
               <Icon name='money bill alternate' />
-              {new Intl.NumberFormat('en-EN').format(pricepool)}$ pricepool
+              <strong>{new Intl.NumberFormat('en-EN').format(pricepool)}$</strong> pricepool
             </Grid.Column>
           </Grid.Row>
         </Grid>

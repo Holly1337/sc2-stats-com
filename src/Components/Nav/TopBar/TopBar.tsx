@@ -2,15 +2,18 @@ import styles from '../topbar.module.scss'
 import Link from 'next/link'
 import { SearchBar } from './SearchBar'
 import { Header, Icon } from 'semantic-ui-react'
+import Image from 'next/image'
 
 export const TopBar = () => {
+  // Icon font is District on Photopea
   return (
     <div className={styles.topBar}>
       <div>
         <Link href={'/'}>
           <a>
-            <Icon name={'line graph'} size={'large'} className={'mr-4'} />
-            <Header size={'small'} style={{ display: 'inline-block', marginTop: 1 }}>SC2 Stats</Header>
+            <div  className={'d-flex align-items-center'}>
+              <Image src={'/assets/images/logo_50.png'} width={273} height={50} alt={'sc2-stats icon s2s'} className={'mr-2'} />
+            </div>
           </a>
         </Link>
       </div>
