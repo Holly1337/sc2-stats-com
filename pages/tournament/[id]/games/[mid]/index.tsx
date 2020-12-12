@@ -8,7 +8,7 @@ import { UpgradeTimesTwoPlayers } from '../../../../../src/Components/Sections/U
 import { BuildingsTwoPlayers } from '../../../../../src/Components/Sections/Units/UnitsCount/BuildingsTwoPlayers'
 import { SingleGameHeaderSection } from '../../../../../src/Components/Sections/SingleGame/SingleGameHeaderSection'
 import { splitName } from '../../../../../src/util/playerNames'
-import { Router } from 'next'
+import { Router } from 'next/router'
 import { NextPageContext } from 'next/types'
 
 interface Props {
@@ -63,6 +63,7 @@ GameHome.getInitialProps = async (ctx: NextPageContext) => {
     } else {
       // On the client, we'll use the Router-object
       // from the 'next/router' module.
+      // @ts-ignore
       Router.replace('/404')
     }
   }
