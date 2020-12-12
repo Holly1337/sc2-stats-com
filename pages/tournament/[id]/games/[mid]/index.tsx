@@ -52,7 +52,7 @@ const GameHome = (props: Props) => {
 
 GameHome.getInitialProps = async (ctx: NextPageContext) => {
   const { query: { id, mid } } = ctx
-  const res = await fetch(`http://localhost:3000/api/tournament/${id}/matches/${mid}`)
+  const res = await fetch(`/api/tournament/${id}/matches/${mid}`)
   if (res.status !== 200) {
     if (ctx.res) {
       // On the server, we'll use an HTTP response to
