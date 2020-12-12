@@ -6,7 +6,7 @@ interface TimelineData {
   amount: number
 }
 
-export const createTimelineItem = ({ id, start, image, amount }: TimelineData): object => {
+export const  createTimelineItem = ({ id, start, image, amount }: TimelineData): object => {
   // @ts-ignore
   start = start * 60
   const secondsSum: number = Math.round(start / 1000)

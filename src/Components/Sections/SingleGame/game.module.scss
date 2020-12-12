@@ -1,0 +1,53 @@
+.headerWrapper {
+  font-size: 36px;
+  line-height: 36px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  display: grid;
+  grid-template-columns: 1fr 75px 1fr;
+
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgba(34,36,38,.15);
+
+  .vs {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-image-slice: 1;
+  }
+}
+
+.playerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  .race {
+    color: gray;
+  }
+}
+
+.p1 {
+  @extend .playerWrapper;
+  justify-content: flex-start;
+  text-align: left;
+  border-bottom-left-radius: 10px;
+}
+
+.p2 {
+  @extend .playerWrapper;
+  justify-content: flex-end;
+  text-align: right;
+  border-bottom-right-radius: 10px;
+}
+
+.resultIcon {
+  margin: 0!important;
+}

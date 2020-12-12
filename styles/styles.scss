@@ -37,6 +37,14 @@ body {
   justify-content: space-between!important;
 }
 
+.justify-content-around {
+  justify-content: space-around!important;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly!important;
+}
+
 .justify-content-end {
   justify-content: flex-end!important;
 }
@@ -105,16 +113,21 @@ body {
   filter: drop-shadow(5px 5px 5px #111);
 }
 
-.ui.input.search-input-wrapper>input {
-  border-radius: 100px;
-  width: 200px;
-  transition: width ease-in-out 100ms;
+.ui.search.search-input-wrapper {
+  input {
+    border-radius: 100px;
+    width: 200px;
+    transition: width ease-in-out 100ms;
 
-  &:focus {
-    width: 400px;
+    &:focus {
+      width: 400px;
+    }
+
+    &:not(:focus) {
+      border: none;
+    }
   }
-
-  &:not(:focus) {
-    border: none;
+  .results.visible {
+    width: 100% !important;
   }
 }
