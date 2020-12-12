@@ -5,6 +5,7 @@ import { TournamentListItem, TreeNode } from './TournamentListItem'
 
 interface Props {
   tournamentId: string
+  tournamentName: string
   tree: TreeNode
 }
 
@@ -19,7 +20,7 @@ export const TournamentSection = (props: Props) => {
   }
 
   return (
-    <SegmentCustom heading={'Stay At Home Story Cup'}>
+    <SegmentCustom heading={`All games of ${props.tournamentName}`}>
       <List>
         <TournamentListItem
           tournamentId={props.tournamentId}

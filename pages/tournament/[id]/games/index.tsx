@@ -30,7 +30,7 @@ const GamesHome = (props: Props) => {
           All Games
         </Breadcrumb.Section>
       </Breadcrumb>
-      <TournamentSection tournamentId={id} tree={tree} />
+      <TournamentSection tournamentId={id} tournamentName={name} tree={tree} />
     </TournamentPageWrapper>
   )
 }
