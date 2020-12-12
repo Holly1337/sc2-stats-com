@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Header, Search, SearchResultData, SearchResultProps } from 'semantic-ui-react'
+import { Search, SearchResultData, SearchResultProps } from 'semantic-ui-react'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 import { splitName } from '../../../util/playerNames'
 import { getMapImageByName } from '../../Sections/Maps/mapsImages'
 
@@ -36,7 +35,7 @@ export const SearchBar = (props) => {
     <Search
       className={'search-input-wrapper'}
       value={search}
-      placeholder={'Search for players, maps or races'}
+      placeholder={'Search for players, maps, races, tournaments or matchups'}
       loading={loading}
       onResultSelect={onResultSelect}
       onSearchChange={handleSearchChange}
