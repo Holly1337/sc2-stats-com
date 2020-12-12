@@ -61,7 +61,7 @@ const CombatUpgradeAmountSection = (props: Props) => {
 
   return (
     <>
-      <SegmentCustom heading={'General Research'}>
+      <SegmentCustom heading={'Combat Upgrades'}>
         <div className={'d-flex justify-content-end'}>
           <Checkbox toggle label={'Show Percentage'} checked={showPercentage} onClick={onToggleShowPercentage} className={'mr-4'} />
         </div>

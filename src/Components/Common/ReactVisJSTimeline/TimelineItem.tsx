@@ -1,3 +1,5 @@
+import { getColorsByRace, raceColors } from '../../../util/colors'
+import unitsMeta from '../../../data/units-meta.json'
 
 interface TimelineData {
   id: string
@@ -22,10 +24,16 @@ export const  createTimelineItem = ({ id, start, image, amount }: TimelineData):
   </span>
   `
 
+  const meta = unitsMeta[id]
+  let race = meta?.Race ?? ''
+  const colors = getColorsByRace(race)
+
   return {
     id,
     start: start,
     content: content,
-    title: id
+    title: id,
+    className: `race-${race}`,
+    style: `background-color: ${colors.light}; border-color: ${colors.border};`
   }
 }

@@ -14,6 +14,26 @@ export const raceColors = {
   zergBorder: '#d075d0',
 }
 
+export const getColorsByRace = (race: RaceFull) => {
+  let border = raceColors.terranBorder
+  let light = raceColors.terranLight
+  switch (race) {
+    case 'Protoss':
+      border = raceColors.protossBorder
+      light = raceColors.protossLight
+      break
+    case 'Terran':
+      border = raceColors.terranBorder
+      light = raceColors.terranLight
+      break
+    case 'Zerg':
+      border = raceColors.zergBorder
+      light = raceColors.zergLight
+      break
+  }
+  return { border, light }
+}
+
 export const mrgbaToRgba = (color: PlayerColor): RGBAColor => {
   return {
     r: color.m_r,
