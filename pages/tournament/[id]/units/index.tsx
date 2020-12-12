@@ -7,6 +7,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { MatchupStats, UnitsBuilt } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
+import { useState } from 'react'
 
 interface Props {
   id: string
@@ -17,6 +18,12 @@ interface Props {
 
 const MapsHome = (props: Props) => {
   const { id, name, matchups, unitsBuilt } = props
+  const [showAverage, setShowAverage] = useState(false)
+
+  const toggleShowAverage = () => {
+    setShowAverage(showAverage => !showAverage)
+  }
+
   return (
     <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
@@ -32,8 +39,18 @@ const MapsHome = (props: Props) => {
           Units & Buildings
         </Breadcrumb.Section>
       </Breadcrumb>
-      <UnitsCountSection matchups={matchups} unitsBuilt={unitsBuilt} />
-      <BuildingsCountSection matchups={matchups} unitsBuilt={unitsBuilt} />
+      <UnitsCountSection
+        matchups={matchups}
+        unitsBuilt={unitsBuilt}
+        showAverage={showAverage}
+        onToggleShowAverage={toggleShowAverage}
+      />
+      <BuildingsCountSection
+        matchups={matchups}
+        unitsBuilt={unitsBuilt}
+        showAverage={showAverage}
+        onToggleShowAverage={toggleShowAverage}
+      />
     </TournamentPageWrapper>
   )
 }

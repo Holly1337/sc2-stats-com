@@ -10,15 +10,12 @@ import unitMetaData from '../../../../data/units-meta.json'
 interface Props {
   matchups: MatchupStats
   upgradesCount: UpgradesCount
+  showPercentage: boolean
+  onToggleShowPercentage: () => void
 }
 
 const ResearchAmountSection = (props: Props) => {
-  const { matchups, upgradesCount } = props
-  const [showPercentage, setShowPercentage] = useState<boolean>(false)
-
-  const onToggleShowPercentage = () => {
-    setShowPercentage(showPercentage => !showPercentage)
-  }
+  const { matchups, upgradesCount, showPercentage, onToggleShowPercentage } = props
 
   // TODO: add checkboxes to filter for each race
   const gamesPerRace = countGamesPerRace(matchups)

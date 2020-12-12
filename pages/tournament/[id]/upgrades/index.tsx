@@ -10,6 +10,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
+import { useState } from 'react'
 
 interface Props {
   id: string
@@ -21,6 +22,12 @@ interface Props {
 
 export default function Home(props: Props) {
   const { id, name, matchups, upgradesCount, upgradesTimes } = props
+  const [showPercentage, setShowPercentage] = useState(false)
+
+  const toggleShowPercentage = () => {
+    setShowPercentage(showPercentage => !showPercentage)
+  }
+
   return (
     <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
@@ -36,9 +43,19 @@ export default function Home(props: Props) {
           Upgrades
         </Breadcrumb.Section>
       </Breadcrumb>
-      <ResearchAmountSection matchups={matchups} upgradesCount={upgradesCount} />
+      <ResearchAmountSection
+        matchups={matchups}
+        upgradesCount={upgradesCount}
+        showPercentage={showPercentage}
+        onToggleShowPercentage={toggleShowPercentage}
+      />
       <GeneralUpgradeSection upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
-      <CombatUpgradeAmountSection matchups={matchups} upgradesCount={upgradesCount} />
+      <CombatUpgradeAmountSection
+        matchups={matchups}
+        upgradesCount={upgradesCount}
+        showPercentage={showPercentage}
+        onToggleShowPercentage={toggleShowPercentage}
+      />
       <CombatUpgradeSection upgradesCount={upgradesCount} upgradesTimes={upgradesTimes} />
     </TournamentPageWrapper>
   )
