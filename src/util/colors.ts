@@ -5,6 +5,15 @@ export type RGBAColor = {
   a: number
 }
 
+export const raceColors = {
+  protossLight: 'rgb(246 243 213)',
+  protossBorder: '#ffc886',
+  terranLight: '#d5ddf6',
+  terranBorder: '#97b0f8',
+  zergLight: 'rgb(229 213 246)',
+  zergBorder: '#d075d0',
+}
+
 export const mrgbaToRgba = (color: PlayerColor): RGBAColor => {
   return {
     r: color.m_r,
