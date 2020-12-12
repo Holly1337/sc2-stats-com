@@ -6,7 +6,7 @@ import { TournamentCard } from '../src/Components/Common/TournamentCard/Tourname
 
 export default function Home () {
   return (
-    <Container>
+    <Container style={{ minHeight: 'calc(100vh - 171px) '}}>
       <div style={{ marginTop: 60, marginBottom: 60 }}>
         <Card.Group itemsPerRow={3} stackable={true}>
           {tournaments.map(tournament => (
