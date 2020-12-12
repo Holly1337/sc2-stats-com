@@ -2,7 +2,7 @@ import fs from 'fs'
 import Fuse from 'fuse.js'
 
 const tournamentsPath = 'data/tournaments'
-const tournamentFolders = fs.readdirSync(tournamentsPath)
+const tournamentFolders = fs.readdirSync(tournamentsPath).filter(path => !path.endsWith('.json'))
 
 export type SearchObject = {
   matchId: string
@@ -52,12 +52,18 @@ const getAllGameMetaForTournament = (tournamentId): Array<SearchObject> => {
       .map(file => `${path}/${file}`)
       .map(file => getMetaFromFile(file, tournamentId))
       .filter(Boolean)
-  } catch {
-
+  } catch (e) {
+    console.log('there was an error')
+    console.log(e)
   }
 }
 
-const allSearchObjects = getAllGameMetaForTournament(tournamentFolders[4])
+const objectsPerTournament = tournamentFolders.map(getAllGameMetaForTournament)
+console.log(objectsPerTournament.length)
+const allSearchObjects = []
+objectsPerTournament.forEach((objectArray) => {
+  console.log(Array.isArray(objectArray))
+})
 
 let options = {
   includeScore: true,
