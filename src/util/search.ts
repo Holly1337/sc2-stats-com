@@ -65,7 +65,6 @@ const getAllGameMetaForTournament = (tournamentId): Array<SearchObject> => {
 }
 
 const objectsPerTournament = tournamentFolders.map(getAllGameMetaForTournament)
-console.log(objectsPerTournament.length)
 const allSearchObjects = []
 objectsPerTournament.forEach(objectArray => allSearchObjects.push(...objectArray))
 
