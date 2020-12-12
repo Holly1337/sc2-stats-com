@@ -61,7 +61,8 @@ export const UnitsDiedHeatMap = (props: Props) => {
         style={{
           width: mapSizeData.widthInPixels,
           height: mapSizeData.heightInPixels,
-          backgroundImage: `url(${img})`
+          backgroundImage: `url(${img})`,
+          backgroundRepeat: 'no-repeat'
         }}
         className={styles.heatmap}
         ref={ref}
