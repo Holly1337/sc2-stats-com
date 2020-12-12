@@ -29,7 +29,7 @@ const MapsHome = (props: Props) => {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Units
+          Units & Buildings
         </Breadcrumb.Section>
       </Breadcrumb>
       <UnitsCountSection matchups={matchups} unitsBuilt={unitsBuilt} />
