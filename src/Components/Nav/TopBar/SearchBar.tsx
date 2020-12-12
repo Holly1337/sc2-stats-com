@@ -18,7 +18,7 @@ export const SearchBar = (props) => {
       return
     }
     setLoading(true)
-    const response = await fetch(`api/search?q=${newValue}`)
+    const response = await fetch(`/api/search?q=${newValue}`)
     const json = await response.json()
     const results = json.results
     setResults(results)
