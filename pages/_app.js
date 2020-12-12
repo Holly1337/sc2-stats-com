@@ -6,6 +6,7 @@ import 'rc-slider/assets/index.css'
 import '../styles/styles.scss'
 import { TopBar } from '../src/Components/Nav/TopBar/TopBar'
 import React from 'react'
+import { Footer } from '../src/Components/Nav/Footer/Footer'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
     }}>
       <TopBar />
       <Component {...pageProps} />
+      <Footer />
     </div>
   )
 }

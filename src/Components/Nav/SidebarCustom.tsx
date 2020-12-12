@@ -11,7 +11,7 @@ export const SidebarCustom: React.FC<Props> = (props) => {
   return (
     <Sidebar.Pushable
       as={Segment}
-      style={{ border: 'none', borderRadius: 0, height: '100%', minHeight: '100vh' }}
+      style={{ border: 'none', borderRadius: 0, height: '100%', minHeight: '100vh', marginBottom: 0 }}
       id={'base-segment'}
       className={'mt-0'}
     >
