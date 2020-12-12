@@ -2,13 +2,25 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 25px;
   width: 100vw;
   height: 64px;
   background-color: white;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
   z-index: 1200;
+  align-items: center;
+
+  .logo {
+    justify-self: start;
+  }
+
+  .searchBar {
+    justify-self: center;
+  }
+
+  .social {
+    justify-self: end;
+  }
 }
