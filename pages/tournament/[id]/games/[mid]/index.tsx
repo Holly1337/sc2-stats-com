@@ -1,5 +1,5 @@
 import { TournamentPageWrapper } from '../../../../../src/Components/Layout/TournamentPageWrapper'
-import { Breadcrumb } from 'semantic-ui-react'
+import { Breadcrumb, Placeholder } from 'semantic-ui-react'
 import Link from 'next/link'
 import { HeatmapSection } from '../../../../../src/Components/Sections/Heatmap/HeatmapSection'
 import { UnitsBuilt } from '../../../../../src/types/stats'
@@ -8,10 +8,12 @@ import { UpgradeTimesTwoPlayers } from '../../../../../src/Components/Sections/U
 import { BuildingsTwoPlayers } from '../../../../../src/Components/Sections/Units/UnitsCount/BuildingsTwoPlayers'
 import { SingleGameHeaderSection } from '../../../../../src/Components/Sections/SingleGame/SingleGameHeaderSection'
 import { splitName } from '../../../../../src/util/playerNames'
-import { Router } from 'next/router'
-import { NextPageContext } from 'next/types'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import Error from 'next/error'
+import { SegmentCustom } from '../../../../../src/Components/Segments/SegmentCustom'
 
-interface Props {
+interface PageData {
   tournamentMeta: TournamentMeta
   matchMeta: MatchMeta
   heatmap: Array<HeatmapDataPoint>
@@ -19,9 +21,75 @@ interface Props {
   upgrades: { player1: {[upgradeId: string]: number}, player2: {[upgradeId: string]: number}}
 }
 
-const GameHome = (props: Props) => {
-  const { matchMeta, unitsBuilt, upgrades } = props
-  const { id, name } = props.tournamentMeta
+const GameHome = () => {
+  const router = useRouter()
+  const id = router.query.id as string
+  const mid = router.query.mid as string
+
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
+  const [data, setData] = useState<null | PageData>(null)
+
+  const loadData = async () => {
+    if (id === undefined || mid === undefined) {
+      return
+    }
+    try {
+      setIsLoading(true)
+      const res = await fetch(`/api/tournament/${id}/matches/${mid}`)
+      if (res.status === 404) {
+        router.replace('/404')
+        return
+      }
+      const json = await res.json()
+      setData(json)
+    } catch (e) {
+      setHasError(true)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    loadData()
+  }, [id, mid])
+
+  if (isLoading) {
+    return (
+      <TournamentPageWrapper tournamentId={id}>
+        <SegmentCustom>
+          <div>
+            <Placeholder style={{ margin: '40px auto'}}>
+              <Placeholder.Header>
+                <Placeholder.Line />
+              </Placeholder.Header>
+            </Placeholder>
+            <Placeholder style={{ margin: '0 auto'}}>
+              <Placeholder.Image square />
+            </Placeholder>
+            <Placeholder style={{ margin: '40px 0px 40px 200px'}} fluid>
+              <Placeholder.Header>
+                <Placeholder.Line />
+                <Placeholder.Line />
+                <Placeholder.Line />
+                <Placeholder.Line />
+                <Placeholder.Line />
+              </Placeholder.Header>
+            </Placeholder>
+          </div>
+        </SegmentCustom>
+      </TournamentPageWrapper>
+    )
+  }
+  if (hasError) {
+    return <Error statusCode={500} />
+  }
+  if (data === null) {
+    return <Error statusCode={500} />
+  }
+
+  const { matchMeta, unitsBuilt, upgrades } = data
+  const { name } = data.tournamentMeta
   return (
     <TournamentPageWrapper tournamentId={id}>
       <Breadcrumb>
@@ -42,35 +110,12 @@ const GameHome = (props: Props) => {
         </Breadcrumb.Section>
       </Breadcrumb>
       <SingleGameHeaderSection matchMeta={matchMeta} />
-      <HeatmapSection dataPoints={props.heatmap} mapId={matchMeta.mapId} mapName={matchMeta.mapName} />
+      <HeatmapSection dataPoints={data.heatmap} mapId={matchMeta.mapId} mapName={matchMeta.mapName} />
       <UnitsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={matchMeta.players} />
       <BuildingsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={matchMeta.players} />
       <UpgradeTimesTwoPlayers upgrades={[upgrades.player1, upgrades.player2]} names={matchMeta.players} />
     </TournamentPageWrapper>
   )
-}
-
-GameHome.getInitialProps = async (ctx: NextPageContext) => {
-  const { query: { id, mid } } = ctx
-  const res = await fetch(`${process.env.BASE_URL}/api/tournament/${id}/matches/${mid}`)
-  if (res.status !== 200) {
-    if (ctx.res) {
-      // On the server, we'll use an HTTP response to
-      // redirect with the status code of our choice.
-      // 307 is for temporary redirects.
-      ctx.res.writeHead(307, { Location: '/404' })
-      ctx.res.end()
-    } else {
-      // On the client, we'll use the Router-object
-      // from the 'next/router' module.
-      // @ts-ignore
-      Router.replace('/404')
-    }
-  }
-  const json = await res.json()
-  return {
-    ...json
-  }
 }
 
 export default GameHome
