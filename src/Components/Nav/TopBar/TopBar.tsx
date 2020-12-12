@@ -8,7 +8,7 @@ export const TopBar = () => {
   // Icon font is District on Photopea
   return (
     <div className={styles.topBar}>
-      <div>
+      <div className={styles.logo}>
         <Link href={'/'}>
           <a>
             <div  className={'d-flex align-items-center'}>
@@ -17,10 +17,10 @@ export const TopBar = () => {
           </a>
         </Link>
       </div>
-      <div>
+      <div className={styles.searchBar}>
         <SearchBar />
       </div>
-      <div>
+      <div className={styles.social}>
         <a href="https://twitter.com/HollySC2" target={'_blank'} rel={'noopener noreferrer'}>
           <Icon name={'twitter'} size={'large'} color={'black'} />
         </a>
