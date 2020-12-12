@@ -31,32 +31,43 @@ export const UpgradeTimesTwoPlayers = (props: Props) => {
 
   const p1Times = timelineItemsData[0].map(i => i.start)
   const p2Times = timelineItemsData[1].map(i => i.start)
-  const maxP1 = Math.max(...p1Times)
-  const maxP2 = Math.max(...p2Times)
+  let maxP1 = Math.max(...p1Times)
+  let maxP2 = Math.max(...p2Times)
+  if (!isFinite(maxP1)) {
+    maxP1 = 0
+  }
+  if (!isFinite(maxP2)) {
+    maxP2 = 0
+  }
   const max = Math.max(maxP1, maxP2)
+  console.log({ maxP1, maxP2, max })
 
   return (
     <>
       <SegmentCustom heading={'Upgrades'}>
         <Header size={'large'} textAlign={'center'} className={'mt-4'}><PlayerName>{names[0]}</PlayerName></Header>
-        <Timeline
-          options={{
-            ...timelineOptions,
-            start: 0,
-            end: (max + 1000) * 60
-          }}
-          items={timelineItemsData[0].map(createTimelineItem)}
-        />
+        {timelineItemsData[0].length === 0
+        ? <Header textAlign={'center'} size={'large'}>No Upgrades Researched</Header>
+        :<Timeline
+            options={{
+              ...timelineOptions,
+              start: 0,
+              end: (max + 1000) * 60
+            }}
+            items={timelineItemsData[0].map(createTimelineItem)}
+          />}
         <Divider />
         <Header size={'large'} textAlign={'center'} className={'mt-4'}><PlayerName>{names[1]}</PlayerName></Header>
-        <Timeline
-          options={{
-            ...timelineOptions,
-            start: 0,
-            end: (max + 1000) * 60
-          }}
-          items={timelineItemsData[1].map(createTimelineItem)}
-        />
+        {timelineItemsData[1].length === 0
+          ? <Header textAlign={'center'} size={'large'}>No Upgrades Researched</Header>
+          :<Timeline
+            options={{
+              ...timelineOptions,
+              start: 0,
+              end: (max + 1000) * 60
+            }}
+            items={timelineItemsData[1].map(createTimelineItem)}
+          />}
       </SegmentCustom>
     </>
   )

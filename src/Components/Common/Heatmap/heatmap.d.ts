@@ -5,6 +5,7 @@ type MapSizeData = {
   heightInPixels: number
   offsetX: number
   offsetY: number
+  xModifier?: number
 }
 
 type HeatmapDataPoint = {

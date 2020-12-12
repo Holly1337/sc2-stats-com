@@ -32,9 +32,14 @@ export const UnitsDiedHeatMap = (props: Props) => {
     const heightModifier = widthInUnits / heightInUnits
     const widthModifier = heightInUnits / widthInUnits
 
+    let xModifier = heightInUnits < widthInUnits ? widthModifier : 1
+    if (mapSizeData.xModifier !== undefined) {
+      xModifier = mapSizeData.xModifier
+    }
+
     const adjustedDataPoints = dataPoints
       .map(point => {
-        const adjustedX = ((point.x - offsetX) / heightInUnits * heightInPixels) * (heightInUnits < widthInUnits ? widthModifier : 1)
+        const adjustedX = ((point.x - offsetX) / heightInUnits * heightInPixels) * xModifier
         const adjustedY = (point.y - offsetY) / widthInUnits * widthInPixels
 
         return {
