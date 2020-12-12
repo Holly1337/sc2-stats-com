@@ -18,8 +18,11 @@ export const TopBar = () => {
         <SearchBar />
       </div>
       <div>
-        <a href="https://twitter.com/HollySC2">
-          <Icon name={'twitter'} circular size={'large'} />
+        <a href="https://twitter.com/HollySC2" target={'_blank'} rel={'noopener noreferrer'}>
+          <Icon name={'twitter'} size={'large'} color={'black'} />
+        </a>
+        <a href="https://github.com/Holly1337/sc2-stats-com" target={'_blank'} rel={'noopener noreferrer'}>
+          <Icon name={'github'} size={'large'} color={'black'} />
         </a>
       </div>
     </div>
