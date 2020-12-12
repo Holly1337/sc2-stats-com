@@ -55,6 +55,7 @@ const getAllGameMetaForTournament = (tournamentId): Array<SearchObject> => {
   } catch (e) {
     console.log('there was an error')
     console.log(e)
+    return []
   }
 }
 
