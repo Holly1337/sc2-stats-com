@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Header, Search, SearchResultData, SearchResultProps } from 'semantic-ui-react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import { splitName } from '../../../util/playerNames'
+import { getMapImageByName } from '../../Sections/Maps/mapsImages'
 
 export const SearchBar = (props) => {
   const [search, setSearch] = useState('')
@@ -46,11 +48,15 @@ export const SearchBar = (props) => {
 
 const resultRenderer = (result: SearchResultProps) => {
   const item = result.item
+  const mapImage = getMapImageByName(item.map)
   return (
-    <div>
-      <div><Header size={'small'}>Stay At Home Story Cup</Header></div>
-      <div><strong>{item.map}</strong></div>
-      <div><strong>{splitName(item.player1).name}</strong> vs <strong>{splitName(item.player2).name}</strong></div>
+    <div className={'d-flex'}>
+      <img src={mapImage} height={48} alt={item.map} style={{ marginRight: 16 }} />
+      <div>
+        <div><strong>{splitName(item.player1).name}</strong> vs <strong>{splitName(item.player2).name}</strong></div>
+        <div><strong>{item.map}</strong></div>
+        <div>{item.tournamentName}</div>
+      </div>
     </div>
   )
 }
