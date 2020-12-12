@@ -45,7 +45,11 @@ export const groupBuildings = (unitsBuilt: UnitsBuilt): UnitsBuilt => {
       unitsBuilt[target] = 0
     }
     from.forEach((id) => {
-      unitsBuilt[target] += unitsBuilt[id]
+      const toAdd = unitsBuilt[id]
+      if (typeof toAdd !== 'number') {
+        return
+      }
+      unitsBuilt[target] += toAdd
       delete unitsBuilt[id]
     })
   })
