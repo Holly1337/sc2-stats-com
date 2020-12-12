@@ -111,5 +111,41 @@
     "offsetX": 17 ,
     "offsetY": 9,
     "xModifier": 1
+  },
+  "jagannatha": {
+    "heightInUnits": 146,
+    "widthInUnits": 120,
+    "heightInPixels": 600,
+    "widthInPixels": 493,
+    "offsetX": 23.5,
+    "offsetY": 45.6
+  },
+  "romanticide": {
+    "heightInUnits": 132,
+    "widthInUnits": 150,
+    "heightInPixels": 599,
+    "widthInPixels": 681,
+    "offsetX": 25,
+    "offsetY": 1.5,
+    "xModifier": 1.01
+  },
+  "lightshade": {
+    "heightInUnits": 132,
+    "widthInUnits": 136,
+    "heightInPixels": 599,
+    "widthInPixels": 617,
+    "offsetX": 25,
+    "offsetY": 13,
+    "xModifier": 1.02,
+    "yModifier": 1.02
+  },
+  "oxide": {
+    "heightInUnits": 126,
+    "widthInUnits": 136,
+    "heightInPixels": 600,
+    "widthInPixels": 648,
+    "offsetX": 27,
+    "offsetY": 28,
+    "xModifier": 1
   }
 }

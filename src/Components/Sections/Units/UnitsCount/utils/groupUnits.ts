@@ -25,7 +25,7 @@ export const groupUnits = (unitsBuilt: UnitsBuilt): UnitsBuilt => {
       if (typeof toAdd !== 'number') {
         return
       }
-      unitsBuilt[target] += unitsBuilt[id]
+      unitsBuilt[target] += toAdd
       delete unitsBuilt[id]
     })
   })
