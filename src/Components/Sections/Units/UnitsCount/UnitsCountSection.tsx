@@ -11,25 +11,21 @@ import { roundTwoDecimals } from '../../../../util/round'
 interface Props {
   matchups: MatchupStats
   unitsBuilt: UnitsBuilt
+  showAverage: boolean
+  onToggleShowAverage: () => void
 }
 
 export const UnitsCountSection = (props: Props) => {
-  let { matchups, unitsBuilt } = props
-  const [showAveragePerGame, setShowAveragePerGame] = useState<boolean>(false)
+  let { matchups, unitsBuilt, showAverage, onToggleShowAverage } = props
   unitsBuilt = groupUnits({ ...unitsBuilt })
-
-  const onToggleShowAverage = () => {
-    setShowAveragePerGame(showAverage => !showAverage)
-  }
 
   const unitsSorted = Object.entries(unitsBuilt)
     .sort(([unitId1], [unitId2]) => unitId1.localeCompare(unitId2))
     .sort(([unitId1, count1], [unitId2, count2]) => count2 - count1)
 
-
   const byRace = { Protoss: [], Terran: [], Zerg: [] }
 
-  const totalGamesPerRace = showAveragePerGame
+  const totalGamesPerRace = showAverage
     ? countGamesPerRace(matchups)
     : { Prot: 1, Terr: 1, Zerg: 1, Rand: 1}
 
@@ -50,7 +46,7 @@ export const UnitsCountSection = (props: Props) => {
   return (
     <SegmentCustom heading={'Units Trained'}>
       <div className={'d-flex justify-content-end'}>
-        <Checkbox toggle label={'Show Average Per Game'} checked={showAveragePerGame} onClick={onToggleShowAverage} className={'mr-4'} />
+        <Checkbox toggle label={'Show Average Per Game'} checked={showAverage} onClick={onToggleShowAverage} className={'mr-4'} />
       </div>
       <Header size={'large'} className={'ml-4'}>Protoss</Header>
       <div className={'d-flex flex-wrap mt-4'}>

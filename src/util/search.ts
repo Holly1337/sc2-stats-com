@@ -1,12 +1,14 @@
 import fs from 'fs'
 import Fuse from 'fuse.js'
+import tournaments from '../../data/tournaments/tournaments.json'
 
 const tournamentsPath = 'data/tournaments'
-const tournamentFolders = fs.readdirSync(tournamentsPath)
+const tournamentFolders = fs.readdirSync(tournamentsPath).filter(path => !path.endsWith('.json'))
 
 export type SearchObject = {
   matchId: string
   tournamentId: string
+  tournamentName: string
   map: string
   matchup: string
   matchupLong: string
@@ -26,10 +28,13 @@ const getMetaFromFile = (filePath: string, tournamentId: string): SearchObject |
   try {
     const data = fs.readFileSync(filePath)
     const fileName = filePath.substr(filePath.lastIndexOf('/') + 1).replace('.json', '')
+    const tournamentMeta = tournaments.find(tournament => tournament.id === tournamentId)
+    const tournamentName = tournamentMeta?.name ?? ''
     // @ts-ignore
     const meta = JSON.parse(data)
     return {
       tournamentId,
+      tournamentName,
       matchId: fileName,
       map: meta.mapName,
       matchup: meta.racesShort.sort((a, b) => a.localeCompare(b)).map(r => r.substr(0, 1).toUpperCase()).join('v'),
@@ -52,16 +57,21 @@ const getAllGameMetaForTournament = (tournamentId): Array<SearchObject> => {
       .map(file => `${path}/${file}`)
       .map(file => getMetaFromFile(file, tournamentId))
       .filter(Boolean)
-  } catch {
-
+  } catch (e) {
+    console.log('there was an error')
+    console.log(e)
+    return []
   }
 }
 
-const allSearchObjects = getAllGameMetaForTournament(tournamentFolders[4])
+const objectsPerTournament = tournamentFolders.map(getAllGameMetaForTournament)
+console.log(objectsPerTournament.length)
+const allSearchObjects = []
+objectsPerTournament.forEach(objectArray => allSearchObjects.push(...objectArray))
 
 let options = {
   includeScore: true,
-  keys: ['map', 'matchup', 'race1', 'race2', 'player1', 'player2'],
+  keys: ['map', 'matchup', 'race1', 'race2', 'player1', 'player2', 'tournamentName'],
   threshold: 0.5
 }
 

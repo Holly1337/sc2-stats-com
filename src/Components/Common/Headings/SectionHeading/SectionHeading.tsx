@@ -14,7 +14,7 @@ const SectionHeading: React.FC<Props> = ({ title, subtitle }) => {
         {title}
       </Header>
       {hasSubtitle && (
-        <Header size={'large'} textAlign={'center'} className={'mt-0'}>
+        <Header size={'large'} textAlign={'center'} className={'mt-0'} color={'grey'}>
           {subtitle}
         </Header>
       )}
