@@ -4,7 +4,7 @@ import styles from './footer.module.scss'
 export const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      This is the footer. Nothing to see here.
+      All data is based on the official replay packs.
     </div>
   )
 }

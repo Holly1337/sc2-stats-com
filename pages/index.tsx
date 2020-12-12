@@ -7,7 +7,7 @@ import { TournamentCard } from '../src/Components/Common/TournamentCard/Tourname
 export default function Home () {
   return (
     <Container>
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 60, marginBottom: 60 }}>
         <Card.Group itemsPerRow={3} stackable={true}>
           {tournaments.map(tournament => (
             <Link href={`/tournament/${tournament.id}`} passHref={true}>
