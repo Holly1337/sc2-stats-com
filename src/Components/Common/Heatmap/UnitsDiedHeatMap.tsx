@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import h337 from 'heatmap.js'
 import styles from './heatmap.module.scss'
+import AspectRatio from 'react-aspect-ratio'
 
 type Props = {
   img: string
@@ -11,13 +12,13 @@ type Props = {
 }
 
 export const UnitsDiedHeatMap = (props: Props) => {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<any>(null)
   const [heatmap, setHeatmap] = useState<h337.Heatmap<'value', 'x', "y"> | null>(null)
   const { img, mapSizeData, dataPoints, radius, removeWeight } = props
 
   useEffect(() => {
     let newHeatmap = h337.create({
-      container: ref.current as HTMLElement,
+      container: ref.current.node as HTMLElement,
       radius
     })
     setHeatmap(newHeatmap)
@@ -61,18 +62,20 @@ export const UnitsDiedHeatMap = (props: Props) => {
     heatmap.setData(data)
   }, [dataPoints, heatmap, radius, removeWeight])
 
+  const { heightInPixels, widthInPixels } = mapSizeData
+
   return (
-    <div className={styles.heatmapWrapper}>
-      <div
-        style={{
-          width: mapSizeData.widthInPixels,
-          height: mapSizeData.heightInPixels,
-          backgroundImage: `url(${img})`,
-          backgroundRepeat: 'no-repeat'
-        }}
-        className={styles.heatmap}
-        ref={ref}
-      />
-    </div>
+    <AspectRatio
+      ratio={`${widthInPixels}/${heightInPixels}`}
+      style={{
+        maxWidth: widthInPixels,
+        backgroundImage: `url(${img})`
+      }}
+      className={styles.heatmapWrapper}
+      ref={ref}
+    >
+      {/* AspectRatio requires a single child component */}
+      <div />
+    </AspectRatio>
   )
 }
