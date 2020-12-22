@@ -18,6 +18,7 @@
     "next": "10.0.2",
     "rc-slider": "^9.6.5",
     "react": "17.0.1",
+    "react-aspect-ratio": "^1.0.46",
     "react-dom": "17.0.1",
     "react-visjs-timeline": "^1.6.0",
     "recharts": "^1.8.5",
