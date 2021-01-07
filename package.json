@@ -25,6 +25,7 @@
     "sass": "^1.29.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
+    "use-debounce": "^5.2.0",
     "vis": "^4.21.0-EOL",
     "vis-timeline": "^7.4.2"
   },
