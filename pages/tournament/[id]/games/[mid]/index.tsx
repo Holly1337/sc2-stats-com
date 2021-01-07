@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Error from 'next/error'
 import { SegmentCustom } from '../../../../../src/Components/Segments/SegmentCustom'
+import { GameNavigation } from '../../../../../src/Components/Sections/SingleGame/GameNavigation'
 
 interface PageData {
   tournamentMeta: TournamentMeta
@@ -19,6 +20,8 @@ interface PageData {
   heatmap: Array<HeatmapDataPoint>
   unitsBuilt: { player1: UnitsBuilt, player2: UnitsBuilt }
   upgrades: { player1: {[upgradeId: string]: number}, player2: {[upgradeId: string]: number}}
+  previousGameId: null | string
+  nextGameId: null | string
 }
 
 const GameHome = () => {
@@ -106,9 +109,10 @@ const GameHome = () => {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          {splitName(matchMeta.players[0]).name} vs {splitName(matchMeta.players[1]).name}
+          {splitName(matchMeta.players[0]).name} vs {splitName(matchMeta.players[1]).name} - {matchMeta.mapName}
         </Breadcrumb.Section>
       </Breadcrumb>
+      <GameNavigation tournamentId={id} previousGameId={data.previousGameId} nextGameId={data.nextGameId} />
       <SingleGameHeaderSection matchMeta={matchMeta} />
       <HeatmapSection dataPoints={data.heatmap} mapId={matchMeta.mapId} mapName={matchMeta.mapName} />
       <UnitsTwoPlayers units={[unitsBuilt.player1, unitsBuilt.player2]} names={matchMeta.players} />
