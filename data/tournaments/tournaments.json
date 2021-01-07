@@ -1,5 +1,17 @@
 [
   {
+    "id": "tsl6",
+    "name": "TeamLiquid StarLeague 6",
+    "from": "2020-12-05",
+    "to": "2020-12-15",
+    "description": "The TeamLiquid StarLeague 6, announced on November 10, 2020, is the fourth TSL event held for StarCraft II.",
+    "games": 124,
+    "pricepool": 30000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/tsl5_banner.png"
+  },
+  {
     "id": "dhmw2020",
     "name": "DreamHack Masters Winter",
     "from": "2020-10-14",
