@@ -13,11 +13,16 @@ import { loadTournamentData } from '../../../src/util/loadFile'
 import { TournamentIndexPageProps } from '../../../src/types/TournamentIndexPage'
 import { getTournamentPaths } from '../../../src/util/paths'
 import { TournamentNameHeading } from '../../../src/Components/Common/Headings/TournamentNameHeading/TournamentNameHeading'
+import { TITLE } from '../../../src/constants/meta'
 
 export default function Home(props: TournamentIndexPageProps) {
   const { id, name } = props
   return (
-    <TournamentPageWrapper tournamentId={id}>
+    <TournamentPageWrapper
+      tournamentId={id}
+      tournamentName={name}
+      title={`Overview - ${props.name} - ${TITLE}`}
+    >
       <Breadcrumb>
         <Breadcrumb.Section>
           <Link href={'/'}>Home</Link>

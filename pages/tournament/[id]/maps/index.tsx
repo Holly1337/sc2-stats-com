@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData } from '../../../../src/util/loadFile'
 import { FullMatchupStats, MapsPlayedStats } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
+import { TITLE } from '../../../../src/constants/meta'
 
 interface Props {
   id: string
@@ -18,7 +19,11 @@ interface Props {
 
 const MapsHome = (props: Props) => {
   return (
-    <TournamentPageWrapper tournamentId={props.id}>
+    <TournamentPageWrapper
+      tournamentId={props.id}
+      tournamentName={props.name}
+      title={`Maps - ${props.name} - ${TITLE}`}
+    >
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>

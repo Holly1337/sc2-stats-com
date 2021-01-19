@@ -8,6 +8,7 @@ import { loadTournamentData } from '../../../../src/util/loadFile'
 import { MatchupStats, UnitsBuilt } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
 import { useState } from 'react'
+import { TITLE } from '../../../../src/constants/meta'
 
 interface Props {
   id: string
@@ -25,7 +26,11 @@ const MapsHome = (props: Props) => {
   }
 
   return (
-    <TournamentPageWrapper tournamentId={id}>
+    <TournamentPageWrapper
+      tournamentId={id}
+      tournamentName={name}
+      title={`Units & Buildings - ${props.name} - ${TITLE}`}
+    >
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>

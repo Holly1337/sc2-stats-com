@@ -6,6 +6,7 @@ import { loadTournamentData } from '../../../../src/util/loadFile'
 import { getTournamentPaths } from '../../../../src/util/paths'
 import { TournamentSection } from '../../../../src/Components/Sections/Tournament/TournamentSection'
 import { TreeNode } from '../../../../src/Components/Sections/Tournament/TournamentListItem'
+import { TITLE } from '../../../../src/constants/meta'
 
 interface Props {
   id: string
@@ -16,7 +17,11 @@ interface Props {
 const GamesHome = (props: Props) => {
   const { id, name, tree } = props
   return (
-    <TournamentPageWrapper tournamentId={id}>
+    <TournamentPageWrapper
+      tournamentId={id}
+      tournamentName={name}
+      title={`Games - ${props.name} - ${TITLE}`}
+    >
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>
