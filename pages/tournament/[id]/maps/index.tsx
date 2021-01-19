@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let id = context.params.id as string
 
   const tournaments = await loadTournaments()
-  const tournament = tournaments.find(tournament => tournament.id = id)
+  const tournament = tournaments.find(tournament => tournament.id === id)
   const meta = await loadTournamentData(id, 'meta')
   const mapsPlayedStats = await loadTournamentData(id, 'mapsPlayed')
   const fullMatchupStats = await loadTournamentData(id, 'fullMatchupStats')

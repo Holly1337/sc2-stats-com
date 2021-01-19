@@ -10,6 +10,9 @@ export const MetaDescription = (props: Props) => {
     description = props.children.substr(0, 157) + '...'
   }
   return (
-    <meta name={'description'} key={'description'} content={description} />
+    <>
+      <meta name={'og:description'} key={'og:description'} content={description} />
+      <meta name={'description'} key={'description'} content={description}/>
+    </>
   )
 }
