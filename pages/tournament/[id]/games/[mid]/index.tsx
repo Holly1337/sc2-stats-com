@@ -13,9 +13,10 @@ import React, { useEffect, useState } from 'react'
 import Error from 'next/error'
 import { SegmentCustom } from '../../../../../src/Components/Segments/SegmentCustom'
 import { GameNavigation } from '../../../../../src/Components/Sections/SingleGame/GameNavigation'
-import { TITLE } from '../../../../../src/constants/meta'
+import tournaments from '../../../../../data/tournaments/tournaments.json'
 
 interface PageData {
+  tournament: TournamentData
   tournamentMeta: TournamentMeta
   matchMeta: MatchMeta
   heatmap: Array<HeatmapDataPoint>
@@ -25,13 +26,20 @@ interface PageData {
   nextGameId: null | string
 }
 
-const GameHome = () => {
+interface PageProps {
+  id: string
+  mid: string
+}
+
+const GameHome = (props: PageProps) => {
   const router = useRouter()
-  const id = router.query.id as string
-  const mid = router.query.mid as string
+  const { id, mid } = props
+  const [tournament, setTournament] = useState<TournamentData | undefined>(
+    () => tournaments.find(t => t.id === id) as TournamentData
+  )
 
   const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
+  const [hasError, setHasError] = useState(tournament === undefined)
   const [data, setData] = useState<null | PageData>(null)
 
   const loadData = async () => {
@@ -55,16 +63,28 @@ const GameHome = () => {
   }
 
   useEffect(() => {
-    loadData()
+    const tournament = tournaments.find(t => t.id === id) as TournamentData
+    setTournament(tournament)
+    if (tournament !== undefined) {
+      loadData()
+    }
   }, [id, mid])
+
+  if (tournament === undefined) {
+    router.replace('/404')
+    return null
+  }
+
+  if (hasError) {
+    return <Error statusCode={500} />
+  }
 
   if (isLoading) {
     return (
       <>
         <TournamentPageWrapper
-          tournamentId={id}
-          tournamentName={''}
-          title={TITLE}
+          tournament={tournament}
+          pageName={'Game'}
         >
           <SegmentCustom>
             <div>
@@ -91,9 +111,6 @@ const GameHome = () => {
       </>
     )
   }
-  if (hasError) {
-    return <Error statusCode={500} />
-  }
   if (data === null) {
     return <Error statusCode={500} />
   }
@@ -105,9 +122,8 @@ const GameHome = () => {
   return (
     <>
       <TournamentPageWrapper
-        tournamentId={id}
-        tournamentName={name}
-        title={`${playersOnMap} - ${name}`}
+        tournament={tournament}
+        pageName={playersOnMap}
       >
         <Breadcrumb>
           <Breadcrumb.Section href={'/'}>
@@ -135,6 +151,16 @@ const GameHome = () => {
       </TournamentPageWrapper>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { id, mid } = context.params
+  return {
+    props: {
+      id,
+      mid
+    }, // will be passed to the page component as props
+  }
 }
 
 export default GameHome

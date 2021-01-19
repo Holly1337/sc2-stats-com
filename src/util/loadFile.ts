@@ -7,7 +7,7 @@ export const loadTournamentData = async (tournamentId: string, pageType: Tournam
   return JSON.parse(file)
 }
 
-export const loadTournaments = async <T>(): Promise<Promise<T>> => {
+export const loadTournaments = async (): Promise<TournamentData[]> => {
   const file = await fs.promises.readFile(`./data/tournaments/tournaments.json`, 'utf-8')
   return JSON.parse(file)
 }

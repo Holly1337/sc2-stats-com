@@ -8,6 +8,7 @@ import '../styles/styles.scss'
 import { TopBar } from '../src/Components/Nav/TopBar/TopBar'
 import React from 'react'
 import { Footer } from '../src/Components/Nav/Footer/Footer'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps }) {
       position: 'absolute',
       marginTop: 64
     }}>
+      <Head>
+        <meta name='keywords' content='SC2, Starcraft2, Tournament, Stats, Statistics, Numbers, Replay'/>
+      </Head>
       <TopBar />
       <Component {...pageProps} />
       <Footer />
