@@ -31,8 +31,8 @@ function MyApp({ Component, pageProps }) {
           images: [{
             url: `${process.env.BASE_URL}/assets/images/logo_open_graph.png`,
             alt: 'SC2 Stats logo',
-            width: 350,
-            height: 64
+            width: 600,
+            height: 315
           }]
         }}
         twitter={{
