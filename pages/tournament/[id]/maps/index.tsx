@@ -5,39 +5,45 @@ import { MapsMatchupSection } from '../../../../src/Components/Sections/Maps/Map
 import Link from 'next/link'
 import { MatchupLengthSection } from '../../../../src/Components/Sections/Maps/MapsDetail/MatchupLength/MatchupLengthSection'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { loadTournamentData } from '../../../../src/util/loadFile'
+import { loadTournamentData, loadTournaments } from '../../../../src/util/loadFile'
 import { FullMatchupStats, MapsPlayedStats } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
 
 interface Props {
   id: string
   name: string
+  tournament: TournamentData
   mapsPlayed: MapsPlayedStats
   fullMatchupStats: FullMatchupStats
 }
 
 const MapsHome = (props: Props) => {
+  const { id, name, tournament, mapsPlayed, fullMatchupStats } = props
+  const pageName = 'Maps'
   return (
-    <TournamentPageWrapper tournamentId={props.id}>
+    <TournamentPageWrapper
+      tournament={tournament}
+      pageName={pageName}
+    >
       <Breadcrumb>
         <Breadcrumb.Section href={'/'}>
           <Link href={'/'}>Home</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section>
-          <Link href={`/tournament/${props.id}`}>{props.name}</Link>
+          <Link href={`/tournament/${id}`}>{name}</Link>
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Maps
+          {pageName}
         </Breadcrumb.Section>
       </Breadcrumb>
-      <MapsPlayedSectionHorizontal stats={props.mapsPlayed} />
+      <MapsPlayedSectionHorizontal stats={mapsPlayed} />
       <MapsMatchupSection
-        allMapsStats={props.fullMatchupStats.perMap}
+        allMapsStats={fullMatchupStats.perMap}
       />
       <MatchupLengthSection
-        allMapsStats={props.fullMatchupStats.perMap}
+        allMapsStats={fullMatchupStats.perMap}
       />
     </TournamentPageWrapper>
   )
@@ -52,13 +58,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const meta = await loadTournamentData(context.params.id as string, 'meta')
-  const mapsPlayedStats = await loadTournamentData(context.params.id as string, 'mapsPlayed')
-  const fullMatchupStats = await loadTournamentData(context.params.id as string, 'fullMatchupStats')
+  let id = context.params.id as string
+
+  const tournaments = await loadTournaments()
+  const tournament = tournaments.find(tournament => tournament.id === id)
+  const meta = await loadTournamentData(id, 'meta')
+  const mapsPlayedStats = await loadTournamentData(id, 'mapsPlayed')
+  const fullMatchupStats = await loadTournamentData(id, 'fullMatchupStats')
 
   return {
     props: {
       ...meta,
+      tournament,
       mapsPlayed: mapsPlayedStats,
       fullMatchupStats
     }

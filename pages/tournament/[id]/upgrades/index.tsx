@@ -7,7 +7,7 @@ import Link from 'next/link'
 import CombatUpgradeAmountSection
   from '../../../../src/Components/Sections/Upgrades/ResearchAmount/CombatUpgradeAmountSection'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { loadTournamentData } from '../../../../src/util/loadFile'
+import { loadTournamentData, loadTournaments } from '../../../../src/util/loadFile'
 import { MatchupStats, UpgradesCount, UpgradesTimes } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
 import { useState } from 'react'
@@ -15,21 +15,26 @@ import { useState } from 'react'
 interface Props {
   id: string
   name: string
+  tournament: TournamentData
   matchups: MatchupStats
   upgradesCount: UpgradesCount
   upgradesTimes: UpgradesTimes
 }
 
 export default function Home(props: Props) {
-  const { id, name, matchups, upgradesCount, upgradesTimes } = props
+  const { id, name, tournament, matchups, upgradesCount, upgradesTimes } = props
   const [showPercentage, setShowPercentage] = useState(false)
+  const pageName = 'Upgrades'
 
   const toggleShowPercentage = () => {
     setShowPercentage(showPercentage => !showPercentage)
   }
 
   return (
-    <TournamentPageWrapper tournamentId={id}>
+    <TournamentPageWrapper
+      tournament={tournament}
+      pageName={pageName}
+    >
       <Breadcrumb>
         <Breadcrumb.Section>
           <Link href={'/'}>Home</Link>
@@ -40,7 +45,7 @@ export default function Home(props: Props) {
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
         <Breadcrumb.Section active>
-          Upgrades
+          {pageName}
         </Breadcrumb.Section>
       </Breadcrumb>
       <ResearchAmountSection
@@ -70,14 +75,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const metaData = await loadTournamentData(context.params.id as string, 'meta')
-  const matchupStats = await loadTournamentData(context.params.id as string, 'matchups')
-  const upgradesCountsStats = await loadTournamentData(context.params.id as string, 'upgradesCount')
-  const upgradesTimesStats = await loadTournamentData(context.params.id as string, 'upgradesTimes')
+  let id = context.params.id as string
+
+  const tournaments = await loadTournaments()
+  const tournament = tournaments.find(tournament => tournament.id === id)
+  const metaData = await loadTournamentData(id, 'meta')
+  const matchupStats = await loadTournamentData(id, 'matchups')
+  const upgradesCountsStats = await loadTournamentData(id, 'upgradesCount')
+  const upgradesTimesStats = await loadTournamentData(id, 'upgradesTimes')
 
   return {
     props: {
       ...metaData,
+      tournament,
       matchups: matchupStats,
       upgradesCount: upgradesCountsStats,
       upgradesTimes: upgradesTimesStats

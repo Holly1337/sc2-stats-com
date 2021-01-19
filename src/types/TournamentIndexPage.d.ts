@@ -3,6 +3,7 @@ import { PopularUnit } from './stats'
 export interface TournamentIndexPageProps {
   id: string
   name: string
+  tournament: TournamentData
   general: GeneralStats
   matchups: MatchupStats
   resources: ResourceStats

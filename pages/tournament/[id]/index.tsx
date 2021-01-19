@@ -1,4 +1,4 @@
-import { Breadcrumb, Header } from 'semantic-ui-react'
+import { Breadcrumb } from 'semantic-ui-react'
 import { GeneralSection } from '../../../src/Components/Sections/General/GeneralSection'
 import { MatchupsSection } from '../../../src/Components/Sections/Matchups/MatchupsSection'
 import { ResourcesSpentGraphSection } from '../../../src/Components/Sections/Resources/ResourcesSpentGraphSection'
@@ -9,15 +9,18 @@ import { PopularUnitsSection } from '../../../src/Components/Sections/PopularUni
 import { TournamentPageWrapper } from '../../../src/Components/Layout/TournamentPageWrapper'
 import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { loadTournamentData } from '../../../src/util/loadFile'
+import { loadTournamentData, loadTournaments } from '../../../src/util/loadFile'
 import { TournamentIndexPageProps } from '../../../src/types/TournamentIndexPage'
 import { getTournamentPaths } from '../../../src/util/paths'
 import { TournamentNameHeading } from '../../../src/Components/Common/Headings/TournamentNameHeading/TournamentNameHeading'
 
 export default function Home(props: TournamentIndexPageProps) {
-  const { id, name } = props
+  const { id, name, tournament } = props
   return (
-    <TournamentPageWrapper tournamentId={id}>
+    <TournamentPageWrapper
+      tournament={tournament}
+      pageName={'Overview'}
+    >
       <Breadcrumb>
         <Breadcrumb.Section>
           <Link href={'/'}>Home</Link>
@@ -48,18 +51,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const metaData = await loadTournamentData(context.params.id as string, 'meta')
-  const generalStats = await loadTournamentData(context.params.id as string, 'general')
-  const matchupStats = await loadTournamentData(context.params.id as string, 'matchups')
-  const resourcesStats = await loadTournamentData(context.params.id as string, 'resources')
-  const mapsPlayedStats = await loadTournamentData(context.params.id as string, 'mapsPlayed')
-  const supplyStats = await loadTournamentData(context.params.id as string, 'supply')
-  const workerStats = await loadTournamentData(context.params.id as string, 'workers')
-  const popularUnitsStats = await loadTournamentData(context.params.id as string, 'popularUnits')
+  let id: string = context.params.id as string
+
+  const tournaments = await loadTournaments()
+  const tournament = tournaments.find(tournament => tournament.id === id)
+  const metaData = await loadTournamentData(id, 'meta')
+  const generalStats = await loadTournamentData(id, 'general')
+  const matchupStats = await loadTournamentData(id, 'matchups')
+  const resourcesStats = await loadTournamentData(id, 'resources')
+  const mapsPlayedStats = await loadTournamentData(id, 'mapsPlayed')
+  const supplyStats = await loadTournamentData(id, 'supply')
+  const workerStats = await loadTournamentData(id, 'workers')
+  const popularUnitsStats = await loadTournamentData(id, 'popularUnits')
 
   return {
     props: {
       ...metaData,
+      tournament,
       general: generalStats,
       matchups: matchupStats,
       resources: resourcesStats,

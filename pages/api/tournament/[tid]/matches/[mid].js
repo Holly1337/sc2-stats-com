@@ -6,9 +6,9 @@ const tournamentsPath = 'data/tournaments'
 
 export default async (req, res) => {
   const { query: { tid, mid } } = req
-  const existingTournamentIds = tournaments.map(t => t.id)
+  const tournament = tournaments.find(tournament => tournament.id === tid)
 
-  if (!existingTournamentIds.includes(tid)) {
+  if (tournament === undefined) {
     res.statusCode = 404
     res.json({ status: 404 })
     return
@@ -52,6 +52,7 @@ export default async (req, res) => {
 
     res.statusCode = 200
     res.json({
+      tournament,
       tournamentMeta,
       matchMeta,
       heatmap,

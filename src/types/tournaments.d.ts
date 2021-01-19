@@ -6,6 +6,7 @@ interface TournamentData {
   description: string
   games: number
   pricepool: number
+  currency: string
   tier: 'premier' | 'major' | 'minor' | 'other'
-  href?: string
+  image?: string
 }
