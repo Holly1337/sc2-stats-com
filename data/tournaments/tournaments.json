@@ -1,5 +1,17 @@
 [
   {
+    "id": "dhmlastchance",
+    "name": "DreamHack Masters - Last Chance",
+    "from": "2020-12-08",
+    "to": "2021-01-17",
+    "description": "The DreamHack SC2 Masters Last Chance 2021 is the last-chance online event of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
+    "games": 84,
+    "pricepool": 57000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  },
+  {
     "id": "tsl6",
     "name": "TeamLiquid StarLeague 6",
     "from": "2020-12-05",
