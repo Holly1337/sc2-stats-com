@@ -59,7 +59,7 @@ export const unitIcons = {
     Lurker: 'Icon_Zerg_Lurker.jpg',
     // There is a problem with more Lurkers being built than Hydras. There were 8849 Hydras and 9876 LurkerMP. So Eggs seem to be closer to the real value
     // LurkerMP: 'Icon_Zerg_Lurker.jpg',
-    LurkerMPEgg: 'Icon_Zerg_Lurker.jpg',
+    LurkerMP: 'Icon_Zerg_Lurker.jpg',
     Larva: 'Icon_Zerg_Larva.jpg',
     Mutalisk: 'Icon_Zerg_Mutalisk.jpg',
     NydusWorm: 'Icon_Zerg_Nydus_Worm.jpg',

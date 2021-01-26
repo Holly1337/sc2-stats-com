@@ -7,11 +7,11 @@
   {
     "id": "Zergling",
     "unitName": "Zergling",
-    "count": 25156
+    "count": 20524
   },
   {
-    "id": "SiegeTank",
-    "unitName": "SiegeTank",
-    "count": 5227
+    "id": "Zergling",
+    "unitName": "Zergling",
+    "count": 4580
   }
 ]
