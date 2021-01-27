@@ -56,7 +56,7 @@ export const WorkerSection = (props: Props) => {
       <SegmentCustom heading={'Workers'}>
         <SectionHeading
           title={<><Number value={totalWorkers} /> Workers were created with <MineralNumber value={mineralCost}/> Minerals</>}
-          subtitle={<>Gray values are from {previousName}.</>}
+          subtitle={<>Gray values are from {previousName}</>}
         />
         <Divider section />
         <Grid columns={3} textAlign={'center'}>
