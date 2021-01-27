@@ -1,5 +1,17 @@
 [
   {
+    "id": "cheesewc2021",
+    "name": "Cheeseadelphia Winter Championship 2021",
+    "from": "2020-10-18",
+    "to": "2021-01-24",
+    "description": "Nerd Street Gamers is hosting the Cheeseadelphia Winter Championship 2021, an online Starcraft II tournament with a $10,000 prize pool in which first place takes home $3,500. ",
+    "games": 73,
+    "pricepool": 10000,
+    "currency": "$",
+    "tier": "major",
+    "image": "/assets/images/TournamentCardBackgrounds/Cheeseadelphia_Winter_2021.png"
+  },
+  {
     "id": "dhmlastchance",
     "name": "DreamHack Masters - Last Chance",
     "from": "2020-12-08",
