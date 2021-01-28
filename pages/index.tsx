@@ -20,7 +20,7 @@ export default function Home () {
           <Header size={'huge'}>All Tournaments</Header>
           <Card.Group itemsPerRow={3} stackable={true}>
             {tournaments.map(tournament => (
-              <Link href={`/tournament/${tournament.id}`} passHref={true}>
+              <Link key={tournament.id} href={`/tournament/${tournament.id}`} passHref={true}>
                 <
                   // @ts-ignore
                   TournamentCard
