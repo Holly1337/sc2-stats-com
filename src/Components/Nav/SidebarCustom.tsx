@@ -1,5 +1,5 @@
 import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
-import React, { Dispatch, SetStateAction, useContext } from 'react'
+import React, { Dispatch, SetStateAction, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { SidebarContext } from '../../../pages/_app'
@@ -15,6 +15,10 @@ export const SidebarCustom: React.FC<Props> = (props) => {
   const path = router.asPath
   // @ts-ignore
   const [isOpen, setIsOpen] = useContext<[boolean, Dispatch<SetStateAction<boolean>>]>(SidebarContext)
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [router.pathname])
 
   const hrefs = {
     overview: `/tournament/${tournamentId}`,
