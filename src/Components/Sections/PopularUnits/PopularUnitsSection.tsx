@@ -38,6 +38,8 @@ export const PopularUnitsSection = (props: Props) => {
           // @ts-ignore
           columns={popularUnits.length}
           textAlign={'center'}
+          stackable={true}
+          divided={true}
         >
           <Grid.Row>
             {popularUnits.map(unit => (

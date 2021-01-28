@@ -59,7 +59,7 @@ export const WorkerSection = (props: Props) => {
           subtitle={<>Gray values are from {previousName}</>}
         />
         <Divider section />
-        <Grid columns={3} textAlign={'center'}>
+        <Grid columns={3} textAlign={'center'} stackable={true} divided={true}>
           <Grid.Row>
             {dataAsArray.map(({ id, count, games, previousAverage }) => (
               <Grid.Column key={id}>
