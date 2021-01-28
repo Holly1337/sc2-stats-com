@@ -1,7 +1,9 @@
 import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
-import React from 'react'
+import React, { Dispatch, SetStateAction, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { SidebarContext } from '../../../pages/_app'
+import styles from './sidebar.module.scss'
 
 interface Props {
   tournamentId: string
@@ -11,6 +13,12 @@ export const SidebarCustom: React.FC<Props> = (props) => {
   const { tournamentId, children } = props
   const router = useRouter()
   const path = router.asPath
+  // @ts-ignore
+  const [isOpen, setIsOpen] = useContext<[boolean, Dispatch<SetStateAction<boolean>>]>(SidebarContext)
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [router.pathname])
 
   const hrefs = {
     overview: `/tournament/${tournamentId}`,
@@ -33,9 +41,10 @@ export const SidebarCustom: React.FC<Props> = (props) => {
         icon='labeled'
         inverted
         vertical
-        visible
+        visible={isOpen}
         width='thin'
         style={{ height: '100%' }}
+        className={styles.sideBar}
       >
         <Link href={hrefs.overview} passHref={true}>
           <Menu.Item as={'a'} active={path === hrefs.overview}>
@@ -68,9 +77,8 @@ export const SidebarCustom: React.FC<Props> = (props) => {
           </Menu.Item>
         </Link>
       </Sidebar>
-
-      <Sidebar.Pusher>
-        <Segment basic>
+      <Sidebar.Pusher dimmed={isOpen} className={styles.pusher} onClick={() => setIsOpen(false)}>
+        <Segment basic className={styles.content}>
           {children}
         </Segment>
       </Sidebar.Pusher>

@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { loadTournamentData, loadTournaments } from '../../../../src/util/loadFile'
 import { FullMatchupStats, MapsPlayedStats } from '../../../../src/types/stats'
 import { getTournamentPaths } from '../../../../src/util/paths'
+import { useState } from 'react'
 
 interface Props {
   id: string
@@ -19,6 +20,7 @@ interface Props {
 
 const MapsHome = (props: Props) => {
   const { id, name, tournament, mapsPlayed, fullMatchupStats } = props
+  const [selectedMapIndex, setSelectedMapIndex] = useState(0)
   const pageName = 'Maps'
   return (
     <TournamentPageWrapper
@@ -41,9 +43,13 @@ const MapsHome = (props: Props) => {
       <MapsPlayedSectionHorizontal stats={mapsPlayed} />
       <MapsMatchupSection
         allMapsStats={fullMatchupStats.perMap}
+        selectedMapIndex={selectedMapIndex}
+        onSelectedMapChange={setSelectedMapIndex}
       />
       <MatchupLengthSection
         allMapsStats={fullMatchupStats.perMap}
+        selectedMapIndex={selectedMapIndex}
+        onSelectedMapChange={setSelectedMapIndex}
       />
     </TournamentPageWrapper>
   )

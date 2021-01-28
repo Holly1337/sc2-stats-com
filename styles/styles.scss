@@ -49,6 +49,18 @@ body {
   justify-content: flex-end!important;
 }
 
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
 .text-center {
   text-align: center!important;
 }
@@ -134,4 +146,15 @@ body {
 
 .heatmap-canvas {
   width: 100%
+}
+
+.responsive-tab-container {
+  @media only screen and (max-width: 991px) {
+    .four.wide.column {
+      display: none !important;
+    }
+    .twelve.wide.column {
+      width: 100% !important;
+    }
+  }
 }

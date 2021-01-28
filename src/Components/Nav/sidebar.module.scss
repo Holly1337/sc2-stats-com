@@ -1,0 +1,19 @@
+.sideBar {
+  @media only screen and (min-width: 768px) {
+    visibility: visible!important;
+    transform: translate3d(0,0,0)!important;
+  }
+}
+.content {
+  @media only screen and (min-width: 768px) {
+    margin-left: 150px !important;
+  }
+}
+
+.pusher:after {
+  @media only screen and (min-width: 768px) {
+    width: 0!important;
+    height: 0!important;
+    content: none!important;
+  }
+}

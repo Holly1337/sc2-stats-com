@@ -27,11 +27,9 @@ export const TournamentPageWrapper: React.FC<Props> = (props) => {
         }}
       />
       <SidebarCustom tournamentId={tournament.id}>
-        <div style={{ marginLeft: 150 }}>
-          <Container>
-            {children}
-          </Container>
-        </div>
+        <Container>
+          {children}
+        </Container>
       </SidebarCustom>
     </>
   )
