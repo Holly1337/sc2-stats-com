@@ -22,7 +22,7 @@ export const SingleGameHeaderSection = (props: Props) => {
         <div
           className={styles.p1}
           style={{
-          borderColor: mrgbaToRgbaString(colors[0])
+            borderColor: mrgbaToRgbaString(colors[0])
           }}
         >
           <div>
