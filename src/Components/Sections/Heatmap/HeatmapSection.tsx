@@ -71,6 +71,11 @@ export const HeatmapSection = (props: Props) => {
     }
   }, [animate])
 
+  const mapSizeData: MapSizeData = mapData[mapId]
+  if (mapSizeData === undefined) {
+    return null
+  }
+
   const onToggleAnimate = () => {
     setAnimate(animate => !animate)
   }
@@ -95,8 +100,6 @@ export const HeatmapSection = (props: Props) => {
       && p.gameloop <= animationGameloop + GAMELOOP_RANGE
     ))
   }
-
-  const mapSizeData: MapSizeData = mapData[mapId]
 
   const marksRange = { 0: 0 }
   for (let i = 1; i <= totalSteps; i++) {

@@ -16,6 +16,13 @@ const romanticide = '/assets/images/maps/Romanticide.jpg'
 const triton = '/assets/images/maps/Triton.jpg'
 const ephemeron = '/assets/images/maps/Ephemeron.jpg'
 const worldOfSleepers = '/assets/images/maps/World_of_Sleepers.jpg'
+const twoKAtmospheres = '/assets/images/maps/2000Atmospheres.jpg'
+const berlingrad = '/assets/images/maps/Berlingrad.jpg'
+const blackburn = '/assets/images/maps/Blackburn.jpg'
+const curiousMinds = '/assets/images/maps/CuriousMinds.jpg'
+const glitteringAshes = '/assets/images/maps/GlitteringAshes.jpg'
+const hardwire = '/assets/images/maps/Hardwire.jpg'
+const prideOfAltaris = '/assets/images/maps/prideOfAltaris.jpg'
 
 export const mapImagePaths: { [id: string]: string } = {
   eternalEmpire,
@@ -36,6 +43,13 @@ export const mapImagePaths: { [id: string]: string } = {
   triton,
   worldOfSleepers,
   ephemeron,
+  glitteringAshes,
+  hardwire,
+  berlingrad,
+  curiousMinds,
+  blackburn,
+  prideOfAltaris,
+  '2000Atmospheres': twoKAtmospheres,
   'Eternal Empire LE': eternalEmpire,
   'Simulacrum LE': simulacrum,
   'Nightshade LE': nightshade,
@@ -54,6 +68,13 @@ export const mapImagePaths: { [id: string]: string } = {
   'Triton LE': triton,
   'Ephemeron LE': ephemeron,
   'World of Sleepers LE': worldOfSleepers,
+  '2000 Atmospheres LE': twoKAtmospheres,
+  'Berlingrad LE': berlingrad,
+  'Blackburn LE': blackburn,
+  'Curious Minds LE': curiousMinds,
+  'Glittering Ashes LE': glitteringAshes,
+  'Hardwire LE': hardwire,
+  'Pride of Altaris LE': prideOfAltaris,
 }
 
 const fallbackImage = '/assets/images/100x100.png'
