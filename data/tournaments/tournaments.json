@@ -12,6 +12,18 @@
     "image": "/assets/images/TournamentCardBackgrounds/pigfest.png"
   },
   {
+    "id": "iemkato2021",
+    "name": "IEM Katowice 2021",
+    "from": "2021-02-20",
+    "to": "2021-02-28",
+    "description": "IEM Katowice 2021 is the final tournament of the ESL Pro Tour 2020/21 Circuit, also known as Masters Championship 2021.",
+    "games": 261,
+    "pricepool": 250000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/katowice2020.jpg"
+  },
+  {
     "id": "cheesewc2021",
     "name": "Cheeseadelphia Winter Championship 2021",
     "from": "2020-10-18",
