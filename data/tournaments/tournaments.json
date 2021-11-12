@@ -1,5 +1,17 @@
 [
   {
+    "id": "pigfest",
+    "name": "PiG Sty Festival",
+    "from": "2021-10-25",
+    "to": "2021-10-31",
+    "description": "The PiG Sty Festival is a week-long 24 hours a day event featuring a high level pro tournament, entertaining side-show show matches, and frivolous carnival games.",
+    "games": 83,
+    "pricepool": 6960,
+    "currency": "$",
+    "tier": "major",
+    "image": "/assets/images/TournamentCardBackgrounds/pigfest.png"
+  },
+  {
     "id": "cheesewc2021",
     "name": "Cheeseadelphia Winter Championship 2021",
     "from": "2020-10-18",

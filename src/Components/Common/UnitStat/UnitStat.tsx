@@ -4,6 +4,7 @@ const Marine = '/assets/images/units/marine.png'
 const Zergling = '/assets/images/units/zergling.png'
 const Zealot = '/assets/images/units/zealot.png'
 const Baneling = '/assets/images/units/baneling.png'
+const Interceptor = '/assets/images/units/interceptor.gif'
 const Overlord = '/assets/images/units/overlord.png'
 const SupplyDepot = '/assets/images/buildings/supplydepot.png'
 const Pylon = '/assets/images/buildings/pylon.webp'
@@ -27,7 +28,8 @@ const images: { [id: string]: string } = {
   Drone,
   SCV,
   Probe,
-  SiegeTank
+  SiegeTank,
+  Interceptor
 }
 
 interface Props {
