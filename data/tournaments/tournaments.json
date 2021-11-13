@@ -12,6 +12,18 @@
     "image": "/assets/images/TournamentCardBackgrounds/pigfest.png"
   },
   {
+    "id": "dhmf2021",
+    "name": "DreamHack Masters Fall 2021",
+    "from": "2021-09-07",
+    "to": "2021-09-12",
+    "description": "The DreamHack SC2 Masters Fall is the second of the three online events of the ESL Pro Tour 2021/22 Circuit. It is organized by DreamHack in cooperation with ESL.",
+    "games": 786,
+    "pricepool": 50000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  },
+  {
     "id": "iemkato2021",
     "name": "IEM Katowice 2021",
     "from": "2021-02-20",
@@ -37,7 +49,7 @@
   },
   {
     "id": "dhmlastchance",
-    "name": "DreamHack Masters - Last Chance",
+    "name": "DreamHack Masters - Last Chance 2020",
     "from": "2020-12-08",
     "to": "2021-01-17",
     "description": "The DreamHack SC2 Masters Last Chance 2021 is the last-chance online event of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
@@ -61,7 +73,7 @@
   },
   {
     "id": "dhmw2020",
-    "name": "DreamHack Masters Winter",
+    "name": "DreamHack Masters Winter 2020",
     "from": "2020-10-14",
     "to": "2020-11-15",
     "description": "The DreamHack SC2 Masters Winter is the third and last online event of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
@@ -85,7 +97,7 @@
   },
   {
     "id": "dhmf2020",
-    "name": "DreamHack Masters Fall",
+    "name": "DreamHack Masters Fall 2020",
     "from": "2020-08-08",
     "to": "2020-09-20",
     "description": "The DreamHack SC2 Masters Fall is the second of the three online events of the ESL Pro Tour 2020/21 Circuit. It is organized by DreamHack in cooperation with ESL.",
