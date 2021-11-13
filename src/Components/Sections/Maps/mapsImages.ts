@@ -23,6 +23,7 @@ const curiousMinds = '/assets/images/maps/CuriousMinds.jpg'
 const glitteringAshes = '/assets/images/maps/GlitteringAshes.jpg'
 const hardwire = '/assets/images/maps/Hardwire.jpg'
 const prideOfAltaris = '/assets/images/maps/prideOfAltaris.jpg'
+const beckettIndustries = '/assets/images/maps/BeckettIndustries.jpg'
 
 export const mapImagePaths: { [id: string]: string } = {
   eternalEmpire,
@@ -49,6 +50,7 @@ export const mapImagePaths: { [id: string]: string } = {
   curiousMinds,
   blackburn,
   prideOfAltaris,
+  beckettIndustries,
   '2000Atmospheres': twoKAtmospheres,
   'Eternal Empire LE': eternalEmpire,
   'Simulacrum LE': simulacrum,
@@ -75,6 +77,7 @@ export const mapImagePaths: { [id: string]: string } = {
   'Glittering Ashes LE': glitteringAshes,
   'Hardwire LE': hardwire,
   'Pride of Altaris LE': prideOfAltaris,
+  'Beckett Industries LE': beckettIndustries,
 }
 
 const fallbackImage = '/assets/images/100x100.png'
