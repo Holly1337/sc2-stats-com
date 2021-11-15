@@ -1,0 +1,13 @@
+{
+  "current": {
+    "Drone": 41568,
+    "Probe": 49005,
+    "SCV": 33992
+  },
+  "previous": {
+    "previousEventName": "DreamHack Masters Fall",
+    "Drone": 99.8,
+    "Probe": 68.76,
+    "SCV": 74.74
+  }
+}
