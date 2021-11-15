@@ -1,5 +1,17 @@
 [
   {
+    "id": "dhmw2021",
+    "name": "DreamHack Masters Winter 2021",
+    "from": "2021-11-09",
+    "to": "2021-11-14",
+    "description": "The DreamHack SC2 Masters Winter is the third online global event of the ESL Pro Tour 2021/22.  Circuit. It is organized by DreamHack in cooperation with ESL.",
+    "games": 802,
+    "pricepool": 50000,
+    "currency": "$",
+    "tier": "premier",
+    "image": "/assets/images/TournamentCardBackgrounds/DH_SC2_Masters.png"
+  },
+  {
     "id": "pigfest",
     "name": "PiG Sty Festival",
     "from": "2021-10-25",
